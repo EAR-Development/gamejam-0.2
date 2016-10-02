@@ -11,9 +11,9 @@ deploy:
   api_key:
     secure: lrpSfYpQdMe8FPw81G/doFYbJMAk9hGI/6jbd6BzMH03f1JH4YqS9USCz2vMa7vozCUp8d3YNCbO+tjYUPqZh1MgXSTwPiZz/lhdmD8DbNDUAGwXh7U5CtkxQEHboCLa2KO4+WAEbnbfd4MV8Ouzq33pZVJN0Pn7KH8shsoGudV/nf0TL4SfTrkcs4ZnmrjhdgKKmRREkQD1MX/0/g2QqPCzPXYyZ/YujiHZdGwN+QFXYKeL7WzueAb/XmCYCVQ1NOOP2F9l5ijIQzt2F6m0VY220JvsYcxCj6NrRva8qY4O72x/jhPHCOsryD+SwhHHv8xTpNeK3iJad8tp+Q7VuEn1X6IlEA4Tf07ZmUaN3h62Y9F5X/r0yES4XlqknDX0k6s5xJiyeEC13Fw/7PJ/5EzA7YeoBUxZZdX03t3qWDfFgpsCWnF/56/OWEgtkKow98sQBhfnfZxaNh9pytUxrJj8YwqGEUmrSMzgX7J22u8zP1+gvQYk/o+UGMjQoKa+VzmvTOVeJsKc9rUqMWDltsekwM0iIC7ySB+RBWr1Mwg36mg7foKLBV2vnZLCKjNTgK+1m4hVGI4M/qD1q8pYKFn2hQ4PLHM6JFf3qXTjz6EjX6ebpPSqewB1BgJmL0JH3yBsyAlSbW1x+n4jEKLcRkQo4RYtOOcyaIuSAVzZss8=
   file:
-    - '$(pwd)/Build/osx/gamejam-0.2.app'
-    - '$(pwd)/Build/windows/gamejam-0.2.exe'
-    - '$(pwd)/Build/linux/gamejam-0.2.exe'
+    - '$(pwd)/Build/gamejam-0.2-osx.dmg'
+    - '$(pwd)/Build/gamejam-0.2-windows.zip'
+    - '$(pwd)/Build/gamejam-0.2-linux.zip'
   skip_cleanup: true
   on:
     tags: true
