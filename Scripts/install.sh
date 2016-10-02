@@ -5,8 +5,8 @@
 
 ls
 echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/MacEditorInstaller/Unity-5.4.1f1.pkg: '
-curl -o Unity.pkg http://netstorage.unity3d.com/unity/3757309da7e7/MacEditorInstaller/Unity-5.4.1f1.pkg
+curl -o Unity.pkg http://netstorage.unity3d.com/unity/649f48bbbf0f/MacEditorInstaller/Unity-5.4.1f1.pkg
 
 ls
 echo 'Installing Unity.pkg'
-sudo installer -dumplog -package "./Unity.pkg" -target /
+sudo installer -dumplog -package "Unity.pkg" -target /
