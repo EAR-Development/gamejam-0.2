@@ -3,7 +3,7 @@
 # Example build script for Unity3D project. See the entire example: https://github.com/JonathanPorta/ci-build
 
 # Change this the name of your project. This will be the name of the final executables as well.
-project="ci-build"
+project="gamejam-0.2"
 
 echo "Attempting to build $project for Windows"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
@@ -32,7 +32,7 @@ echo "Attempting to build $project for Linux"
         -silent-crashes \
           -logFile $(pwd)/unity.log \
             -projectPath $(pwd) \
-              -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
+              -buildLinuxUniversalPlayer "$(pwd)/Build/linux/" \
                 -quit
 
 echo 'Logs from build'
