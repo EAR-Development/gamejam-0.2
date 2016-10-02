@@ -8,10 +8,10 @@ echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/MacEdito
 curl -o Unity.pkg http://netstorage.unity3d.com/unity/649f48bbbf0f/MacEditorInstaller/Unity-5.4.1f1.pkg
 
 echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/TargetSupportInstaller/UnitySetup-Linux-Support-for-Editor-5.4.1f1.pkg: '
-curl -o Unity_linux.pkg http://netstorage.unity3d.com/unity/3757309da7e7/TargetSupportInstaller/UnitySetup-Linux-Support-for-Editor-5.4.1f1.pkg
+curl -o Unity_linux.pkg http://netstorage.unity3d.com/download_unity/649f48bbbf0f/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.4.1f1.pkg
 
 echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/TargetSupportInstaller/UnitySetup-Windows-Support-for-Editor-5.4.1f1.pkg: '
-curl -o Unity_windows.pkg  http://netstorage.unity3d.com/unity/3757309da7e7/TargetSupportInstaller/UnitySetup-Windows-Support-for-Editor-5.4.1f1.pkg
+curl -o Unity_windows.pkg  http://netstorage.unity3d.com/download_unity/649f48bbbf0f/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.4.1f1.pkg
 
 
 echo 'Installing Unity.pkg'
