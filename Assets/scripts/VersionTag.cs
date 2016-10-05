@@ -9,7 +9,7 @@ public class VersionTag : MonoBehaviour {
 	}
 	#else
 	void setVersion(){
-		VERSION = "0.0.01";
+		VERSION = "<versionnumber>";
 	}
 	#endif
 
