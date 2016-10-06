@@ -11,9 +11,12 @@ deploy:
   api_key:
     secure: lrpSfYpQdMe8FPw81G/doFYbJMAk9hGI/6jbd6BzMH03f1JH4YqS9USCz2vMa7vozCUp8d3YNCbO+tjYUPqZh1MgXSTwPiZz/lhdmD8DbNDUAGwXh7U5CtkxQEHboCLa2KO4+WAEbnbfd4MV8Ouzq33pZVJN0Pn7KH8shsoGudV/nf0TL4SfTrkcs4ZnmrjhdgKKmRREkQD1MX/0/g2QqPCzPXYyZ/YujiHZdGwN+QFXYKeL7WzueAb/XmCYCVQ1NOOP2F9l5ijIQzt2F6m0VY220JvsYcxCj6NrRva8qY4O72x/jhPHCOsryD+SwhHHv8xTpNeK3iJad8tp+Q7VuEn1X6IlEA4Tf07ZmUaN3h62Y9F5X/r0yES4XlqknDX0k6s5xJiyeEC13Fw/7PJ/5EzA7YeoBUxZZdX03t3qWDfFgpsCWnF/56/OWEgtkKow98sQBhfnfZxaNh9pytUxrJj8YwqGEUmrSMzgX7J22u8zP1+gvQYk/o+UGMjQoKa+VzmvTOVeJsKc9rUqMWDltsekwM0iIC7ySB+RBWr1Mwg36mg7foKLBV2vnZLCKjNTgK+1m4hVGI4M/qD1q8pYKFn2hQ4PLHM6JFf3qXTjz6EjX6ebpPSqewB1BgJmL0JH3yBsyAlSbW1x+n4jEKLcRkQo4RYtOOcyaIuSAVzZss8=
   file:
-    - '$(pwd)/Build/gamejam-0.2-osx.dmg'
-    - '$(pwd)/Build/gamejam-0.2-windows.zip'
-    - '$(pwd)/Build/gamejam-0.2-linux.zip'
+  - $(pwd)/Build/gamejam-0.2-osx.dmg
+  - $(pwd)/Build/gamejam-0.2-windows.zip
+  - $(pwd)/Build/gamejam-0.2-linux.zip
   skip_cleanup: true
   on:
     tags: true
+notifications:
+  slack:
+    secure: ayLw7TafB2OxvrscHhawSGAXmrSgiA+eVQz/iG6G+WnJkbPPntBGSa3cYSFsye1lc17CCus8nLDNJzxPeFoyWPWhs82lLa9NuQWRbCLTnVm1CXxbHXQgb03uT9Yp9zw5Uo2dCNbTNjCMXhxJvr8/Er2m/FO/yVcE35IGvGhl4Zc4nA+6Mr6FATF+p8w/tySf3TPUXIAUEG+z0kEcSrJ+NLbE5YDG4uxzlGYAOCgiqT8nj05ogQBv1VSaiA+UKpNs7IRRToEw3+uIBq7SuDD/kX2y9spX0baAHHcqSTpHzBEQNF4trikzpvGkkm+eafyF3C3shK16GBSNmdmWdX2qMnLoUnd9iIBRWl1BdWKesO47bckXmgFMyAulTOvkETkGoIfu5Ukd+/JzkN1PIFZyWsn6/rrIKOAakjanSjVivyqBRAhdHTv52xdCXtAJMck20SGJvFsZCerCfmEeKcUtYUrnFlKuewERM9TfLqM6UUmh9u9mMXv/3A4Llq7H2jQshm6ZGho0Nq5/mBXkx4qTDTdKFAo7apDy9pHtEYxAacSDJzNmn36QwAn+7X3B0aH/k5HKB2rQwY3+w0RfJIFZfDxi+bPEhw3U3jeL9hJur24YlZ2YKiNQ3EpCrIOZDo6RgyrasvJ25VEUCaVam050wDrSLkpr7U/IrgtWPa7pHuQ=
