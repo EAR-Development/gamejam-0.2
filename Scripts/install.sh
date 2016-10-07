@@ -7,17 +7,17 @@
 echo 'Downloading from http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorInstaller/Unity-5.3.1f1.pkg: '
 curl -o Unity.pkg http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorInstaller/Unity-5.3.1f1.pkg
 
+echo 'Downloading from http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-5.3.1f1.pkg: '
+curl -o Unity_mac.pkg  http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-5.3.1f1.pkg
+
 echo 'Downloading from http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.3.1f1.pkg: '
 curl -o Unity_linux.pkg http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.3.1f1.pkg
 
 echo 'Downloading from http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.3.1f1.pkg: '
 curl -o Unity_windows.pkg  http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.3.1f1.pkg
 
-echo 'Downloading from http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-5.3.1f1.pkg: '
-curl -o Unity_windows.pkg  http://download.unity3d.com/download_unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-5.3.1f1.pkg
-
-
 echo 'Installing Unity.pkg'
 sudo installer -dumplog -package "Unity.pkg" -target /
+sudo installer -dumplog -package "Unity_mac.pkg" -target /
 sudo installer -dumplog -package "Unity_linux.pkg" -target /
 sudo installer -dumplog -package "Unity_windows.pkg" -target /
