@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour {
 
 	bool triggerReleasedSinceLastShot;
 	int shotsRemainingInBurst;
-	int projectilesRemainingInMag;
+	public int projectilesRemainingInMag;
 	bool isReloading;
 
 	Vector3 recoilSmoothDampVelocity;
