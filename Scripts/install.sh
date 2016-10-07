@@ -4,14 +4,14 @@
 # installs like this. You will probably need to grab a current link from: http://unity3d.com/get-unity/download/archive
 
 
-echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/MacEditorInstaller/Unity-5.4.1f1.pkg: '
-curl -o Unity.pkg http://netstorage.unity3d.com/unity/649f48bbbf0f/MacEditorInstaller/Unity-5.4.1f1.pkg
+echo 'Downloading from http://netstorage.unity3d.com/unity/cc9cbbcc37b4/MacEditorInstaller/Unity-5.3.1f1.pkg: '
+curl -o Unity.pkg http://netstorage.unity3d.com/unity/cc9cbbcc37b4/MacEditorInstaller/Unity-5.3.1f1.pkg
 
-echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/TargetSupportInstaller/UnitySetup-Linux-Support-for-Editor-5.4.1f1.pkg: '
-curl -o Unity_linux.pkg http://netstorage.unity3d.com/unity/649f48bbbf0f/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.4.1f1.pkg
+echo 'Downloading from http://netstorage.unity3d.com/unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.3.1f1.pkg: '
+curl -o Unity_linux.pkg http://netstorage.unity3d.com/unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.3.1f1.pkg
 
-echo 'Downloading from http://netstorage.unity3d.com/unity/3757309da7e7/TargetSupportInstaller/UnitySetup-Windows-Support-for-Editor-5.4.1f1.pkg: '
-curl -o Unity_windows.pkg  http://netstorage.unity3d.com/unity/649f48bbbf0f/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.4.1f1.pkg
+echo 'Downloading from http://netstorage.unity3d.com/unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.4.1f1.pkg: '
+curl -o Unity_windows.pkg  http://netstorage.unity3d.com/unity/cc9cbbcc37b4/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.3.1f1.pkg
 
 
 echo 'Installing Unity.pkg'
