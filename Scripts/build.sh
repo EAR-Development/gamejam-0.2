@@ -16,6 +16,8 @@ echo "Attempting to build $project for Windows"
               -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
                 -quit
 
+cat unity.log
+
 echo "Attempting to build $project for OS X"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
     -batchmode \
@@ -26,6 +28,7 @@ echo "Attempting to build $project for OS X"
               -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
                 -quit
 
+cat unity.log
 
 echo "Attempting to build $project for Linux"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
@@ -37,7 +40,9 @@ echo "Attempting to build $project for Linux"
               -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
                 -quit
 
-cd build
+cat unity.log
+
+cd Build
 
 hdiutil create -fs HFS+ -srcfolder "osx" -volname "gamejam-0.2-osx" "gamejam-0.2-osx.dmg"
 zip -r "gamejam-0.2-windows.zip" "windows"

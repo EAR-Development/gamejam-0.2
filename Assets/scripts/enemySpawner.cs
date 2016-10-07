@@ -7,7 +7,12 @@ public class enemySpawner : MonoBehaviour {
 
 	public Transform target;
 
-	public float spawnTime = 500f;
+	public float innerSpawnTime = 0.3f;
+	public float outerSpawnTime = 7f;
+
+	public int enemysPerWave = 10;
+
+
 	private float spawnTimer = 0;
 	private int spawnCount = 10;
 
@@ -20,16 +25,17 @@ public class enemySpawner : MonoBehaviour {
 	void Update () {
 		spawnTimer += Time.deltaTime;
 
-		if (spawnTimer >= spawnTime) {
+		if (spawnTimer >= innerSpawnTime && spawnCount > 0) {
 			spawnTimer = 0;
-			if (spawnCount > 0) {
-				spawnCount -= 1;
-				GameObject e = (GameObject)Instantiate (normalEnemy, transform.position, transform.rotation);
-			}
+			spawnCount -= 1;
+			GameObject e = (GameObject)Instantiate (normalEnemy, transform.position, transform.rotation);
+		}else if(outerSpawnTime <= spawnTimer && spawnCount == 0){
+			spawnWave ();
 		}
 	}
 
-	void SpawnWave(){
-		spawnCount = 5;
+	void spawnWave(){
+		spawnCount += enemysPerWave;
+		enemysPerWave *= 2;
 	}
 }
