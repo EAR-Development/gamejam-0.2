@@ -33,5 +33,9 @@ Thumbs.db
 
 unity.log
 
-Assets/scenes/private.*
-Assets/scenes/privat.*
+Assets/scenes/private*
+Assets/scenes/privat*
+
+Assets/scenes/privat/
+Assets/scenes/private/
+
