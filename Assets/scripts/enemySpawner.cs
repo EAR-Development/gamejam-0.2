@@ -25,8 +25,6 @@ public class enemySpawner : MonoBehaviour {
 			if (spawnCount > 0) {
 				spawnCount -= 1;
 				GameObject e = (GameObject)Instantiate (normalEnemy, transform.position, transform.rotation);
-				enemyAgent eAgent = e.GetComponent<enemyAgent> ();
-				eAgent.target = this.target;
 			}
 		}
 	}

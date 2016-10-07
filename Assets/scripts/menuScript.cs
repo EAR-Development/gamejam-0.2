@@ -18,6 +18,9 @@ public class menuScript : MonoBehaviour {
 
 		quitMenu.enabled = false;
 		startMenu.enabled = true;
+
+		Time.timeScale = 1.0F;
+		Time.fixedDeltaTime = 0.02F * Time.timeScale;
 	}
 	
 	// Update is called once per frame
@@ -42,7 +45,7 @@ public class menuScript : MonoBehaviour {
 	}
 
 	public void StartPress(){
-		SceneManager.LoadScene ("scenes/main");
+		SceneManager.LoadScene ("scenes/SebLag/game");
 	}
 
 	public void ExitGame(){

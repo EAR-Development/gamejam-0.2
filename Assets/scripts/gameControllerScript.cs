@@ -23,6 +23,25 @@ public class gameControllerScript : MonoBehaviour {
 
 	public void EscapeKeyPressed(){
 		pausemenu.enabled = ! pausemenu.enabled;
+
+		if (pausemenu.enabled) {
+			Cursor.visible = true;
+		} else {
+			Cursor.visible = false;
+		}
+
+		if (GameObject.FindGameObjectWithTag ("Player") != null) {
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			Player controller = player.GetComponent<Player> ();
+			controller.pause = !controller.pause;
+		}
+			
+		if (Time.timeScale == 1.0F) {
+			Time.timeScale = 0.0F;
+		} else {
+			Time.timeScale = 1.0F;
+		}
+		Time.fixedDeltaTime = 0.02F * Time.timeScale;
 	}
 
 	public void ExitButtonPressed(){
@@ -30,6 +49,6 @@ public class gameControllerScript : MonoBehaviour {
 	}
 
 	public void ResumeButtonPressed(){
-		pausemenu.enabled = false;
+		EscapeKeyPressed ();
 	}
 }

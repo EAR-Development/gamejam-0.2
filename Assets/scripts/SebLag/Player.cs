@@ -9,6 +9,7 @@ public class Player : LivingEntity {
 
 	public Crosshairs crosshairs;
 
+	public bool pause = false;
 	Camera viewCamera;
 	PlayerController controller;
 	GunController gunController;
@@ -25,63 +26,54 @@ public class Player : LivingEntity {
 		//FindObjectOfType<Spawner> ().OnNewWave += OnNewWave;
 	}
 
-	void OnNewWave(int waveNumber) {
-		health = startingHealth;
-		gunController.EquipGun (1);
-	}
-
 	void Update () {
-		// Movement input
-		Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
-		Vector3 moveVelocity = moveInput.normalized * moveSpeed;
-		controller.Move (moveVelocity);
+		if (!pause) {
+			// Movement input
+			Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+			Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+			controller.Move (moveVelocity);
 
-		// Look input
-		Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
-		Plane groundPlane = new Plane (Vector3.up, Vector3.up * gunController.GunHeight);
-		float rayDistance;
+			// Look input
+			Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
+			Plane groundPlane = new Plane (Vector3.up, Vector3.up * gunController.GunHeight);
+			float rayDistance;
 
-		if (groundPlane.Raycast(ray,out rayDistance)) {
-			Vector3 point = ray.GetPoint(rayDistance);
-			//Debug.DrawLine(ray.origin,point,Color.red);
-			controller.LookAt(point);
-			crosshairs.transform.position = point;
-			crosshairs.DetectTargets(ray);
-			if ((new Vector2(point.x, point.z) - new Vector2(transform.position.x, transform.position.z)).sqrMagnitude > 1) {
-				gunController.Aim(point);
-			}
-		}
-
-		// Weapon input
-		if (Input.GetMouseButton(0)) {
-			gunController.OnTriggerHold();
-		}
-		if (Input.GetMouseButtonUp(0)) {
-			gunController.OnTriggerRelease();
-		}
-		if (Input.GetKeyDown (KeyCode.R)) {
-			gunController.Reload();
-		}
-		if(Input.GetKeyDown(KeyCode.Q)){
-			if (gunController.euqippedGunNr < gunController.allGuns.Length-1) {
-				gunController.euqippedGunNr++;
-
-			} else {
-				gunController.euqippedGunNr = 0;
+			if (groundPlane.Raycast (ray, out rayDistance)) {
+				Vector3 point = ray.GetPoint (rayDistance);
+				Debug.DrawLine (ray.origin, point, Color.red);
+				controller.LookAt (point);
+				crosshairs.transform.position = point;
+				crosshairs.DetectTargets (ray);
+				if ((new Vector2 (point.x, point.z) - new Vector2 (transform.position.x, transform.position.z)).sqrMagnitude > 1) {
+					gunController.Aim (point);
+				}
 			}
 
-			gunController.EquipGun(gunController.euqippedGunNr);
+			// Weapon input
+			if (Input.GetMouseButton (0)) {
+				gunController.OnTriggerHold ();
+			}
+			if (Input.GetMouseButtonUp (0)) {
+				gunController.OnTriggerRelease ();
+			}
+			if (Input.GetKeyDown (KeyCode.R)) {
+				gunController.Reload ();
+			}
+			if (Input.GetKeyDown (KeyCode.Q)) {
+				if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
+					gunController.euqippedGunNr++;
+
+				} else {
+					gunController.euqippedGunNr = 0;
+				}
+
+				gunController.EquipGun (gunController.euqippedGunNr);
+			}
 		}
-
-
-		//if (transform.position.y < -10) {
-		//	TakeDamage (health);
-		//}
 	}
 
 	public override void Die ()
 	{
-		AudioManager.instance.PlaySound ("Player Death", transform.position);
 		base.Die ();
 	}
 		
