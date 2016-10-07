@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 	Vector3 velocity;
 	Rigidbody myRigidbody;
+	GunController gunController;
 
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody> ();
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate() {
 		myRigidbody.MovePosition (myRigidbody.position + velocity * Time.fixedDeltaTime);
+
 
 	}
 }

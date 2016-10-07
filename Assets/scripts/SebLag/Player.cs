@@ -62,6 +62,17 @@ public class Player : LivingEntity {
 		if (Input.GetKeyDown (KeyCode.R)) {
 			gunController.Reload();
 		}
+		if(Input.GetKeyDown(KeyCode.Q)){
+			if (gunController.euqippedGunNr < gunController.allGuns.Length-1) {
+				gunController.euqippedGunNr++;
+
+			} else {
+				gunController.euqippedGunNr = 0;
+			}
+
+			gunController.EquipGun(gunController.euqippedGunNr);
+		}
+
 
 		//if (transform.position.y < -10) {
 		//	TakeDamage (health);

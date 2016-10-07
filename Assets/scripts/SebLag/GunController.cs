@@ -6,6 +6,7 @@ public class GunController : MonoBehaviour {
 	public Transform weaponHold;
 	public Gun[] allGuns;
 	Gun equippedGun;
+	public int euqippedGunNr;
 
 	void Start() {
 	}
@@ -20,6 +21,7 @@ public class GunController : MonoBehaviour {
 
 	public void EquipGun(int weaponIndex) {
 		EquipGun (allGuns [weaponIndex]);
+		euqippedGunNr = weaponIndex;
 	}
 
 	public void OnTriggerHold() {
