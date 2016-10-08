@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 499066}
   - 114: {fileID: 11486252}
   m_Layer: 0
-  m_Name: Wave25
+  m_Name: Wave26
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   totalEnemys: 10
   maxIntervallPause: 10
   minIntervalPause: 8
-  maxIntevallUntis: 4
+  maxIntevallUntis: 3
   minIntervallUnits: 2
   gcs: {fileID: 0}
 --- !u!1001 &100100000

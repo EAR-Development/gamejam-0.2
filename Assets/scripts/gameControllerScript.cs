@@ -57,22 +57,10 @@ public class gameControllerScript : MonoBehaviour {
 	}
 
 	public void spawnNextWave (){
-		
-		/*if( currentSpawner.spawnedUnits.Count){
-			waveTimer = 0;
-			foreach (enemySpawner s in allSpawner){
-				s.spawnWave (enemysPerSpawner);
-			}
-			enemysPerSpawner = Mathf.FloorToInt(enemysPerSpawner * waveFactor);
-
-			guiController.OnNextWave (nextWave);
-			nextWave++;
-		}*/
-
-
 		Destroy (currentSpawner.gameObject);
 		currentSpawner = (Instantiate (allSpawner [nextWave]) as GameObject).GetComponent<enemySpawner> ();
 		currentSpawner.gcs = this;
+		guiController.OnNextWave (nextWave);
 		nextWave++;
 
 	}
