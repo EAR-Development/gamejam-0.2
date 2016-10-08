@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ScoreKeeper : MonoBehaviour {
 
-	public static bool playerTwoEnabled;
-	public static string playerOneName;
-	public static string playerTwoName;
+	public bool playerTwoEnabled;
+	public string playerOneName;
+	public string playerTwoName;
 
 	void Start(){
 		Object.DontDestroyOnLoad (this);

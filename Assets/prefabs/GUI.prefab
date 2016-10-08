@@ -722,6 +722,12 @@ MonoBehaviour:
   spawnTimeInWave: 0.3
   enemysPerSpawner: 5
   waveFactor: 1.2
+  allSpawner:
+  - {fileID: 134206, guid: 7c21e6e1515d43349ab21f0f6fa60261, type: 2}
+  - {fileID: 134206, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
+  - {fileID: 134206, guid: 6e6387984cf635843a8fe1c33b67f2c1, type: 2}
+  currentSpawner: {fileID: 0}
+  scoreKeeperPrefab: {fileID: 11487846, guid: 3d1404098e4c949578c8cadfd180d147, type: 2}
 --- !u!114 &11438718
 MonoBehaviour:
   m_ObjectHideFlags: 1

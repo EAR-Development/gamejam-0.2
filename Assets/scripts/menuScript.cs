@@ -88,9 +88,9 @@ public class menuScript : MonoBehaviour {
 	}
 
 	public void RunPress(){
-		ScoreKeeper.playerTwoEnabled = secondPlayerCard.enabled;
-		ScoreKeeper.playerOneName = playerOneNameField.text;
-		ScoreKeeper.playerTwoName = playerTwoNameField.text;
+		score.playerTwoEnabled = secondPlayerCard.enabled;
+		score.playerOneName = playerOneNameField.text;
+		score.playerTwoName = playerTwoNameField.text;
 
 		SceneManager.LoadScene ("scenes/SebLag/game");
 	}

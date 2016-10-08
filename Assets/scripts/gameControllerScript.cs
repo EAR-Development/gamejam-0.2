@@ -22,11 +22,22 @@ public class gameControllerScript : MonoBehaviour {
 	public GameObject[] allSpawner;
 	public enemySpawner currentSpawner;
 
-	GUIController guiController;
+	public ScoreKeeper scoreKeeperPrefab;
 
+	GUIController guiController;
+	ScoreKeeper scoreKeeper;
 
 	// Use this for initialization
 	void Start () {
+		ScoreKeeper scoreKeeper = (ScoreKeeper) FindObjectOfType(typeof(ScoreKeeper));
+		if (scoreKeeper == null) {
+			scoreKeeper = Object.Instantiate (scoreKeeperPrefab).GetComponent<ScoreKeeper>();
+
+			scoreKeeper.playerTwoEnabled = false;
+			scoreKeeper.playerOneName = "Peter Lustig";
+			scoreKeeper.playerTwoName = "Herr Paschulke";
+		}
+			
 		guiController = GetComponent<GUIController> ();
 
 		pausemenu = pausemenu.GetComponent<Canvas> ();
@@ -42,9 +53,6 @@ public class gameControllerScript : MonoBehaviour {
 
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
-
-	
-
 	}
 
 
