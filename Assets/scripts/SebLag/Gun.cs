@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Gun : MonoBehaviour {
 
 	public string weaponName;
+	public Sprite weaponImage;
 	public Player owner;
 	public enum FireMode {Auto, Burst, Single};
 	public FireMode fireMode;

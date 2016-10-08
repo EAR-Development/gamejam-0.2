@@ -40,6 +40,8 @@ public class gameControllerScript : MonoBehaviour {
 			
 		guiController = GetComponent<GUIController> ();
 
+		guiController.setScoreKeeper(scoreKeeper);
+
 		pausemenu = pausemenu.GetComponent<Canvas> ();
 		pausemenu.enabled = false;
 
