@@ -801,11 +801,12 @@ MonoBehaviour:
   - {fileID: 492814}
   - {fileID: 498204}
   projectile: {fileID: 11465928, guid: f52b26b28a189ae43bb793a922a6099f, type: 2}
-  msBetweenShots: 100
+  msBetweenShots: 150
   muzzleVelocity: 50
   burstCount: 3
-  projectilesPerMag: 16
-  reloadTime: 0.3
+  projectilesPerMag: 12
+  reloadTime: 5
+  damage: 100
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -815,6 +816,8 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: fa91595dac754461fa6162f123e94ba1, type: 3}
   reloadAudio: {fileID: 8300000, guid: 6e025827e286846e0a168b83c44f20aa, type: 3}
   projectilesRemainingInMag: 0
+  weaponType: 
+  hitCollider: {fileID: 0}
 --- !u!114 &11499072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -923,6 +926,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: weaponName
       value: AirShot Rocketlauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: msBetweenShots
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectilesPerMag
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reloadTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
