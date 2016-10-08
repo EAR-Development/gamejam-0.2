@@ -19,7 +19,6 @@ public class Projectile : MonoBehaviour {
 	public bool mousePosSaved = false;
 
 	void Start() {
-		
 		viewCamera = Camera.main;
 		Destroy (gameObject, lifetime);
 
@@ -75,8 +74,16 @@ public class Projectile : MonoBehaviour {
 	void OnHitObject(Collider c, Vector3 hitPoint) {
 		IDamageable damageableObject = c.GetComponent<IDamageable> ();
 		if (damageableObject != null) {
-			damageableObject.TakeHit(damage, hitPoint, transform.forward,owner);
+			damageableObject.TakeHit (damage, hitPoint, transform.forward, owner);
+		} else {
+			owner.misses++;
 		}
 		GameObject.Destroy (gameObject);
+	}
+
+	void OnDestroy(){
+		
+
+		print (owner.hits / (owner.hits+owner.misses));
 	}
 }

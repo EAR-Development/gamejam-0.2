@@ -14,9 +14,9 @@ public class Player : LivingEntity {
 	PlayerController controller;
 	GunController gunController;
 
-	public int kills;
-	public int hits;
-	public int misses;
+	public float kills=0;
+	public float hits=1;
+	public float misses=0;
 
 	protected override void Start () {
 		base.Start ();
