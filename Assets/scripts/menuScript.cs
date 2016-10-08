@@ -21,6 +21,7 @@ public class menuScript : MonoBehaviour {
 	public InputField playerOneNameField;
 	public InputField playerTwoNameField;
 
+	public ScoreKeeper score;
 
 	// Use this for initialization
 	void Start () {
@@ -83,11 +84,9 @@ public class menuScript : MonoBehaviour {
 	}
 
 	public void RunPress(){
-		bool playerTwoEnabled = secondPlayerCard.enabled;
-		string playerOneName = playerOneNameField.text;
-		string playerTwoName = playerTwoNameField.text;
-
-		Debug.Log (playerOneName);
+		ScoreKeeper.playerTwoEnabled = secondPlayerCard.enabled;
+		ScoreKeeper.playerOneName = playerOneNameField.text;
+		ScoreKeeper.playerTwoName = playerTwoNameField.text;
 
 		SceneManager.LoadScene ("scenes/SebLag/game");
 	}

@@ -27,7 +27,6 @@ public class gameControllerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		guiController = GetComponent<GUIController> ();
 
 		pausemenu = pausemenu.GetComponent<Canvas> ();
