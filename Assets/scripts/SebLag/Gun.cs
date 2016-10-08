@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour {
 	public enum FireMode {Auto, Burst, Single};
 	public FireMode fireMode;
 
+	public Sprite weaponImage;
+
 	public Transform[] projectileSpawn;
 	public Projectile projectile;
 	public float msBetweenShots = 100;

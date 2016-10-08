@@ -64,15 +64,18 @@ public class CameraController : MonoBehaviour {
 		zMin = 30000;
 		zMax = -30000;
 		foreach (GameObject player in allPlayer) {
-			float x = player.transform.position.x;
+			if(player!=null){
+				float x = player.transform.position.x;
 
-			xMin = Mathf.Min (x,xMin);
-			xMax = Mathf.Max (x, xMax);
+				xMin = Mathf.Min (x,xMin);
+				xMax = Mathf.Max (x, xMax);
 
-			float z = player.transform.position.z;
+				float z = player.transform.position.z;
 
-			zMin = Mathf.Min (z, zMin);
-			zMax = Mathf.Max (z, zMax);
+				zMin = Mathf.Min (z, zMin);
+				zMax = Mathf.Max (z, zMax);
+			}
+
 		}
 	}
 }

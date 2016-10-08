@@ -2,15 +2,18 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class gameControllerScript : MonoBehaviour {
 
 	public Canvas pausemenu;
 	public Canvas endMenu;
 
-	Transform target;
+	public Transform target;
 	LivingEntity targetEntity;
 
+	public GameObject ScoreKeeperPrefab;
+	public ScoreKeeper scoreKeeper;
 
 	public float timeBetweenWaves = 10f;
 	public float spawnTimeInWave = 2.5f;
@@ -25,16 +28,25 @@ public class gameControllerScript : MonoBehaviour {
 	GUIController guiController;
 
 
+	public List<Transform> spawnpoints;
+	public Transform spawnPointsParent;
+
+
+
 	// Use this for initialization
 	void Start () {
+		
+		scoreKeeper = (ScoreKeeper)FindObjectOfType (typeof(ScoreKeeper));
 
-		guiController = GetComponent<GUIController> ();
+		if (scoreKeeper == null) {
+			scoreKeeper = Object.Instantiate (ScoreKeeperPrefab).GetComponent<ScoreKeeper> ();
 
-		pausemenu = pausemenu.GetComponent<Canvas> ();
-		pausemenu.enabled = false;
+			scoreKeeper.playerTwoEnabled = false;
+			scoreKeeper.playerOneName = "Peter Lustig";
+			scoreKeeper.playerTwoName = "";
+		}
 
-		endMenu = endMenu.GetComponent<Canvas> ();
-		endMenu.enabled = false;
+		Debug.Log ("Start");
 
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
 
@@ -44,7 +56,24 @@ public class gameControllerScript : MonoBehaviour {
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
 
-	
+		guiController = GetComponent<GUIController> ();
+
+		guiController.setScoreKeeper(scoreKeeper);
+
+		pausemenu = pausemenu.GetComponent<Canvas> ();
+		pausemenu.enabled = false;
+
+		endMenu = endMenu.GetComponent<Canvas> ();
+		endMenu.enabled = false;
+
+		setupSpawnpoints ();
+
+	}
+
+	void OnAwake(){
+		
+
+
 
 	}
 
@@ -58,7 +87,7 @@ public class gameControllerScript : MonoBehaviour {
 	}
 
 	public void spawnNextWave (){
-		
+
 		/*if( currentSpawner.spawnedUnits.Count){
 			waveTimer = 0;
 			foreach (enemySpawner s in allSpawner){
@@ -92,7 +121,7 @@ public class gameControllerScript : MonoBehaviour {
 			Player controller = player.GetComponent<Player> ();
 			controller.pause = !controller.pause;
 		}
-			
+
 		if (Time.timeScale == 1.0F) {
 			Time.timeScale = 0.0F;
 		} else {
@@ -114,11 +143,52 @@ public class gameControllerScript : MonoBehaviour {
 		Time.fixedDeltaTime = 0.02F * Time.timeScale;
 		SceneManager.LoadScene ("scenes/SebLag/game");
 	}
-		
+
 	void OnPlayerDeath() {
 		Time.timeScale = 0.0F;
 		Time.fixedDeltaTime = 0.02F * Time.timeScale;
 		Cursor.visible = true;
 		endMenu.enabled = true;
+	}
+
+	public Vector3[] getClosestSpawnPoints(int range, Vector3 pos){
+
+
+
+		spawnpoints.Sort (((Transform x, Transform y) =>(int)Vector3.Distance(x.position,pos) -(int) Vector3.Distance(y.position,pos)));
+		Vector3[] ret=new Vector3[range];
+
+		for(int i=0;i<range;i++) {
+
+			ret [i] = spawnpoints [i].position;
+
+		}
+
+		return ret;
+
+	}
+
+	public void setupSpawnpoints(){
+
+
+		spawnpoints = new List<Transform> ();
+		spawnpoints.AddRange (spawnPointsParent.GetComponentsInChildren<Transform>());
+
+	}
+
+	public void enableSpawnerPoints(Transform[] points){
+
+		for(int i=0;i<spawnpoints.Count;i++){
+
+			for(int j=0;j<points.Length;i++){
+
+				if(points[j]==spawnpoints[i]){
+					spawnpoints [i].gameObject.SetActive (true);
+				}
+
+			}
+
+		}
+
 	}
 }
