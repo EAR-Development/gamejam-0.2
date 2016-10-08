@@ -1,10 +1,51 @@
 fileFormatVersion: 2
-guid: 2059cf2650da54b34a09978be40e78a4
-timeCreated: 1475955844
+guid: f404c7700c27e3d498adc455e6ef2d60
+timeCreated: 1475954786
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: Box002
+    100002: Box006
+    100004: Box008
+    100006: Box009
+    100008: Cylinder003
+    100010: Cylinder003 1
+    100012: Cylinder004
+    100014: Cylinder005
+    100016: //RootNode
+    400000: Box002
+    400002: Box006
+    400004: Box008
+    400006: Box009
+    400008: Cylinder003
+    400010: Cylinder003 1
+    400012: Cylinder004
+    400014: Cylinder005
+    400016: //RootNode
+    2300000: Box002
+    2300002: Box006
+    2300004: Box009
+    2300006: Cylinder003
+    2300008: Cylinder003 1
+    2300010: Cylinder004
+    2300012: Cylinder005
+    3300000: Box002
+    3300002: Box006
+    3300004: Box009
+    3300006: Cylinder003
+    3300008: Cylinder003 1
+    3300010: Cylinder004
+    3300012: Cylinder005
+    4300000: Box006
+    4300002: Cylinder003
+    4300004: Box002
+    4300006: Cylinder003
+    4300008: Cylinder004
+    4300010: Cylinder005
+    4300012: Box009
+    7400000: Take 001
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
