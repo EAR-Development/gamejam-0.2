@@ -467,9 +467,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
   enemysPerWave: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
 --- !u!1 &12248006
 GameObject:
   m_ObjectHideFlags: 0
@@ -25803,23 +25807,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430070, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -29.09
+      value: -29.18
       objectReference: {fileID: 0}
     - target: {fileID: 430070, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.70892245
+      value: -0.7064895
       objectReference: {fileID: 0}
     - target: {fileID: 430070, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.018455833
+      value: -0.0000004608091
       objectReference: {fileID: 0}
     - target: {fileID: 430070, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.018563775
+      value: -0.0000004608091
       objectReference: {fileID: 0}
     - target: {fileID: 430070, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.70480055
+      value: 0.7077235
       objectReference: {fileID: 0}
     - target: {fileID: 430070, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_RootOrder
@@ -25827,39 +25831,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433588, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.6875694
+      value: 0.63822424
       objectReference: {fileID: 0}
     - target: {fileID: 433588, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.6875694
+      value: 0.63822424
       objectReference: {fileID: 0}
     - target: {fileID: 433588, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.16507079
+      value: -0.30441728
       objectReference: {fileID: 0}
     - target: {fileID: 433588, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.16507079
+      value: -0.30441728
       objectReference: {fileID: 0}
     - target: {fileID: 425202, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.16507079
+      value: 0.30441728
       objectReference: {fileID: 0}
     - target: {fileID: 425202, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.16507079
+      value: 0.30441728
       objectReference: {fileID: 0}
     - target: {fileID: 425202, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.6875694
+      value: 0.63822424
       objectReference: {fileID: 0}
     - target: {fileID: 425202, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.6875694
+      value: 0.63822424
       objectReference: {fileID: 0}
     - target: {fileID: 412408, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.8910065
+      value: 0.96622634
       objectReference: {fileID: 0}
     - target: {fileID: 412408, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.z
@@ -25867,13 +25871,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412408, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.4539906
+      value: 0.25769496
       objectReference: {fileID: 0}
     - target: {fileID: 9545586, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 412408, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9545586, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &798980785
@@ -26640,9 +26649,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
   enemysPerWave: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
 --- !u!1001 &820601641
 Prefab:
   m_ObjectHideFlags: 0
@@ -42903,9 +42916,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
   enemysPerWave: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
 --- !u!1 &1339098367
 GameObject:
   m_ObjectHideFlags: 0
@@ -46367,9 +46384,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
   enemysPerWave: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
 --- !u!1001 &1491759784
 Prefab:
   m_ObjectHideFlags: 0
@@ -49743,6 +49764,27 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 461822, guid: 640ecf6c33a3843ff96f2d7424edf0e0, type: 2}
   m_PrefabInternal: {fileID: 1594284027}
+--- !u!1 &1594833337 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110946, guid: a7fb539954ea0224db611def8f0f7bc3, type: 2}
+  m_PrefabInternal: {fileID: 792250614}
+--- !u!95 &1594833338
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594833337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9603db89743ae5145953594fd588f636, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1596329550
 Prefab:
   m_ObjectHideFlags: 0
@@ -59415,9 +59457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
   enemysPerWave: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
 --- !u!1001 &1878620029
 Prefab:
   m_ObjectHideFlags: 0
@@ -66558,9 +66604,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
   enemysPerWave: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
 --- !u!1 &2117136217
 GameObject:
   m_ObjectHideFlags: 0
