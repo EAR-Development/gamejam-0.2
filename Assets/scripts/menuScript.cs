@@ -67,6 +67,7 @@ public class menuScript : MonoBehaviour {
 	}
 
 	public void toggleSecondPlayerPress(){
+		return;
 		if (secondPlayerCard.enabled) {
 			toggleSecondPlayerButton.image.overrideSprite = plusSprite;
 		} else {
