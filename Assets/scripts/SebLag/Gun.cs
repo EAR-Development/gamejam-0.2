@@ -89,6 +89,7 @@ public class Gun : MonoBehaviour {
 				Projectile newProjectile = Instantiate (projectile, projectileSpawn[i].position, projectileSpawn[i].rotation) as Projectile;
 				newProjectile.SetSpeed (muzzleVelocity);
 				newProjectile.owner = owner;
+				newProjectile.damage = damage;
 			}
 
 			Instantiate(shell,shellEjection.position, shellEjection.rotation);
