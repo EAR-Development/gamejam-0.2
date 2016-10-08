@@ -59,6 +59,9 @@ public class Player : LivingEntity {
 			}
 			if (Input.GetMouseButtonUp (0)) {
 				gunController.OnTriggerRelease ();
+				if(gunController.equippedGun.weaponType == "Flamethrower"){
+					gunController.equippedGun.hitCollider.enabled = true;
+				}
 			}
 			if (Input.GetKeyDown (KeyCode.R)) {
 				gunController.Reload ();
