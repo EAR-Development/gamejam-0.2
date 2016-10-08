@@ -10,23 +10,28 @@ ModelImporter:
     100004: Cylinder001
     100006: Cylinder002
     100008: //RootNode
+    100010: Box008
     400000: Box004
     400002: Box006
     400004: Cylinder001
     400006: Cylinder002
     400008: //RootNode
+    400010: Box008
     2300000: Box004
     2300002: Box006
     2300004: Cylinder001
     2300006: Cylinder002
+    2300008: Box008
     3300000: Box004
     3300002: Box006
     3300004: Cylinder001
     3300006: Cylinder002
+    3300008: Box008
     4300000: Box004
     4300002: Cylinder001
     4300004: Cylinder002
     4300006: Box006
+    4300008: Box008
     7400000: Take 001
     9500000: //RootNode
   materials:

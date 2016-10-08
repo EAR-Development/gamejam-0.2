@@ -6,10 +6,29 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box005
+    100004: Box006
+    100006: Box007
+    100008: Box008
     400000: //RootNode
+    400002: Box005
+    400004: Box006
+    400006: Box007
+    400008: Box008
     2300000: //RootNode
+    2300002: Box005
+    2300004: Box006
+    2300006: Box007
+    2300008: Box008
     3300000: //RootNode
+    3300002: Box005
+    3300004: Box006
+    3300006: Box007
+    3300008: Box008
     4300000: Box005
+    4300002: Box006
+    4300004: Box007
+    4300006: Box008
     7400000: Take 001
     9500000: //RootNode
   materials:
