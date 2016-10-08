@@ -10453,6 +10453,10 @@ Prefab:
       propertyPath: enemyCount.Array.data[0]
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11486252, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
+      propertyPath: enemyTypes.Array.data[0]
+      value: Zombie_Small_normal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
   m_IsPrefabParent: 0
@@ -74199,7 +74203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db478f39a9d3c4edf854a1c7be422bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 300
   moveSpeed: 5
   crosshairs: {fileID: 1966233089}
   pause: 0
@@ -91017,7 +91021,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 492924, guid: d9df4d82c5b05e747a5d69b0c58ff1f4, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 150076, guid: d9df4d82c5b05e747a5d69b0c58ff1f4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9df4d82c5b05e747a5d69b0c58ff1f4, type: 2}
