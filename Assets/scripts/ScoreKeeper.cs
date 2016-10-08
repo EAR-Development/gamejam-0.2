@@ -3,11 +3,11 @@ using System.Collections;
 
 public class ScoreKeeper : MonoBehaviour {
 
-	public bool playerTwoEnabled;
-	public string playerOneName;
-	public string playerTwoName;
+	public static bool playerTwoEnabled;
+	public static string playerOneName;
+	public static string playerTwoName;
 
 	void Start(){
-		Object.DontDestroyOnLoad ();
+		Object.DontDestroyOnLoad (this);
 	}
 }

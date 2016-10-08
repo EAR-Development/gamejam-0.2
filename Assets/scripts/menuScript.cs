@@ -21,7 +21,9 @@ public class menuScript : MonoBehaviour {
 	public InputField playerOneNameField;
 	public InputField playerTwoNameField;
 
-	public ScoreKeeper score;
+	public GameObject scoreKeeper;
+	ScoreKeeper score;
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +33,8 @@ public class menuScript : MonoBehaviour {
 
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
+
+		score = scoreKeeper.GetComponent<ScoreKeeper> ();
 
 		quitMenu.enabled = false;
 		playerMenu.enabled = false;
