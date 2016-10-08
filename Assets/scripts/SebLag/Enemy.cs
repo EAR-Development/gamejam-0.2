@@ -12,6 +12,7 @@ public class Enemy : LivingEntity {
 
 	NavMeshAgent pathfinder;
 	Transform target;
+	Transform exit;
 	LivingEntity targetEntity;
 	Material skinMaterial;
 
@@ -35,10 +36,12 @@ public class Enemy : LivingEntity {
 			
 			target = GameObject.FindGameObjectWithTag ("Player").transform;
 			targetEntity = target.GetComponent<LivingEntity> ();
-			
+
 			myCollisionRadius = GetComponent<CapsuleCollider> ().radius;
 			targetCollisionRadius = target.GetComponent<CapsuleCollider> ().radius;
 		}
+
+		exit = GameObject.FindGameObjectWithTag ("Exit").transform;
 	}
 	
 	protected override void Start () {
@@ -89,15 +92,36 @@ public class Enemy : LivingEntity {
 		if (hasTarget) {
 			if (Time.time > nextAttackTime) {
 				float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
+
+				float sqrDstToExit = (exit.position - transform.position).sqrMagnitude;
+
 				if (sqrDstToTarget < Mathf.Pow (attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)) {
 					nextAttackTime = Time.time + timeBetweenAttacks;
-				//	AudioManager.instance.PlaySound ("Enemy Attack", transform.position);
 					StartCoroutine (Attack ());
 				}
 
+				if (sqrDstToExit < 10f) {
+					Debug.Log("Ende erreicht");
+					Die ();
+				}
+
+				DebugPath (pathfinder.path);
 			}
 		}
 
+	}
+
+	void DebugPath(NavMeshPath path) {
+		if (path.corners.Length < 2)
+			return;
+		Vector3 previousCorner = path.corners[0];
+		int i = 1;
+		while (i < path.corners.Length) {
+			Vector3 currentCorner = path.corners[i];
+			Debug.DrawLine(previousCorner, currentCorner);
+			previousCorner = currentCorner;
+			i++;
+		}
 	}
 
 	IEnumerator Attack() {
@@ -138,10 +162,15 @@ public class Enemy : LivingEntity {
 		float refreshRate = .25f;
 
 		while (hasTarget) {
+			
+
 			if (currentState == State.Chasing) {
 				Vector3 dirToTarget = (target.position - transform.position).normalized;
 				Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold/2);
-				if (!dead) {
+				float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
+				if (sqrDstToTarget < 300f && !dead) {
+					pathfinder.SetDestination (targetPosition);
+				} else if(!dead) {
 					pathfinder.SetDestination (targetPosition);
 				}
 			}

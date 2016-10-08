@@ -57,7 +57,6 @@ public class Gun : MonoBehaviour {
 	}
 
 	void Shoot() {
-
 		if (!isReloading && Time.time > nextShotTime && projectilesRemainingInMag > 0) {
 			if (fireMode == FireMode.Burst) {
 				if (shotsRemainingInBurst == 0) {
@@ -76,6 +75,11 @@ public class Gun : MonoBehaviour {
 					break;
 				}
 				projectilesRemainingInMag --;
+
+				if (projectilesRemainingInMag == 0) {
+					Reload ();
+				}
+
 				nextShotTime = Time.time + msBetweenShots / 1000;
 				Projectile newProjectile = Instantiate (projectile, projectileSpawn[i].position, projectileSpawn[i].rotation) as Projectile;
 				newProjectile.SetSpeed (muzzleVelocity);
@@ -86,8 +90,6 @@ public class Gun : MonoBehaviour {
 			transform.localPosition -= Vector3.forward * Random.Range(kickMinMax.x, kickMinMax.y);
 			recoilAngle += Random.Range(recoilAngleMinMax.x, recoilAngleMinMax.y);
 			recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
-
-			//AudioManager.instance.PlaySound (shootAudio, transform.position);
 		}
 	}
 

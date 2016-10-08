@@ -11,8 +11,24 @@ public class gameControllerScript : MonoBehaviour {
 	Transform target;
 	LivingEntity targetEntity;
 
+
+	public float timeBetweenWaves = 10f;
+	public float spawnTimeInWave = 2.5f;
+	public int enemysPerSpawner = 5;
+	public float waveFactor = 1.2f;
+
+	float waveTimer = 0f;
+	int nextWave = 1;
+	enemySpawner[] allSpawner;
+
+	GUIController guiController;
+
+
 	// Use this for initialization
 	void Start () {
+
+		guiController = GetComponent<GUIController> ();
+
 		pausemenu = pausemenu.GetComponent<Canvas> ();
 		pausemenu.enabled = false;
 
@@ -26,6 +42,12 @@ public class gameControllerScript : MonoBehaviour {
 
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
+
+		allSpawner =  FindObjectsOfType(typeof(enemySpawner)) as enemySpawner[];
+
+		foreach (enemySpawner s in allSpawner){
+			s.spawnTime = spawnTimeInWave;
+		}
 	}
 
 
@@ -33,8 +55,24 @@ public class gameControllerScript : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			EscapeKeyPressed ();
 		}
+
+		enemyWaveManager ();
 	}
 
+	void enemyWaveManager(){
+		waveTimer += Time.deltaTime;
+
+		if(timeBetweenWaves <= waveTimer){
+			waveTimer = 0;
+			foreach (enemySpawner s in allSpawner){
+				s.spawnWave (enemysPerSpawner);
+			}
+			enemysPerSpawner = Mathf.FloorToInt(enemysPerSpawner * waveFactor);
+
+			guiController.OnNextWave (nextWave);
+			nextWave++;
+		}
+	}
 
 	public void EscapeKeyPressed(){
 		pausemenu.enabled = ! pausemenu.enabled;

@@ -46,13 +46,6 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		calculateContainingRectangle ();
 
-		//float d;
-
-		//float xDistance = (xMax - xMin) * fovXFactor;
-		//float zDistance = (zMax - zMin) * fovZFactor;
-
-		//d = Mathf.Max (xDistance, zDistance, MINIMUMDISTANCE);
-
 		float speedFactor = 1.8f;
 
 		Vector3 distance = transform.position - new Vector3 ((xMin + xMax) / 2, HEIGHT, (zMin + zMax) / 2);
@@ -60,12 +53,9 @@ public class CameraController : MonoBehaviour {
 			speedFactor = 0.5f;
 		}
 
-		//ZOOM
-		//Vector3 zoomVector = Vector3.Lerp (new Vector3(0,0,transform.position.z), new Vector3 (0,0, -d), Time.deltaTime * 2);
-		//PAN
 		Vector3 panVector = Vector3.Lerp (new Vector3(transform.position.x, HEIGHT ,transform.position.z), new Vector3 ((xMin + xMax) / 2, HEIGHT,(zMin + zMax) / 2 - zOffset), Time.deltaTime / speedFactor);
 
-		transform.position = panVector;// + zoomVector;
+		transform.position = panVector;
 	}
 
 	void calculateContainingRectangle(){
