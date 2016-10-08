@@ -40,11 +40,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
-  - Zombie_Small
-  enemyCount: 64000000
+  - Zombie_Small_normal
+  - Zombie_Small_lessSpeed
+  enemyCount: 0f00000005000000
   spawnedUnits: []
   spawnTime: 0.3
-  totalEnemys: 10
+  totalEnemys: 20
   maxIntervallPause: 10
   minIntervalPause: 8
   maxIntevallUntis: 4
@@ -56,7 +57,35 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: enemyTypes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyTypes.Array.data[0]
+      value: Zombie_Small_normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyTypes.Array.data[1]
+      value: Zombie_Small_lessSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: totalEnemys
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.data[0]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134206}
