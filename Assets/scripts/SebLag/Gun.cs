@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour {
 	public int burstCount;
 	public int projectilesPerMag;
 	public float reloadTime = .3f;
+	public float damage = 1;
 
 	[Header("Recoil")]
 	public Vector2 kickMinMax = new Vector2(.05f,.2f);
@@ -39,6 +40,8 @@ public class Gun : MonoBehaviour {
 	Vector3 recoilSmoothDampVelocity;
 	float recoilRotSmoothDampVelocity;
 	float recoilAngle;
+	public string weaponType;
+	public CapsuleCollider hitCollider; 
 
 	void Start() {
 		muzzleflash = GetComponent<MuzzleFlash> ();
@@ -93,6 +96,10 @@ public class Gun : MonoBehaviour {
 			transform.localPosition -= Vector3.forward * Random.Range(kickMinMax.x, kickMinMax.y);
 			recoilAngle += Random.Range(recoilAngleMinMax.x, recoilAngleMinMax.y);
 			recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
+
+			if(weaponType == "Flamethrower"){
+				hitCollider.enabled = true;
+			}
 		}
 	}
 
