@@ -40,11 +40,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
-  - Zombie_Small_elite
-  enemyCount: 0b000000
+  - Zombie_Small_normal
+  - Zombie_Small_lessSpeed
+  - Zombie_Small_moreSpeed
+  enemyCount: 0a000000050000000a000000
   spawnedUnits: []
   spawnTime: 0.3
-  totalEnemys: 10
+  totalEnemys: 25
   maxIntervallPause: 5
   minIntervalPause: 3
   maxIntevallUntis: 3
@@ -58,8 +60,40 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: enemyTypes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: enemyTypes.Array.data[0]
-      value: Zombie_Small_elite
+      value: Zombie_Small_normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyTypes.Array.data[1]
+      value: Zombie_Small_lessSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyTypes.Array.data[2]
+      value: Zombie_Small_moreSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: totalEnemys
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyCount.Array.data[2]
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
