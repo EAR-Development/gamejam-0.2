@@ -20828,10 +20828,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188, type: 2}
-      propertyPath: spawnTimeInWave
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4146da79b8064947a4df849151a0188, type: 2}
   m_IsPrefabParent: 0
