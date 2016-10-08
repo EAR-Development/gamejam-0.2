@@ -11,7 +11,15 @@ public class Projectile : MonoBehaviour {
 	float lifetime = 3;
 	float skinWidth = .1f;
 
+	public string projectileType;
+	Camera viewCamera;
+	Vector3 point;
+	public float airShotHeight;
+	public bool mousePosSaved = false;
+
 	void Start() {
+		
+		viewCamera = Camera.main;
 		Destroy (gameObject, lifetime);
 
 		Collider[] initialCollisions = Physics.OverlapSphere (transform.position, .1f, collisionMask);
@@ -29,7 +37,28 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 		float moveDistance = speed * Time.deltaTime;
 		CheckCollisions (moveDistance);
-		transform.Translate (Vector3.forward * moveDistance);
+
+		if (!mousePosSaved) {
+			// Look input
+			Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
+			Plane groundPlane = new Plane (Vector3.up, Vector3.up * 5);
+			float rayDistance;
+
+			if (groundPlane.Raycast (ray, out rayDistance)) {
+				point = ray.GetPoint (rayDistance);
+				Debug.DrawLine (ray.origin, point, Color.red);
+				mousePosSaved = true;
+			}
+		} else {
+			if (transform.position.y >= airShotHeight && projectileType == "AirShot") {
+				transform.LookAt (point);
+				transform.Translate (Vector3.forward * moveDistance);	
+			} else {
+				transform.Translate (Vector3.forward * moveDistance);
+			}
+		}
+
+
 	}
 
 
