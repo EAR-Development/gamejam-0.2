@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 49312129acad1f349b913178e252a36b
 timeCreated: 1475952107
+=======
+guid: ddb0fd533a89ea7459c1d0d5b7d1dd9f
+timeCreated: 1475948843
+>>>>>>> balance_2
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
