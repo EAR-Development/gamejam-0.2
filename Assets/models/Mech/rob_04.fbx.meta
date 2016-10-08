@@ -283,6 +283,7 @@ ModelImporter:
     7400002: Walk
     7400004: Rockets
     7400006: Jump
+    7400008: Idle
     9500000: //RootNode
     13700000: cone10_default
     13700002: Cube111_default
@@ -616,7 +617,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1108,6 +1109,255 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 101
       lastFrame: 175
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rob
+        weight: 1
+      - path: rob/arm_l
+        weight: 1
+      - path: rob/arm_l/Cylinder23_copy108_default
+        weight: 1
+      - path: rob/arm_l/Cylinder23_extract105_default
+        weight: 1
+      - path: rob/hip
+        weight: 1
+      - path: rob/hip/cone10_default
+        weight: 1
+      - path: rob/hip/Cube11_cut29_default
+        weight: 1
+      - path: rob/hip/gears_l
+        weight: 1
+      - path: rob/hip/gears_l/Cylinder26_default
+        weight: 1
+      - path: rob/hip/gears_l/Cylinder26_sep32_default
+        weight: 1
+      - path: rob/hip/gears_l/Cylinder26_sep33_default
+        weight: 1
+      - path: rob/hip/gears_r
+        weight: 1
+      - path: rob/hip/gears_r/Cylinder26_default 1
+        weight: 1
+      - path: rob/hip/gears_r/Cylinder26_sep32_default 1
+        weight: 1
+      - path: rob/hip/gears_r/Cylinder26_sep33_default 1
+        weight: 1
+      - path: rob/hip/main_hip
+        weight: 1
+      - path: rob/hip/main_hip/Cube1_extract19_default
+        weight: 1
+      - path: rob/hip/main_hip/Cube1_extract19_default1
+        weight: 1
+      - path: rob/hip/main_hip/Cube11_default
+        weight: 1
+      - path: rob/hip/main_hip/Cube14_default
+        weight: 1
+      - path: rob/hip/main_hip/Cylinder13_default
+        weight: 1
+      - path: rob/hip/main_hip/Cylinder13_default1
+        weight: 1
+      - path: rob/leg_l
+        weight: 1
+      - path: rob/leg_l/Cube1_default
+        weight: 1
+      - path: rob/leg_l/Cube1_extract9_default
+        weight: 1
+      - path: rob/leg_l/Cube1_extract18_default
+        weight: 1
+      - path: rob/leg_l/Cube1_extract20_default
+        weight: 1
+      - path: rob/leg_l/hyd_cham_leg_l
+        weight: 1
+      - path: rob/leg_l/hyd_cham_leg_l/Cube1_sep19_default
+        weight: 1
+      - path: rob/leg_l/hyd_cham_leg_l/polySurface1
+        weight: 1
+      - path: rob/leg_l/hyd_leg_l
+        weight: 1
+      - path: rob/leg_l/hyd_leg_l/polySurface2
+        weight: 1
+      - path: rob/leg_r
+        weight: 1
+      - path: rob/leg_r/Cube1_default 1
+        weight: 1
+      - path: rob/leg_r/Cube1_extract9_default 1
+        weight: 1
+      - path: rob/leg_r/Cube1_extract18_default 1
+        weight: 1
+      - path: rob/leg_r/Cube1_extract20_default 1
+        weight: 1
+      - path: rob/leg_r/hyd_cham_leg_r
+        weight: 1
+      - path: rob/leg_r/hyd_cham_leg_r/Cube1_sep19_default 1
+        weight: 1
+      - path: rob/leg_r/hyd_cham_leg_r/polySurface3
+        weight: 1
+      - path: rob/leg_r/hyd_leg_r
+        weight: 1
+      - path: rob/leg_r/hyd_leg_r/polySurface4
+        weight: 1
+      - path: rob/torso
+        weight: 1
+      - path: rob/torso/Cube1_cut42_default
+        weight: 1
+      - path: rob/torso/Cylinder23_default
+        weight: 1
+      - path: rob/torso/Cylinder23_extract34_default
+        weight: 1
+      - path: rob/torso/Cylinder23_glas
+        weight: 1
+      - path: rob/torso/hyd_chamber_pos
+        weight: 1
+      - path: rob/torso/hyd_chamber_pos/Cube1_sep41_default
+        weight: 1
+      - path: rob/weapon_left
+        weight: 1
+      - path: rob/weapon_left/Cube43_copy106_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_extract58_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep51_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep52_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep53_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep54_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep55_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep56_default
+        weight: 1
+      - path: rob/weapon_left/Cube43_sep57_default
+        weight: 1
+      - path: rob/weapon_left/Cube_004_Cube_005_None
+        weight: 1
+      - path: rob/weapon_left/Cube_012_Cube_016_None
+        weight: 1
+      - path: rob/weapon_left/Cylinder107_default
+        weight: 1
+      - path: rob/weapon_right
+        weight: 1
+      - path: rob/weapon_right/Cube111_default
+        weight: 1
+      - path: rob/weapon_right/Cube_012_Cube_016_copy109_None
+        weight: 1
+      - path: rob/weapon_right/Cylinder125_copy127_default
+        weight: 1
+      - path: rob/weapon_right/Cylinder125_default
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/robot_main
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1/leg_low_l2
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1/leg_low_l2/hyd_l1
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1/leg_low_l2/hyd_l1/hyd_l2
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1/leg_low_l2/leg_low_l4
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1/leg_low_l2/leg_low_l4/leg_low_l6
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/leg_low_l1/leg_low_l2/leg_low_l4/leg_low_l6/leg_low_l8
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/orient_hyd_cham_l
+        weight: 1
+      - path: ROOT/robot_main/leg_up_l/leg_l_rot/orient_hyd_cham_l/orient_hyd_cham_l2
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1/leg_low_r2
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1/leg_low_r2/hyd_r1
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1/leg_low_r2/hyd_r1/hyd_r2
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1/leg_low_r2/leg_low_r4
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1/leg_low_r2/leg_low_r4/leg_low_r6
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/leg_low_r1/leg_low_r2/leg_low_r4/leg_low_r6/leg_low_r8
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/orient_hyd_cham_l5
+        weight: 1
+      - path: ROOT/robot_main/leg_up_r1/leg_r_rot/orient_hyd_cham_l5/orient_hyd_cham_l2
+          1
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1/arm_l2
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1/arm_l2/arm_lrot1
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1/arm_l2/arm_lrot1/arm_recoil_holder
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1/arm_l2/arm_lrot1/arm_recoil_holder/arm_recoil_back
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1/arm_l2/arm_lrot1/arm_recoil_holder/arm_recoil_front
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_l1/arm_l2/arm_lrot1/arm_recoil_holder/arm_recoil_mid
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_r
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_r/arm_r_rot
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arm_r/arm_r_rot/arm_r_rot2
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arms_hyd1
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arms_hyd1/arms_hyd2
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/arms/arms_hyd1/arms_hyd2/arms_hyd3
+        weight: 1
+      - path: ROOT/robot_main/main_hip_rot/torso_front_rot/joint17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
