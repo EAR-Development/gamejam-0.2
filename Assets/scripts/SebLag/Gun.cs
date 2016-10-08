@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Gun : MonoBehaviour {
 
@@ -42,6 +43,7 @@ public class Gun : MonoBehaviour {
 	float recoilAngle;
 	public string weaponType;
 	public CapsuleCollider hitCollider; 
+	public List<Collider> collidersHit;
 
 	void Start() {
 		muzzleflash = GetComponent<MuzzleFlash> ();
@@ -86,10 +88,15 @@ public class Gun : MonoBehaviour {
 				}
 
 				nextShotTime = Time.time + msBetweenShots / 1000;
-				Projectile newProjectile = Instantiate (projectile, projectileSpawn[i].position, projectileSpawn[i].rotation) as Projectile;
-				newProjectile.SetSpeed (muzzleVelocity);
-				newProjectile.owner = owner;
-				newProjectile.damage = damage;
+				if (weaponType == "Flamethrower") {
+					hitCollider.enabled = true;
+				}
+				else {
+					Projectile newProjectile = Instantiate (projectile, projectileSpawn [i].position, projectileSpawn [i].rotation) as Projectile;
+					newProjectile.SetSpeed (muzzleVelocity);
+					newProjectile.owner = owner;
+					newProjectile.damage = damage;
+				}
 			}
 
 			Instantiate(shell,shellEjection.position, shellEjection.rotation);
@@ -98,9 +105,7 @@ public class Gun : MonoBehaviour {
 			recoilAngle += Random.Range(recoilAngleMinMax.x, recoilAngleMinMax.y);
 			recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
 
-			if(weaponType == "Flamethrower"){
-				hitCollider.enabled = true;
-			}
+
 		}
 	}
 
@@ -149,5 +154,20 @@ public class Gun : MonoBehaviour {
 	public void OnTriggerRelease() {
 		triggerReleasedSinceLastShot = true;
 		shotsRemainingInBurst = burstCount;
+		if (hitCollider) {
+			hitCollider.enabled = false;
+		}
+	}
+
+	public void OnTriggerEnter(Collider col){
+		if(weaponType == "Flamethrower" && col.gameObject.tag == "Enemy"){
+			collidersHit.Add(col);
+		}
+	}
+
+	public void OnTriggerExit(Collider col){
+		if(weaponType == "Flamethrower" && col.gameObject.tag == "Enemy"){
+			collidersHit.Remove(col);
+		}
 	}
 }
