@@ -6,7 +6,7 @@ public class GunController : MonoBehaviour {
 	public Transform weaponHold;
 	public Gun[] allGuns;
 	public Gun equippedGun;
-	public int euqippedGunNr;
+	public int euqippedGunNr =-1;
 
 	void Start() {
 	}
