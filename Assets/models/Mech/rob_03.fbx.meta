@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: ef543cac7e2ace94b9e5b815a04a2111
+timeCreated: 1475941659
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm_l
+    100002: arm_l1
+    100004: arm_l2
+    100006: arm_lrot1
+    100008: arm_r
+    100010: arm_r_rot
+    100012: arm_r_rot2
+    100014: arm_recoil_back
+    100016: arm_recoil_front
+    100018: arm_recoil_holder
+    100020: arm_recoil_mid
+    100022: arms
+    100024: arms_hyd1
+    100026: arms_hyd2
+    100028: arms_hyd3
+    100030: cone10_default
+    100032: Cube111_default
+    100034: Cube11_cut29_default
+    100036: Cube11_default
+    100038: Cube14_default
+    100040: Cube1_cut42_default
+    100042: Cube1_default
+    100044: Cube1_default 1
+    100046: Cube1_extract18_default
+    100048: Cube1_extract18_default 1
+    100050: Cube1_extract19_default
+    100052: Cube1_extract19_default1
+    100054: Cube1_extract20_default
+    100056: Cube1_extract20_default 1
+    100058: Cube1_extract9_default
+    100060: Cube1_extract9_default 1
+    100062: Cube1_sep19_default
+    100064: Cube1_sep19_default 1
+    100066: Cube1_sep41_default
+    100068: Cube43_copy106_default
+    100070: Cube43_default
+    100072: Cube43_extract58_default
+    100074: Cube43_sep51_default
+    100076: Cube43_sep52_default
+    100078: Cube43_sep53_default
+    100080: Cube43_sep54_default
+    100082: Cube43_sep55_default
+    100084: Cube43_sep56_default
+    100086: Cube43_sep57_default
+    100088: Cube_004_Cube_005_None
+    100090: Cube_012_Cube_016_copy109_None
+    100092: Cube_012_Cube_016_None
+    100094: Cylinder107_default
+    100096: Cylinder125_copy127_default
+    100098: Cylinder125_default
+    100100: Cylinder13_default
+    100102: Cylinder13_default1
+    100104: Cylinder23_copy108_default
+    100106: Cylinder23_default
+    100108: Cylinder23_extract105_default
+    100110: Cylinder23_extract34_default
+    100112: Cylinder23_glas
+    100114: Cylinder26_default
+    100116: Cylinder26_default 1
+    100118: Cylinder26_sep32_default
+    100120: Cylinder26_sep32_default 1
+    100122: Cylinder26_sep33_default
+    100124: Cylinder26_sep33_default 1
+    100126: gears_l
+    100128: gears_r
+    100130: hip
+    100132: hyd_cham_leg_l
+    100134: hyd_cham_leg_r
+    100136: hyd_chamber_pos
+    100138: hyd_l1
+    100140: hyd_l2
+    100142: hyd_leg_l
+    100144: hyd_leg_r
+    100146: hyd_r1
+    100148: hyd_r2
+    100150: joint17
+    100152: leg_l
+    100154: leg_l_rot
+    100156: leg_low_l1
+    100158: leg_low_l2
+    100160: leg_low_l4
+    100162: leg_low_l6
+    100164: leg_low_l8
+    100166: leg_low_r1
+    100168: leg_low_r2
+    100170: leg_low_r4
+    100172: leg_low_r6
+    100174: leg_low_r8
+    100176: leg_r
+    100178: leg_r_rot
+    100180: leg_up_l
+    100182: leg_up_r1
+    100184: main_hip
+    100186: main_hip_rot
+    100188: orient_hyd_cham_l
+    100190: orient_hyd_cham_l2
+    100192: orient_hyd_cham_l2 1
+    100194: orient_hyd_cham_l5
+    100196: polySurface1
+    100198: polySurface2
+    100200: polySurface3
+    100202: polySurface4
+    100204: rob
+    100206: //RootNode
+    100208: robot_main
+    100210: ROOT
+    100212: torso
+    100214: torso_front_rot
+    100216: weapon_left
+    100218: weapon_right
+    400000: arm_l
+    400002: arm_l1
+    400004: arm_l2
+    400006: arm_lrot1
+    400008: arm_r
+    400010: arm_r_rot
+    400012: arm_r_rot2
+    400014: arm_recoil_back
+    400016: arm_recoil_front
+    400018: arm_recoil_holder
+    400020: arm_recoil_mid
+    400022: arms
+    400024: arms_hyd1
+    400026: arms_hyd2
+    400028: arms_hyd3
+    400030: cone10_default
+    400032: Cube111_default
+    400034: Cube11_cut29_default
+    400036: Cube11_default
+    400038: Cube14_default
+    400040: Cube1_cut42_default
+    400042: Cube1_default
+    400044: Cube1_default 1
+    400046: Cube1_extract18_default
+    400048: Cube1_extract18_default 1
+    400050: Cube1_extract19_default
+    400052: Cube1_extract19_default1
+    400054: Cube1_extract20_default
+    400056: Cube1_extract20_default 1
+    400058: Cube1_extract9_default
+    400060: Cube1_extract9_default 1
+    400062: Cube1_sep19_default
+    400064: Cube1_sep19_default 1
+    400066: Cube1_sep41_default
+    400068: Cube43_copy106_default
+    400070: Cube43_default
+    400072: Cube43_extract58_default
+    400074: Cube43_sep51_default
+    400076: Cube43_sep52_default
+    400078: Cube43_sep53_default
+    400080: Cube43_sep54_default
+    400082: Cube43_sep55_default
+    400084: Cube43_sep56_default
+    400086: Cube43_sep57_default
+    400088: Cube_004_Cube_005_None
+    400090: Cube_012_Cube_016_copy109_None
+    400092: Cube_012_Cube_016_None
+    400094: Cylinder107_default
+    400096: Cylinder125_copy127_default
+    400098: Cylinder125_default
+    400100: Cylinder13_default
+    400102: Cylinder13_default1
+    400104: Cylinder23_copy108_default
+    400106: Cylinder23_default
+    400108: Cylinder23_extract105_default
+    400110: Cylinder23_extract34_default
+    400112: Cylinder23_glas
+    400114: Cylinder26_default
+    400116: Cylinder26_default 1
+    400118: Cylinder26_sep32_default
+    400120: Cylinder26_sep32_default 1
+    400122: Cylinder26_sep33_default
+    400124: Cylinder26_sep33_default 1
+    400126: gears_l
+    400128: gears_r
+    400130: hip
+    400132: hyd_cham_leg_l
+    400134: hyd_cham_leg_r
+    400136: hyd_chamber_pos
+    400138: hyd_l1
+    400140: hyd_l2
+    400142: hyd_leg_l
+    400144: hyd_leg_r
+    400146: hyd_r1
+    400148: hyd_r2
+    400150: joint17
+    400152: leg_l
+    400154: leg_l_rot
+    400156: leg_low_l1
+    400158: leg_low_l2
+    400160: leg_low_l4
+    400162: leg_low_l6
+    400164: leg_low_l8
+    400166: leg_low_r1
+    400168: leg_low_r2
+    400170: leg_low_r4
+    400172: leg_low_r6
+    400174: leg_low_r8
+    400176: leg_r
+    400178: leg_r_rot
+    400180: leg_up_l
+    400182: leg_up_r1
+    400184: main_hip
+    400186: main_hip_rot
+    400188: orient_hyd_cham_l
+    400190: orient_hyd_cham_l2
+    400192: orient_hyd_cham_l2 1
+    400194: orient_hyd_cham_l5
+    400196: polySurface1
+    400198: polySurface2
+    400200: polySurface3
+    400202: polySurface4
+    400204: rob
+    400206: //RootNode
+    400208: robot_main
+    400210: ROOT
+    400212: torso
+    400214: torso_front_rot
+    400216: weapon_left
+    400218: weapon_right
+    2300000: Cube1_sep41_default
+    3300000: Cube1_sep41_default
+    4300000: Cylinder23_extract105_default
+    4300002: Cylinder23_copy108_default
+    4300004: Cube_012_Cube_016_copy109_None
+    4300006: Cube111_default
+    4300008: Cylinder125_default
+    4300010: Cylinder125_copy127_default
+    4300012: Cylinder23_glas
+    4300014: Cylinder23_default
+    4300016: Cylinder23_extract34_default
+    4300018: Cube1_cut42_default
+    4300020: Cube1_sep41_default
+    4300022: cone10_default
+    4300024: Cube11_cut29_default
+    4300026: Cylinder26_default
+    4300028: Cylinder26_sep32_default
+    4300030: Cylinder26_sep33_default
+    4300032: Cylinder26_default
+    4300034: Cylinder26_sep32_default
+    4300036: Cylinder26_sep33_default
+    4300038: Cube1_extract19_default1
+    4300040: Cylinder13_default1
+    4300042: Cube1_extract19_default
+    4300044: Cylinder13_default
+    4300046: Cube14_default
+    4300048: Cube11_default
+    4300050: Cylinder107_default
+    4300052: Cube43_copy106_default
+    4300054: Cube_004_Cube_005_None
+    4300056: Cube_012_Cube_016_None
+    4300058: Cube43_extract58_default
+    4300060: Cube43_sep57_default
+    4300062: Cube43_sep56_default
+    4300064: Cube43_sep55_default
+    4300066: Cube43_sep54_default
+    4300068: Cube43_sep53_default
+    4300070: Cube43_sep52_default
+    4300072: Cube43_sep51_default
+    4300074: Cube43_default
+    4300076: Cube1_default
+    4300078: Cube1_extract20_default
+    4300080: Cube1_extract18_default
+    4300082: Cube1_extract9_default
+    4300084: polySurface2
+    4300086: polySurface1
+    4300088: Cube1_sep19_default
+    4300090: Cube1_default
+    4300092: Cube1_extract20_default
+    4300094: Cube1_extract18_default
+    4300096: Cube1_extract9_default
+    4300098: polySurface4
+    4300100: polySurface3
+    4300102: Cube1_sep19_default
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: cone10_default
+    13700002: Cube111_default
+    13700004: Cube11_cut29_default
+    13700006: Cube11_default
+    13700008: Cube14_default
+    13700010: Cube1_cut42_default
+    13700012: Cube1_default
+    13700014: Cube1_default 1
+    13700016: Cube1_extract18_default
+    13700018: Cube1_extract18_default 1
+    13700020: Cube1_extract19_default
+    13700022: Cube1_extract19_default1
+    13700024: Cube1_extract20_default
+    13700026: Cube1_extract20_default 1
+    13700028: Cube1_extract9_default
+    13700030: Cube1_extract9_default 1
+    13700032: Cube1_sep19_default
+    13700034: Cube1_sep19_default 1
+    13700036: Cube43_copy106_default
+    13700038: Cube43_default
+    13700040: Cube43_extract58_default
+    13700042: Cube43_sep51_default
+    13700044: Cube43_sep52_default
+    13700046: Cube43_sep53_default
+    13700048: Cube43_sep54_default
+    13700050: Cube43_sep55_default
+    13700052: Cube43_sep56_default
+    13700054: Cube43_sep57_default
+    13700056: Cube_004_Cube_005_None
+    13700058: Cube_012_Cube_016_copy109_None
+    13700060: Cube_012_Cube_016_None
+    13700062: Cylinder107_default
+    13700064: Cylinder125_copy127_default
+    13700066: Cylinder125_default
+    13700068: Cylinder13_default
+    13700070: Cylinder13_default1
+    13700072: Cylinder23_copy108_default
+    13700074: Cylinder23_default
+    13700076: Cylinder23_extract105_default
+    13700078: Cylinder23_extract34_default
+    13700080: Cylinder23_glas
+    13700082: Cylinder26_default
+    13700084: Cylinder26_default 1
+    13700086: Cylinder26_sep32_default
+    13700088: Cylinder26_sep32_default 1
+    13700090: Cylinder26_sep33_default
+    13700092: Cylinder26_sep33_default 1
+    13700094: polySurface1
+    13700096: polySurface2
+    13700098: polySurface3
+    13700100: polySurface4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
