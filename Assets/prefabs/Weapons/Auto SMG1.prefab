@@ -208,7 +208,7 @@ GameObject:
   - 114: {fileID: 11476506}
   - 114: {fileID: 11495274}
   m_Layer: 0
-  m_Name: Minigun
+  m_Name: Auto SMG1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,6 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba355178253a4f73a08ad7a9887983f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: 
+  owner: {fileID: 0}
   fireMode: 0
   projectileSpawn:
   - {fileID: 488908}
@@ -722,6 +724,7 @@ MonoBehaviour:
   burstCount: 3
   projectilesPerMag: 18
   reloadTime: 0.3
+  damage: 1
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -731,6 +734,8 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: 90bb8f60485d141089a4870536866a85, type: 3}
   reloadAudio: {fileID: 8300000, guid: d617432175d1a42b9adc26881cd90b15, type: 3}
   projectilesRemainingInMag: 0
+  weaponType: 
+  hitCollider: {fileID: 0}
 --- !u!114 &11495274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -836,6 +841,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: projectilesPerMag
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181120}

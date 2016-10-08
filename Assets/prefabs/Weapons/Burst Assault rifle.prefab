@@ -126,7 +126,7 @@ GameObject:
   - 114: {fileID: 11475382}
   - 114: {fileID: 11418560}
   m_Layer: 0
-  m_Name: Burst SMG
+  m_Name: Burst Assault rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3015137, y: 78.83688, z: -2.483933}
+  m_LocalPosition: {x: -5.097992, y: 10.716967, z: -29.500004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434124}
@@ -614,11 +614,12 @@ MonoBehaviour:
   projectileSpawn:
   - {fileID: 417700}
   projectile: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c, type: 2}
-  msBetweenShots: 100
+  msBetweenShots: 80
   muzzleVelocity: 25
   burstCount: 3
-  projectilesPerMag: 12
-  reloadTime: 0.3
+  projectilesPerMag: 15
+  reloadTime: 0.5
+  damage: 34
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -628,6 +629,8 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: b585318940e5644e095a7d423a6a8ac5, type: 3}
   reloadAudio: {fileID: 8300000, guid: 64ca40a97e8cc47649d5c2fb07a8b1c7, type: 3}
   projectilesRemainingInMag: 0
+  weaponType: 
+  hitCollider: {fileID: 0}
 --- !u!212 &21248412
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -723,6 +726,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: weaponName
       value: Burst SMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: msBetweenShots
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectilesPerMag
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reloadTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

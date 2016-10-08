@@ -467,11 +467,12 @@ MonoBehaviour:
   projectileSpawn:
   - {fileID: 450644}
   projectile: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c, type: 2}
-  msBetweenShots: 100
+  msBetweenShots: 600
   muzzleVelocity: 20
-  burstCount: 3
-  projectilesPerMag: 12
-  reloadTime: 0.3
+  burstCount: 1
+  projectilesPerMag: 10
+  reloadTime: 1
+  damage: 50
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -481,6 +482,8 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: fac59437641d2421e9f6ac845763b8a8, type: 3}
   reloadAudio: {fileID: 8300000, guid: 0a8071705a91241d7bfe488a2f30620f, type: 3}
   projectilesRemainingInMag: 0
+  weaponType: 
+  hitCollider: {fileID: 0}
 --- !u!114 &11423802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,6 +592,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: weaponName
       value: Carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectilesPerMag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: burstCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reloadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: msBetweenShots
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
