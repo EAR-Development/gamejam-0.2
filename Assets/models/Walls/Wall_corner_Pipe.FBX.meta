@@ -1,41 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
 guid: 49312129acad1f349b913178e252a36b
-timeCreated: 1475952107
-=======
-guid: ddb0fd533a89ea7459c1d0d5b7d1dd9f
-timeCreated: 1475948843
->>>>>>> balance_2
-licenseType: Free
-=======
-guid: 3e12e554f32dfdc46bb57835d29485ce
->>>>>>> Controller
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-<<<<<<< develop
-    100000: //RootNode
-    100002: Box005
-    100004: Box006
-    100006: Box007
-    100008: Box008
-    400000: //RootNode
-    400002: Box005
-    400004: Box006
-    400006: Box007
-    400008: Box008
-    2300000: //RootNode
-    2300002: Box005
-    2300004: Box006
-    2300006: Box007
-    2300008: Box008
-    3300000: //RootNode
-    3300002: Box005
-    3300004: Box006
-    3300006: Box007
-    3300008: Box008
-=======
     100000: Box005
     100002: Box006
     100004: Box007
@@ -54,7 +21,6 @@ ModelImporter:
     3300002: Box006
     3300004: Box007
     3300006: Box008
->>>>>>> Table
     4300000: Box005
     4300002: Box006
     4300004: Box007

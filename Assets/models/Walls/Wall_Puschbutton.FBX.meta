@@ -3,62 +3,6 @@ guid: 7ceb016b74230d64c89e4753db59c234
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-<<<<<<< develop
-    100000: Box001
-    100002: Box002
-    100004: Cylinder001
-    100006: Cylinder002
-    100008: //RootNode
-    100010: Box006
-    100012: Box008
-    100014: Box009
-    100016: Cylinder003
-    100018: Cylinder003 1
-    100020: Cylinder004
-    100022: Cylinder005
-    400000: Box001
-    400002: Box002
-    400004: Cylinder001
-    400006: Cylinder002
-    400008: //RootNode
-    400010: Box006
-    400012: Box008
-    400014: Box009
-    400016: Cylinder003
-    400018: Cylinder003 1
-    400020: Cylinder004
-    400022: Cylinder005
-    2300000: Box001
-    2300002: Box002
-    2300004: Cylinder001
-    2300006: Cylinder002
-    2300008: Box006
-    2300010: Box009
-    2300012: Cylinder003
-    2300014: Cylinder003 1
-    2300016: Cylinder004
-    2300018: Cylinder005
-    3300000: Box001
-    3300002: Box002
-    3300004: Cylinder001
-    3300006: Cylinder002
-    3300008: Box006
-    3300010: Box009
-    3300012: Cylinder003
-    3300014: Cylinder003 1
-    3300016: Cylinder004
-    3300018: Cylinder005
-    4300000: Box001
-    4300002: Cylinder001
-    4300004: Cylinder002
-    4300006: Box002
-    4300008: Box006
-    4300010: Cylinder003
-    4300012: Cylinder003
-    4300014: Cylinder004
-    4300016: Cylinder005
-    4300018: Box009
-=======
     100000: Box002
     100002: Box006
     100004: Box008
@@ -98,7 +42,6 @@ ModelImporter:
     4300008: Cylinder004
     4300010: Cylinder005
     4300012: Box009
->>>>>>> Table
     7400000: Take 001
     9500000: //RootNode
   materials:
