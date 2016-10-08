@@ -2,13 +2,14 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class gameControllerScript : MonoBehaviour {
 
 	public Canvas pausemenu;
 	public Canvas endMenu;
 
-	Transform target;
+	public Transform target;
 	LivingEntity targetEntity;
 
 
@@ -23,6 +24,11 @@ public class gameControllerScript : MonoBehaviour {
 	public enemySpawner currentSpawner;
 
 	GUIController guiController;
+
+
+	public List<Transform> spawnpoints;
+	public Transform spawnPointsParent;
+
 
 
 	// Use this for initialization
@@ -43,7 +49,14 @@ public class gameControllerScript : MonoBehaviour {
 
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
+		setupSpawnpoints ();
+	
 
+	}
+
+	void OnAwake(){
+
+	
 	
 
 	}
@@ -120,5 +133,46 @@ public class gameControllerScript : MonoBehaviour {
 		Time.fixedDeltaTime = 0.02F * Time.timeScale;
 		Cursor.visible = true;
 		endMenu.enabled = true;
+	}
+
+	public Vector3[] getClosestSpawnPoints(int range, Vector3 pos){
+
+
+
+		spawnpoints.Sort (((Transform x, Transform y) =>(int)Vector3.Distance(x.position,pos) -(int) Vector3.Distance(y.position,pos)));
+		Vector3[] ret=new Vector3[range];
+
+		for(int i=0;i<range;i++) {
+			
+			ret [i] = spawnpoints [i].position;
+
+		}
+
+		return ret;
+
+	}
+
+	public void setupSpawnpoints(){
+			
+		print (spawnPointsParent.GetComponentsInChildren<Transform>().Length);
+		spawnpoints = new List<Transform> ();
+		spawnpoints.AddRange (spawnPointsParent.GetComponentsInChildren<Transform>());
+
+	}
+
+	public void enableSpawnerPoints(Transform[] points){
+
+		for(int i=0;i<spawnpoints.Count;i++){
+
+			for(int j=0;j<points.Length;i++){
+
+				if(points[j]==spawnpoints[i]){
+					spawnpoints [i].gameObject.SetActive (true);
+				}
+
+			}
+
+		}
+
 	}
 }

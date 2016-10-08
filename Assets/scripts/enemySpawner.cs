@@ -65,9 +65,10 @@ public class enemySpawner : MonoBehaviour {
 
 				for(int i=0;i<enemyTypes.Length;i++){
 					float r =(int) Random.Range (0,1);
+					int s=(int)Random.Range(0,4);
 					if(r<enemyCount[i]/totalEnemys){
 						
-						Enemy e = (Instantiate (((Resources.Load(enemyTypes[i]) as GameObject)), transform.position, transform.rotation) as GameObject).GetComponent<Enemy>();
+						Enemy e = (Instantiate (((Resources.Load(enemyTypes[i]) as GameObject)), gcs.getClosestSpawnPoints(4,gcs.target.position)[s], transform.rotation) as GameObject).GetComponent<Enemy>();
 						spawnedCounter++;
 						e.spawner = this;
 						spawnedUnits.Add (e);
