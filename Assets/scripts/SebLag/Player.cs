@@ -33,7 +33,7 @@ public class Player : LivingEntity {
 	void Update () {
 		if (!pause) {
 			// Movement input
-			Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+			Vector3 moveInput = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
 			Vector3 moveVelocity = moveInput.normalized * moveSpeed;
 			Vector3 legLookPos = controller.mechLegs.transform.position + moveInput;
 			controller.mechLegs.LookAt (legLookPos);

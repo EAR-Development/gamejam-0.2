@@ -1,11 +1,20 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: b96a65130d283a04cb0b22458834c023
 timeCreated: 1475952391
 =======
 guid: e279ed99697a85b47bfd995f37601ebb
 timeCreated: 1475952123
 >>>>>>> balance_2
+=======
+guid: 945991a992bffb04bab9f6cf0e74a30c
+timeCreated: 1475950173
+=======
+guid: b96a65130d283a04cb0b22458834c023
+timeCreated: 1475952391
+>>>>>>> develop
+>>>>>>> Controller
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

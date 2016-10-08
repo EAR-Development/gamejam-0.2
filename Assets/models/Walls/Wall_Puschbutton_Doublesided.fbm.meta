@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: d6aa01496fcdf6443ac68caef3d55cba
 folderAsset: yes
 timeCreated: 1475952386
@@ -8,6 +9,16 @@ guid: 8359542980d969c4a92e5a1fe2c604be
 folderAsset: yes
 timeCreated: 1475950368
 >>>>>>> balance_2
+=======
+guid: 110d6727006366540b584a6db5712b05
+folderAsset: yes
+timeCreated: 1475950169
+=======
+guid: d6aa01496fcdf6443ac68caef3d55cba
+folderAsset: yes
+timeCreated: 1475952386
+>>>>>>> develop
+>>>>>>> Controller
 licenseType: Free
 DefaultImporter:
   userData: 

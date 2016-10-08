@@ -21,6 +21,9 @@ public class menuScript : MonoBehaviour {
 	public InputField playerOneNameField;
 	public InputField playerTwoNameField;
 
+	public GameObject scoreKeeper;
+	ScoreKeeper score;
+
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +33,8 @@ public class menuScript : MonoBehaviour {
 
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
+
+		score = scoreKeeper.GetComponent<ScoreKeeper> ();
 
 		quitMenu.enabled = false;
 		playerMenu.enabled = false;
@@ -62,6 +67,7 @@ public class menuScript : MonoBehaviour {
 	}
 
 	public void toggleSecondPlayerPress(){
+		return;
 		if (secondPlayerCard.enabled) {
 			toggleSecondPlayerButton.image.overrideSprite = plusSprite;
 		} else {
@@ -83,11 +89,9 @@ public class menuScript : MonoBehaviour {
 	}
 
 	public void RunPress(){
-		bool playerTwoEnabled = secondPlayerCard.enabled;
-		string playerOneName = playerOneNameField.text;
-		string playerTwoName = playerTwoNameField.text;
-
-		Debug.Log (playerOneName);
+		score.playerTwoEnabled = secondPlayerCard.enabled;
+		score.playerOneName = playerOneNameField.text;
+		score.playerTwoName = playerTwoNameField.text;
 
 		SceneManager.LoadScene ("scenes/SebLag/game");
 	}

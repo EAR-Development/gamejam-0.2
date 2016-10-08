@@ -22,13 +22,25 @@ public class gameControllerScript : MonoBehaviour {
 	public GameObject[] allSpawner;
 	public enemySpawner currentSpawner;
 
-	GUIController guiController;
+	public ScoreKeeper scoreKeeperPrefab;
 
+	GUIController guiController;
+	ScoreKeeper scoreKeeper;
 
 	// Use this for initialization
 	void Start () {
+		ScoreKeeper scoreKeeper = (ScoreKeeper) FindObjectOfType(typeof(ScoreKeeper));
+		if (scoreKeeper == null) {
+			scoreKeeper = Object.Instantiate (scoreKeeperPrefab).GetComponent<ScoreKeeper>();
 
+			scoreKeeper.playerTwoEnabled = false;
+			scoreKeeper.playerOneName = "Peter Lustig";
+			scoreKeeper.playerTwoName = "Herr Paschulke";
+		}
+			
 		guiController = GetComponent<GUIController> ();
+
+		guiController.setScoreKeeper(scoreKeeper);
 
 		pausemenu = pausemenu.GetComponent<Canvas> ();
 		pausemenu.enabled = false;
@@ -43,9 +55,6 @@ public class gameControllerScript : MonoBehaviour {
 
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
-
-	
-
 	}
 
 
@@ -58,22 +67,10 @@ public class gameControllerScript : MonoBehaviour {
 	}
 
 	public void spawnNextWave (){
-		
-		/*if( currentSpawner.spawnedUnits.Count){
-			waveTimer = 0;
-			foreach (enemySpawner s in allSpawner){
-				s.spawnWave (enemysPerSpawner);
-			}
-			enemysPerSpawner = Mathf.FloorToInt(enemysPerSpawner * waveFactor);
-
-			guiController.OnNextWave (nextWave);
-			nextWave++;
-		}*/
-
-
 		Destroy (currentSpawner.gameObject);
 		currentSpawner = (Instantiate (allSpawner [nextWave]) as GameObject).GetComponent<enemySpawner> ();
 		currentSpawner.gcs = this;
+		guiController.OnNextWave (nextWave);
 		nextWave++;
 
 	}
