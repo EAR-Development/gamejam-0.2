@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
+	public Player Owner;
 	public LayerMask collisionMask;
 	public Color trailColour;
 	float speed = 10;
