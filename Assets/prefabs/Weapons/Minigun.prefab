@@ -208,7 +208,7 @@ GameObject:
   - 114: {fileID: 11476506}
   - 114: {fileID: 11495274}
   m_Layer: 0
-  m_Name: Minigun
+  m_Name: Auto SMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,6 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba355178253a4f73a08ad7a9887983f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Auto SMG
+  owner: {fileID: 0}
   fireMode: 0
   projectileSpawn:
   - {fileID: 488908}
@@ -836,6 +838,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: weaponName
+      value: Auto SMG
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181120}
