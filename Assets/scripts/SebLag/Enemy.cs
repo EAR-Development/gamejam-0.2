@@ -12,7 +12,6 @@ public class Enemy : LivingEntity {
 
 	NavMeshAgent pathfinder;
 	Transform target;
-	Transform exit;
 	LivingEntity targetEntity;
 	Material skinMaterial;
 
@@ -40,8 +39,6 @@ public class Enemy : LivingEntity {
 			myCollisionRadius = GetComponent<CapsuleCollider> ().radius;
 			targetCollisionRadius = target.GetComponent<CapsuleCollider> ().radius;
 		}
-
-		exit = GameObject.FindGameObjectWithTag ("Exit").transform;
 	}
 	
 	protected override void Start () {
@@ -93,16 +90,9 @@ public class Enemy : LivingEntity {
 			if (Time.time > nextAttackTime) {
 				float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
 
-				float sqrDstToExit = (exit.position - transform.position).sqrMagnitude;
-
 				if (sqrDstToTarget < Mathf.Pow (attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)) {
 					nextAttackTime = Time.time + timeBetweenAttacks;
 					StartCoroutine (Attack ());
-				}
-
-				if (sqrDstToExit < 10f) {
-					Debug.Log("Ende erreicht");
-					Die ();
 				}
 
 				DebugPath (pathfinder.path);
@@ -159,7 +149,7 @@ public class Enemy : LivingEntity {
 	}
 
 	IEnumerator UpdatePath() {
-		float refreshRate = .25f;
+		float refreshRate = 0.1f;
 
 		while (hasTarget) {
 			

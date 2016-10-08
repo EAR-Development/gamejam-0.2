@@ -17,7 +17,7 @@ public class gameControllerScript : MonoBehaviour {
 	public int enemysPerSpawner = 5;
 	public float waveFactor = 1.2f;
 
-	float waveTimer = 0f;
+	float waveTimer = 8f;
 	int nextWave = 1;
 	enemySpawner[] allSpawner;
 
@@ -61,8 +61,7 @@ public class gameControllerScript : MonoBehaviour {
 
 	void enemyWaveManager(){
 		waveTimer += Time.deltaTime;
-
-		if(timeBetweenWaves <= waveTimer){
+		if(timeBetweenWaves <= waveTimer && GameObject.FindGameObjectsWithTag ("Enemy").Length == 0){
 			waveTimer = 0;
 			foreach (enemySpawner s in allSpawner){
 				s.spawnWave (enemysPerSpawner);
