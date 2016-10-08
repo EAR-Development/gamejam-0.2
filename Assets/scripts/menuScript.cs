@@ -6,17 +6,34 @@ using System.Collections;
 public class menuScript : MonoBehaviour {
 	public Canvas quitMenu;
 	public Canvas startMenu;
+	public Canvas playerMenu;
+
+	public Canvas secondPlayerCard;
+
+	public Button toggleSecondPlayerButton;
+	public Sprite plusSprite;
+	public Sprite minusSprite;
+
+
 	public Button startText;
 	public Button exitText;
+
+	public InputField playerOneNameField;
+	public InputField playerTwoNameField;
+
 
 	// Use this for initialization
 	void Start () {
 		quitMenu = quitMenu.GetComponent<Canvas> ();
 		startMenu = startMenu.GetComponent<Canvas> ();
+		playerMenu = playerMenu.GetComponent<Canvas> ();
+
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
 
 		quitMenu.enabled = false;
+		playerMenu.enabled = false;
+		secondPlayerCard.enabled = false;
 		startMenu.enabled = true;
 
 		Time.timeScale = 1.0F;
@@ -44,7 +61,34 @@ public class menuScript : MonoBehaviour {
 		exitText.enabled = true;
 	}
 
+	public void toggleSecondPlayerPress(){
+		if (secondPlayerCard.enabled) {
+			toggleSecondPlayerButton.image.overrideSprite = plusSprite;
+		} else {
+			toggleSecondPlayerButton.image.overrideSprite = minusSprite;
+		}
+		secondPlayerCard.enabled = !secondPlayerCard.enabled;
+	}
+
+	public void BackPress(){
+		startMenu.enabled = true;
+		playerMenu.enabled = false;
+	}
+
 	public void StartPress(){
+		secondPlayerCard.enabled = false;
+
+		startMenu.enabled = false;
+		playerMenu.enabled = true;
+	}
+
+	public void RunPress(){
+		bool playerTwoEnabled = secondPlayerCard.enabled;
+		string playerOneName = playerOneNameField.text;
+		string playerTwoName = playerTwoNameField.text;
+
+		Debug.Log (playerOneName);
+
 		SceneManager.LoadScene ("scenes/SebLag/game");
 	}
 
