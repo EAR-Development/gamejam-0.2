@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491950}
+  - 95: {fileID: 9552152}
   m_Layer: 0
   m_Name: Gate1
   m_TagString: Untagged
@@ -84,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.26, y: -1.82, z: -27.85}
+  m_LocalPosition: {x: -16.11, y: -0.5, z: -27.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 430616}
@@ -181,6 +182,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.682496, y: 6.232569, z: 0.773994}
   m_Center: {x: 1.8309687, y: 3.1162846, z: -0.15881762}
+--- !u!95 &9552152
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132876}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e8619a3cdbe015439214c5301821c98, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!208 &20869468
 NavMeshObstacle:
   m_ObjectHideFlags: 1
