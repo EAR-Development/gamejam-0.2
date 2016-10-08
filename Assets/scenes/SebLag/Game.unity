@@ -483,9 +483,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
-  enemysPerWave: 10
+  totalEnemys: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
+  maxIntevallUntis: 3
+  minIntervallUnits: 2
+  gcs: {fileID: 0}
 --- !u!1 &12248006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7695,49 +7702,52 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -14.8
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalPosition.z
       value: -17.5
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 488478, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+    - target: {fileID: 499066, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11418710, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
-      propertyPath: normalEnemy
+    - target: {fileID: 134206, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
+      propertyPath: m_Name
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486252, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
+      propertyPath: gcs
       value: 
-      objectReference: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
-    - target: {fileID: 11418710, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1774927217}
-    m_RemovedComponents:
-    - {fileID: 11418710, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
+      objectReference: {fileID: 942880125}
+    - target: {fileID: 11486252, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
+      propertyPath: enemyCount.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &264871770
 GameObject:
@@ -12462,7 +12472,7 @@ Transform:
   - {fileID: 947152913}
   - {fileID: 798980786}
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 57
 --- !u!1001 &383925762
 Prefab:
   m_ObjectHideFlags: 0
@@ -21878,6 +21888,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188, type: 2}
+      propertyPath: allSpawner.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 405924, guid: f4146da79b8064947a4df849151a0188, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21910,6 +21924,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188, type: 2}
+      propertyPath: allSpawner.Array.data[0]
+      value: 
+      objectReference: {fileID: 134206, guid: 7c21e6e1515d43349ab21f0f6fa60261, type: 2}
+    - target: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188, type: 2}
+      propertyPath: allSpawner.Array.data[1]
+      value: 
+      objectReference: {fileID: 134206, guid: dbd50d90abd877942828daaf7df069cd, type: 2}
+    - target: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188, type: 2}
+      propertyPath: allSpawner.Array.data[2]
+      value: 
+      objectReference: {fileID: 134206, guid: 6e6387984cf635843a8fe1c33b67f2c1, type: 2}
+    - target: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188, type: 2}
+      propertyPath: currentSpawner
+      value: 
+      objectReference: {fileID: 2116498053}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4146da79b8064947a4df849151a0188, type: 2}
   m_IsPrefabParent: 0
@@ -24734,7 +24764,7 @@ Transform:
   - {fileID: 1266930931}
   - {fileID: 370723868}
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 50
 --- !u!1001 &730511101
 Prefab:
   m_ObjectHideFlags: 0
@@ -27580,9 +27610,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
-  enemysPerWave: 10
+  totalEnemys: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
+  maxIntevallUntis: 3
+  minIntervallUnits: 2
+  gcs: {fileID: 0}
 --- !u!1001 &820601641
 Prefab:
   m_ObjectHideFlags: 0
@@ -31770,6 +31807,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940231291}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &942880125 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11438020, guid: f4146da79b8064947a4df849151a0188,
+    type: 2}
+  m_PrefabInternal: {fileID: 642220880}
+  m_Script: {fileID: 11500000, guid: ff0a19101405e4b4e953345d82c9112d, type: 3}
 --- !u!1001 &944051004
 Prefab:
   m_ObjectHideFlags: 0
@@ -34459,7 +34502,7 @@ Transform:
   - {fileID: 235590790}
   - {fileID: 1669049928}
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
 --- !u!1 &1039472378
 GameObject:
   m_ObjectHideFlags: 0
@@ -44467,9 +44510,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
-  enemysPerWave: 10
+  totalEnemys: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
+  maxIntevallUntis: 3
+  minIntervallUnits: 2
+  gcs: {fileID: 0}
 --- !u!1 &1339098367
 GameObject:
   m_ObjectHideFlags: 0
@@ -47524,7 +47574,7 @@ Transform:
   - {fileID: 1815864486}
   - {fileID: 1478127834}
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 47
 --- !u!1 &1483141715
 GameObject:
   m_ObjectHideFlags: 0
@@ -48063,9 +48113,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
-  enemysPerWave: 10
+  totalEnemys: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
+  maxIntevallUntis: 3
+  minIntervallUnits: 2
+  gcs: {fileID: 0}
 --- !u!1001 &1491759784
 Prefab:
   m_ObjectHideFlags: 0
@@ -55318,7 +55375,7 @@ Transform:
   - {fileID: 519343026}
   - {fileID: 1395238064}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 41
 --- !u!1 &1732334503
 GameObject:
   m_ObjectHideFlags: 0
@@ -61615,9 +61672,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 121202, guid: 97713fe37cf9b4de88696ce6b41c0462, type: 2}
+  enemyTypes: []
+  enemyCount: 
+  spawnedUnits: []
   spawnTime: 0.3
-  enemysPerWave: 10
+  totalEnemys: 10
+  maxIntervallPause: 5
+  minIntervalPause: 3
+  maxIntevallUntis: 3
+  minIntervallUnits: 2
+  gcs: {fileID: 0}
 --- !u!1001 &1878620029
 Prefab:
   m_ObjectHideFlags: 0
@@ -69055,24 +69119,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 461822, guid: 640ecf6c33a3843ff96f2d7424edf0e0, type: 2}
   m_PrefabInternal: {fileID: 2114410522}
---- !u!1 &2116498052 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 147354, guid: f5dec4c37508047f9b6052c83a4c848c, type: 2}
-  m_PrefabInternal: {fileID: 257012702}
---- !u!114 &2116498053
+--- !u!114 &2116498053 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2116498052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11486252, guid: dbd50d90abd877942828daaf7df069cd,
+    type: 2}
+  m_PrefabInternal: {fileID: 257012702}
   m_Script: {fileID: 11500000, guid: 5e13ebf5c713a4ddb9b31940d6a66948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 150076, guid: d9df4d82c5b05e747a5d69b0c58ff1f4, type: 2}
-  spawnTime: 0.3
-  enemysPerWave: 10
 --- !u!1 &2117136217
 GameObject:
   m_ObjectHideFlags: 0

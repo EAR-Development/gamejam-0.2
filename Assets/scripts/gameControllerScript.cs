@@ -17,9 +17,10 @@ public class gameControllerScript : MonoBehaviour {
 	public int enemysPerSpawner = 5;
 	public float waveFactor = 1.2f;
 
-	float waveTimer = 8f;
-	int nextWave = 1;
-	enemySpawner[] allSpawner;
+
+	int nextWave = 0;
+	public GameObject[] allSpawner;
+	public enemySpawner currentSpawner;
 
 	GUIController guiController;
 
@@ -43,11 +44,8 @@ public class gameControllerScript : MonoBehaviour {
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
 
-		allSpawner =  FindObjectsOfType(typeof(enemySpawner)) as enemySpawner[];
+	
 
-		foreach (enemySpawner s in allSpawner){
-			s.spawnTime = spawnTimeInWave;
-		}
 	}
 
 
@@ -56,12 +54,12 @@ public class gameControllerScript : MonoBehaviour {
 			EscapeKeyPressed ();
 		}
 
-		enemyWaveManager ();
+
 	}
 
-	void enemyWaveManager(){
-		waveTimer += Time.deltaTime;
-		if(timeBetweenWaves <= waveTimer && GameObject.FindGameObjectsWithTag ("Enemy").Length == 0){
+	public void spawnNextWave (){
+		
+		/*if( currentSpawner.spawnedUnits.Count){
 			waveTimer = 0;
 			foreach (enemySpawner s in allSpawner){
 				s.spawnWave (enemysPerSpawner);
@@ -70,7 +68,14 @@ public class gameControllerScript : MonoBehaviour {
 
 			guiController.OnNextWave (nextWave);
 			nextWave++;
-		}
+		}*/
+
+
+		Destroy (currentSpawner.gameObject);
+		currentSpawner = (Instantiate (allSpawner [nextWave]) as GameObject).GetComponent<enemySpawner> ();
+		currentSpawner.gcs = this;
+		nextWave++;
+
 	}
 
 	public void EscapeKeyPressed(){

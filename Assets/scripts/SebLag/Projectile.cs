@@ -84,6 +84,5 @@ public class Projectile : MonoBehaviour {
 	void OnDestroy(){
 		
 
-		print (owner.hits / (owner.hits+owner.misses));
 	}
 }

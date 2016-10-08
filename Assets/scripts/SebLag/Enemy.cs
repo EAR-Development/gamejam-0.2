@@ -25,6 +25,8 @@ public class Enemy : LivingEntity {
 	float myCollisionRadius;
 	float targetCollisionRadius;
 
+	public enemySpawner spawner;
+
 	bool hasTarget;
 
 	void Awake() {
@@ -166,5 +168,10 @@ public class Enemy : LivingEntity {
 			}
 			yield return new WaitForSeconds(refreshRate);
 		}
+	}
+
+	void OnDestroy(){
+//		print (spawner.spawnedUnits.Count);
+		spawner.spawnedUnits.Remove (this);
 	}
 }
