@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	Vector3 velocity;
+	public Transform mechTorso;
 	Rigidbody myRigidbody;
 	GunController gunController;
 
@@ -17,8 +18,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void LookAt(Vector3 lookPoint) {
-		Vector3 heightCorrectedPoint = new Vector3 (lookPoint.x, transform.position.y, lookPoint.z);
-		transform.LookAt (heightCorrectedPoint);
+		Vector3 heightCorrectedPoint = new Vector3 (lookPoint.x, mechTorso.position.y, lookPoint.z);
+		mechTorso.LookAt (heightCorrectedPoint);
 	}
 
 	void FixedUpdate() {
