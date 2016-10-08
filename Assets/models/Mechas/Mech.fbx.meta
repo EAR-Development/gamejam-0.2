@@ -23,6 +23,10 @@ ModelImporter:
     100030: upperLeg.l
     100032: upperLeg.r
     100034: upperTorso
+    100036: Cube.001
+    100038: Cube.002
+    100040: hammerHead
+    100042: meleeCONTROL
     400000: Armature
     400002: Cube.000
     400004: Cube.057
@@ -41,15 +45,25 @@ ModelImporter:
     400030: upperLeg.l
     400032: upperLeg.r
     400034: upperTorso
+    400036: Cube.001
+    400038: Cube.002
+    400040: hammerHead
+    400042: meleeCONTROL
     4300000: Cube.000
     4300002: Cube.057
+    4300004: Cube.002
+    4300006: Cube.001
     7400000: Armature|CylinderAction
     7400002: Armature|PlaneAction
     7400004: Armature|t-pose
     7400006: Armature|walk
+    7400008: Armature|Idle
+    7400010: Armature|SMASH!
     9500000: //RootNode
     13700000: Cube.000
     13700002: Cube.057
+    13700004: Cube.001
+    13700006: Cube.002
   materials:
     importMaterials: 1
     materialName: 0
@@ -70,7 +84,399 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|CylinderAction
+      takeName: Armature|CylinderAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/lowerTorso
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.l
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l/foot.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r/foot.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.057
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|PlaneAction
+      takeName: Armature|PlaneAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/lowerTorso
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.l
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l/foot.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r/foot.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.057
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|t-pose
+      takeName: Armature|t-pose
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/lowerTorso
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.l
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l/foot.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r/foot.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.057
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|walk
+      takeName: Armature|walk
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/lowerTorso
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.l
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l/foot.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r/foot.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.057
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Idle
+      takeName: Armature|CylinderAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/lowerTorso
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.l
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l/foot.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r/foot.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.057
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|SMASH!
+      takeName: Armature|SMASH!
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/lowerTorso
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.l
+        weight: 1
+      - path: Armature/lowerTorso/footCONTROL.r
+        weight: 1
+      - path: Armature/lowerTorso/meleeCONTROL
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l/foot.l
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r
+        weight: 1
+      - path: Armature/lowerTorso/upperLeg.r/lowerLeg.r/foot.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l/hammerHead
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r
+        weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
+        weight: 1
+      - path: Cube.057
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
