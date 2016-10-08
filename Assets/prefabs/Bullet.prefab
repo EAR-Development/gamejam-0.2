@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2376130}
   - 114: {fileID: 11465928}
   - 96: {fileID: 9631630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,10 +122,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7401adbcd325d4728a38db80c3be325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 0}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 2304
   trailColour: {r: 0.9117647, g: 0.8422264, b: 0.2815744, a: 0.334}
+  damage: 1
+  projectileType: 
+  airShotHeight: 0
+  mousePosSaved: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -135,7 +140,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: collisionMask.m_Bits
-      value: 1280
+      value: 2304
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Time
@@ -161,6 +166,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: affa7282f39c0e5468ebef97618895c2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187958}
