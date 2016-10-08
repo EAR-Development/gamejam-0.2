@@ -17,6 +17,12 @@ public class enemySpawner : MonoBehaviour {
 
 	private float spawnTimer = 0;
 	private int spawnCount = 0;
+	 float intervallTimer = 0;
+	public float maxIntervallPause = 5;
+	public float minIntervalPause=3;
+
+
+
 
 
 
@@ -29,13 +35,18 @@ public class enemySpawner : MonoBehaviour {
 	void Update () {
 		spawnTimer += Time.deltaTime;
 
+
 		if (spawnTimer >= spawnTime && spawnCount > 0) {
 			spawnTimer = 0;
 			spawnCount -= 1;
 
 			for(int i=0;i<enemyTypes.Length;i++){
 				float r =(int) Random.Range (0,1);
-				GameObject e = Instantiate (Resources.Load(enemyTypes[i]) as GameObject, transform.position, transform.rotation) as GameObject;
+				if(r<0.5){
+					
+					GameObject e = Instantiate (Resources.Load(enemyTypes[i]) as GameObject, transform.position, transform.rotation) as GameObject;
+
+				}
 			}
 
 
