@@ -6,8 +6,13 @@ public class PlayerController : MonoBehaviour {
 
 	Vector3 velocity;
 	public Transform mechTorso;
+	public Transform mechLegs;
 	Rigidbody myRigidbody;
 	GunController gunController;
+
+	void Awake(){
+		myRigidbody = GetComponent<Rigidbody> ();
+	}
 
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody> ();
