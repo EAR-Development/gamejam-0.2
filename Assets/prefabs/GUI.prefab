@@ -295,6 +295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 405924}
   - 114: {fileID: 11438718}
+  - 114: {fileID: 11438020}
   m_Layer: 0
   m_Name: GUI
   m_TagString: Untagged
@@ -327,7 +328,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.634766, y: 63.16797, z: -47.722656}
+  m_LocalPosition: {x: 1.6860261, y: -411, z: -64.74984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22410056}
@@ -641,7 +642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11438020}
         m_MethodName: ExitButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -654,6 +655,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11438020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0a19101405e4b4e953345d82c9112d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausemenu: {fileID: 22308540}
+  endMenu: {fileID: 22334076}
 --- !u!114 &11438718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -780,7 +794,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11438020}
         m_MethodName: RestartButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -1073,7 +1087,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11438020}
         m_MethodName: ResumeButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -1308,7 +1322,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11438020}
         m_MethodName: ExitButtonPressed
         m_Mode: 1
         m_Arguments:
