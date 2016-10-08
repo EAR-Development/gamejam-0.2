@@ -66,7 +66,7 @@ public class Enemy : LivingEntity {
 		originalColour = skinMaterial.color;
 	}
 
-	public override void TakeHit (float damage, Vector3 hitPoint, Vector3 hitDirection)
+	public override void TakeHit (float damage, Vector3 hitPoint, Vector3 hitDirection, Player damager)
 	{
 //		AudioManager.instance.PlaySound ("Impact", transform.position);
 		if (damage >= health && !dead) {
@@ -76,7 +76,7 @@ public class Enemy : LivingEntity {
 	//		AudioManager.instance.PlaySound ("Enemy Death", transform.position);
 			Destroy(Instantiate(deathEffect.gameObject, hitPoint, Quaternion.FromToRotation(Vector3.forward, hitDirection)) as GameObject, deathEffect.startLifetime);
 		}
-		base.TakeHit (damage, hitPoint, hitDirection);
+		base.TakeHit (damage, hitPoint, hitDirection, damager);
 	}
 
 	void OnTargetDeath() {
@@ -133,7 +133,7 @@ public class Enemy : LivingEntity {
 
 			if (percent >= .5f && !hasAppliedDamage) {
 				hasAppliedDamage = true;
-				targetEntity.TakeDamage(damage);
+				targetEntity.TakeDamage(damage, null);
 			}
 
 			percent += Time.deltaTime * attackSpeed;

@@ -11,16 +11,17 @@ public class GunController : MonoBehaviour {
 	void Start() {
 	}
 
-	public void EquipGun(Gun gunToEquip) {
+	public void EquipGun(Gun gunToEquip,Player owner) {
 		if (equippedGun != null) {
 			Destroy(equippedGun.gameObject);
 		}
 		equippedGun = Instantiate (gunToEquip, weaponHold.position,weaponHold.rotation) as Gun;
 		equippedGun.transform.parent = weaponHold;
+		equippedGun.GetComponent<Gun> ().owner=owner;
 	}
 
-	public void EquipGun(int weaponIndex) {
-		EquipGun (allGuns [weaponIndex]);
+	public void EquipGun(int weaponIndex, Player owner) {
+		EquipGun (allGuns [weaponIndex],owner);
 		euqippedGunNr = weaponIndex;
 	}
 

@@ -790,6 +790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba355178253a4f73a08ad7a9887983f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: AirShot Rocketlauncher
+  owner: {fileID: 0}
   fireMode: 1
   projectileSpawn:
   - {fileID: 453582}
@@ -917,6 +919,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: fireMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponName
+      value: AirShot Rocketlauncher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

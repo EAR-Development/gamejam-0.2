@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	public Player Owner;
+	public Player owner;
 	public LayerMask collisionMask;
 	public Color trailColour;
 	float speed = 10;
@@ -75,7 +75,7 @@ public class Projectile : MonoBehaviour {
 	void OnHitObject(Collider c, Vector3 hitPoint) {
 		IDamageable damageableObject = c.GetComponent<IDamageable> ();
 		if (damageableObject != null) {
-			damageableObject.TakeHit(damage, hitPoint, transform.forward);
+			damageableObject.TakeHit(damage, hitPoint, transform.forward,owner);
 		}
 		GameObject.Destroy (gameObject);
 	}

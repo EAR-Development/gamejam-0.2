@@ -13,7 +13,11 @@ public class Player : LivingEntity {
 	Camera viewCamera;
 	PlayerController controller;
 	GunController gunController;
-	
+
+	public int kills;
+	public int hits;
+	public int misses;
+
 	protected override void Start () {
 		base.Start ();
 	}
@@ -21,7 +25,7 @@ public class Player : LivingEntity {
 	void Awake() {
 		controller = GetComponent<PlayerController> ();
 		gunController = GetComponent<GunController> ();
-		gunController.EquipGun (0);
+		gunController.EquipGun (0,this);
 		viewCamera = Camera.main;
 		//FindObjectOfType<Spawner> ().OnNewWave += OnNewWave;
 	}
@@ -67,7 +71,7 @@ public class Player : LivingEntity {
 					gunController.euqippedGunNr = 0;
 				}
 
-				gunController.EquipGun (gunController.euqippedGunNr);
+				gunController.EquipGun (gunController.euqippedGunNr,this);
 			}
 		}
 	}

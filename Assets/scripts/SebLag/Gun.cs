@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class Gun : MonoBehaviour {
-	public Player owner;
-	public string weaponName;
 
+	public string weaponName;
+	public Player owner;
 	public enum FireMode {Auto, Burst, Single};
 	public FireMode fireMode;
 
@@ -85,7 +85,7 @@ public class Gun : MonoBehaviour {
 				nextShotTime = Time.time + msBetweenShots / 1000;
 				Projectile newProjectile = Instantiate (projectile, projectileSpawn[i].position, projectileSpawn[i].rotation) as Projectile;
 				newProjectile.SetSpeed (muzzleVelocity);
-				//new 
+				newProjectile.owner = owner;
 			}
 
 			Instantiate(shell,shellEjection.position, shellEjection.rotation);
