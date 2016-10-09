@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: 1969002551e2bb848b92f859695a8840
+timeCreated: 1475978174
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cube4_extract6_default
+    100002: Cube7_cut8_default
+    100004: Cylinder17_default
+    100006: Cylinder17_sep21_default
+    100008: Cylinder17_sep23_default
+    100010: Cylinder17_sep24_default
+    100012: Cylinder43_default
+    100014: Cylinder9_cut13_default
+    100016: Cylinder9_sep47_default
+    100018: Cylinder9_sep48_default
+    100020: Cylinder9_sep48_default1
+    100022: //RootNode
+    100024: Torus26_copy38_default
+    100026: Torus26_copy39_default
+    100028: Torus26_copy40_default
+    100030: Torus26_default
+    100032: Torus26_sep33_default
+    100034: Torus26_sep34_default
+    100036: transform1
+    100038: transform10
+    100040: transform11
+    100042: transform12
+    100044: transform13
+    100046: transform14
+    100048: transform15
+    100050: transform16
+    100052: transform2
+    100054: transform3
+    100056: transform4
+    100058: transform5
+    100060: transform6
+    100062: transform7
+    100064: transform8
+    100066: transform9
+    400000: Cube4_extract6_default
+    400002: Cube7_cut8_default
+    400004: Cylinder17_default
+    400006: Cylinder17_sep21_default
+    400008: Cylinder17_sep23_default
+    400010: Cylinder17_sep24_default
+    400012: Cylinder43_default
+    400014: Cylinder9_cut13_default
+    400016: Cylinder9_sep47_default
+    400018: Cylinder9_sep48_default
+    400020: Cylinder9_sep48_default1
+    400022: //RootNode
+    400024: Torus26_copy38_default
+    400026: Torus26_copy39_default
+    400028: Torus26_copy40_default
+    400030: Torus26_default
+    400032: Torus26_sep33_default
+    400034: Torus26_sep34_default
+    400036: transform1
+    400038: transform10
+    400040: transform11
+    400042: transform12
+    400044: transform13
+    400046: transform14
+    400048: transform15
+    400050: transform16
+    400052: transform2
+    400054: transform3
+    400056: transform4
+    400058: transform5
+    400060: transform6
+    400062: transform7
+    400064: transform8
+    400066: transform9
+    2300000: Cylinder9_sep48_default1
+    3300000: Cylinder9_sep48_default1
+    4300000: Cylinder9_sep48_default1
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

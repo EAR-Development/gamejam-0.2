@@ -3314,13 +3314,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db478f39a9d3c4edf854a1c7be422bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 230
+  animator: {fileID: 0}
   moveSpeed: 5
   crosshairs: {fileID: 0}
   pause: 0
+  chargeJump: 0
   kills: 0
   hits: 0
   misses: 0
+  points: 0
 --- !u!114 &11462348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5309,7 +5312,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: startingHealth
+      value: 230
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194976}

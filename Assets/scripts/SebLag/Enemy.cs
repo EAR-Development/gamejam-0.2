@@ -178,7 +178,5 @@ public class Enemy : LivingEntity {
 		spawner.spawnedUnits.Remove (this);
 	}
 
-	void Die(){
-		
-	}
+
 }
