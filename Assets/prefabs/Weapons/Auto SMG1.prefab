@@ -726,6 +726,7 @@ MonoBehaviour:
   projectilesPerMag: 18
   reloadTime: 0.3
   damage: 1
+  maxAmmo: 200
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -735,7 +736,7 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: 90bb8f60485d141089a4870536866a85, type: 3}
   reloadAudio: {fileID: 8300000, guid: d617432175d1a42b9adc26881cd90b15, type: 3}
   projectilesRemainingInMag: 0
-  weaponType: 
+  weaponType: Auto
   hitCollider: {fileID: 0}
   collidersHit: []
 --- !u!114 &11495274
@@ -850,6 +851,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponType
+      value: Auto
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

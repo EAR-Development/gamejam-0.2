@@ -10,6 +10,7 @@ public class SoundLibrary : MonoBehaviour {
 
 	void Awake() {
 		foreach (SoundGroup soundGroup in soundGroups) {
+			Debug.Log ("groupID: "+soundGroup.groupID + " soundGroup.group " +soundGroup.group );
 			groupDictionary.Add (soundGroup.groupID, soundGroup.group);
 		}
 	}

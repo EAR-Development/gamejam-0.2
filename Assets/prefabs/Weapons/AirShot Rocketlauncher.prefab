@@ -808,6 +808,7 @@ MonoBehaviour:
   projectilesPerMag: 12
   reloadTime: 5
   damage: 200
+  maxAmmo: 200
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -817,7 +818,7 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: fa91595dac754461fa6162f123e94ba1, type: 3}
   reloadAudio: {fileID: 8300000, guid: 6e025827e286846e0a168b83c44f20aa, type: 3}
   projectilesRemainingInMag: 0
-  weaponType: 
+  weaponType: Rocket
   hitCollider: {fileID: 0}
   collidersHit: []
 --- !u!114 &11499072
@@ -948,6 +949,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponType
+      value: Rocket
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

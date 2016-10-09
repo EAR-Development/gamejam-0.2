@@ -120,6 +120,8 @@ ModelImporter:
         weight: 1
       - path: Armature/lowerTorso/footCONTROL.r
         weight: 1
+      - path: Armature/lowerTorso/meleeCONTROL
+        weight: 1
       - path: Armature/lowerTorso/upperLeg.l
         weight: 1
       - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
@@ -138,11 +140,17 @@ ModelImporter:
         weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
         weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l/hammerHead
+        weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.r
         weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
         weight: 1
       - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
         weight: 1
       - path: Cube.057
         weight: 1
@@ -300,7 +308,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.32489452
+        functionName: SendEvent
+        data: footstep
+        objectReferenceParameter: {fileID: 192658, guid: e0e976770f68d69439f9edf5d9b70793,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

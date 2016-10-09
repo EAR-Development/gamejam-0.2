@@ -35,6 +35,14 @@ public class gameControllerScript : MonoBehaviour {
 	public static Player playerTwo{ get; set;}
 	public static gameControllerScript controller{ get; set;}
 
+	void Awake(){
+		setupSpawnpoints ();
+		if (GameObject.FindGameObjectWithTag ("Player") != null) {
+
+			target = GameObject.FindGameObjectWithTag ("Player").transform;
+		}
+
+	}
 
 	// Use this for initialization
 	void Start () {

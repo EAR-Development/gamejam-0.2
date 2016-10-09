@@ -98,8 +98,55 @@ MonoBehaviour:
     - {fileID: 8300000, guid: cf6559c83d6107d4499fb01f4525c735, type: 3}
     - {fileID: 8300000, guid: 0c5f340767ceb0647ac02235c02f6a42, type: 3}
     - {fileID: 8300000, guid: 649afddb37101e74e9783d09fe1e219b, type: 3}
-  - groupID: 
-    group: []
+  - groupID: Mecha_Reload
+    group:
+    - {fileID: 8300000, guid: ff75bb4897d86764583e441c13f77a1c, type: 3}
+  - groupID: Minigun_SpinUp
+    group:
+    - {fileID: 8300000, guid: 1395615ea0186c64e85a6efa0a9b87db, type: 3}
+  - groupID: Minigun_Shot
+    group:
+    - {fileID: 8300000, guid: db41957c27ecea5488cb5b9b306e5bf6, type: 3}
+  - groupID: Minigun_SpinEnd
+    group:
+    - {fileID: 8300000, guid: 3c33cbabbd7bade4d8cdc25baa71e190, type: 3}
+  - groupID: Zombie_GetHit
+    group:
+    - {fileID: 8300000, guid: 01aac275fdf231b439872af10edca5e5, type: 3}
+    - {fileID: 8300000, guid: e8848d0fa0c7a06419fb2383508fa20d, type: 3}
+    - {fileID: 8300000, guid: ebd41f734960178468d42b390368b261, type: 3}
+    - {fileID: 8300000, guid: 95fd1b59b5c234d4da568886a478fb43, type: 3}
+  - groupID: Laser_SpinUp
+    group:
+    - {fileID: 8300000, guid: 77708e36a9348f34f8c485e65a1d0a5d, type: 3}
+  - groupID: Laser_Shot
+    group:
+    - {fileID: 8300000, guid: 20f7ed8729fa0144d9927bc01c41fc0f, type: 3}
+    - {fileID: 8300000, guid: 555475514e7797e49be05bdac9536e5b, type: 3}
+    - {fileID: 8300000, guid: 36bfe054ba1d27945a3f67e29b9b1214, type: 3}
+  - groupID: TitleTracks
+    group:
+    - {fileID: 8300000, guid: fe9357532c266ed41ac7edc8b170fbf5, type: 3}
+    - {fileID: 8300000, guid: 8ba41e59d62430a48804a63f26c72f17, type: 3}
+  - groupID: Zombie_Ambient
+    group:
+    - {fileID: 8300000, guid: ff7e85bfdd2e27248852cb5976b01eb8, type: 3}
+    - {fileID: 8300000, guid: 1172ae67b1aa06246821f1d791115908, type: 3}
+    - {fileID: 8300000, guid: b8553030649badb48b48fd74f8916400, type: 3}
+    - {fileID: 8300000, guid: f8a441d317b4182478d63b815aeeb0ee, type: 3}
+  - groupID: NextWave
+    group:
+    - {fileID: 8300000, guid: a88344c83be77bf47b44a4771c732224, type: 3}
+  - groupID: Rocketlauncher_Shot
+    group:
+    - {fileID: 8300000, guid: a49761ed4343c8f42811d093dc2c31b4, type: 3}
+  - groupID: Zombie_Death
+    group:
+    - {fileID: 8300000, guid: b4ec88f37aa5f974f89439eb3fe40b6e, type: 3}
+    - {fileID: 8300000, guid: 965d8972d6983574b9e68614ca633386, type: 3}
+  - groupID: Rocketlauncher_Impact
+    group:
+    - {fileID: 8300000, guid: e8396e41dec2b3e4ebf37841800a6929, type: 3}
 --- !u!114 &11492390
 MonoBehaviour:
   m_ObjectHideFlags: 1

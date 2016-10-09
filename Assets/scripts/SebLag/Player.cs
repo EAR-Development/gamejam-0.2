@@ -33,6 +33,8 @@ public class Player : LivingEntity {
 
 	protected override void Start () {
 		base.Start ();
+
+		AudioManager.instance.PlaySound2D ("Mecha_Reload");
 	}
 
 	void Awake() {
