@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour {
 	public int projectilesPerMag;
 	public float reloadTime = .3f;
 	public float damage = 1;
+	public int maxAmmo=200;
 
 	[Header("Recoil")]
 	public Vector2 kickMinMax = new Vector2(.05f,.2f);
@@ -34,6 +35,7 @@ public class Gun : MonoBehaviour {
 
 	MuzzleFlash muzzleflash;
 	float nextShotTime;
+
 
 	bool triggerReleasedSinceLastShot;
 	int shotsRemainingInBurst;
@@ -139,7 +141,7 @@ public class Gun : MonoBehaviour {
 
 
 		isReloading = false;
-		projectilesRemainingInMag = projectilesPerMag;
+	//	projectilesRemainingInMag = projectilesPerMag;
 	}
 
 	public void Aim(Vector3 aimPoint) {

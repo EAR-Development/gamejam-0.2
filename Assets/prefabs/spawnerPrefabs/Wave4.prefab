@@ -51,6 +51,7 @@ MonoBehaviour:
   minIntervalPause: 8
   maxIntevallUntis: 4
   minIntervallUnits: 2
+  maxUnitsAlive: 50
   gcs: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -98,6 +99,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: enemyCount.Array.data[2]
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxUnitsAlive
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

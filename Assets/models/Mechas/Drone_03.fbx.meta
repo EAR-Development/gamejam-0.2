@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: 5e7100284e5f6f848a9f840370bf51db
+timeCreated: 1476006800
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cube4_extract6_default
+    100002: Cube7_cut8_default
+    100004: Cylinder17_default
+    100006: Cylinder17_sep21_default
+    100008: Cylinder17_sep23_default
+    100010: Cylinder17_sep24_default
+    100012: Cylinder43_default
+    100014: Cylinder9_cut13_default
+    100016: Cylinder9_sep47_default
+    100018: Cylinder9_sep48_default
+    100020: Drone_01
+    100022: //RootNode
+    100024: drone_jnt_02
+    100026: Main_Drone
+    100028: Torus26_copy38_default
+    100030: Torus26_copy39_default
+    100032: Torus26_copy40_default
+    100034: Torus26_default
+    100036: Torus26_sep33_default
+    100038: Torus26_sep34_default
+    100040: transform1
+    100042: transform10
+    100044: transform11
+    100046: transform12
+    100048: transform13
+    100050: transform14
+    100052: transform15
+    100054: transform16
+    100056: transform2
+    100058: transform3
+    100060: transform4
+    100062: transform5
+    100064: transform6
+    100066: transform7
+    100068: transform8
+    100070: transform9
+    400000: Cube4_extract6_default
+    400002: Cube7_cut8_default
+    400004: Cylinder17_default
+    400006: Cylinder17_sep21_default
+    400008: Cylinder17_sep23_default
+    400010: Cylinder17_sep24_default
+    400012: Cylinder43_default
+    400014: Cylinder9_cut13_default
+    400016: Cylinder9_sep47_default
+    400018: Cylinder9_sep48_default
+    400020: Drone_01
+    400022: //RootNode
+    400024: drone_jnt_02
+    400026: Main_Drone
+    400028: Torus26_copy38_default
+    400030: Torus26_copy39_default
+    400032: Torus26_copy40_default
+    400034: Torus26_default
+    400036: Torus26_sep33_default
+    400038: Torus26_sep34_default
+    400040: transform1
+    400042: transform10
+    400044: transform11
+    400046: transform12
+    400048: transform13
+    400050: transform14
+    400052: transform15
+    400054: transform16
+    400056: transform2
+    400058: transform3
+    400060: transform4
+    400062: transform5
+    400064: transform6
+    400066: transform7
+    400068: transform8
+    400070: transform9
+    4300000: Drone_01
+    7400000: Flying
+    9500000: //RootNode
+    13700000: Drone_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Flying
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube4_extract6_default
+        weight: 1
+      - path: Cube4_extract6_default/transform1
+        weight: 1
+      - path: Cube7_cut8_default
+        weight: 1
+      - path: Cube7_cut8_default/transform2
+        weight: 1
+      - path: Cylinder9_cut13_default
+        weight: 1
+      - path: Cylinder9_cut13_default/transform3
+        weight: 1
+      - path: Cylinder9_sep47_default
+        weight: 1
+      - path: Cylinder9_sep47_default/transform15
+        weight: 1
+      - path: Cylinder9_sep48_default
+        weight: 1
+      - path: Cylinder9_sep48_default/transform16
+        weight: 1
+      - path: Cylinder17_default
+        weight: 1
+      - path: Cylinder17_default/transform4
+        weight: 1
+      - path: Cylinder17_sep21_default
+        weight: 1
+      - path: Cylinder17_sep21_default/transform5
+        weight: 1
+      - path: Cylinder17_sep23_default
+        weight: 1
+      - path: Cylinder17_sep23_default/transform6
+        weight: 1
+      - path: Cylinder17_sep24_default
+        weight: 1
+      - path: Cylinder17_sep24_default/transform7
+        weight: 1
+      - path: Cylinder43_default
+        weight: 1
+      - path: Cylinder43_default/transform14
+        weight: 1
+      - path: Drone_01
+        weight: 1
+      - path: Main_Drone
+        weight: 1
+      - path: Main_Drone/drone_jnt_02
+        weight: 1
+      - path: Torus26_copy38_default
+        weight: 1
+      - path: Torus26_copy38_default/transform11
+        weight: 1
+      - path: Torus26_copy39_default
+        weight: 1
+      - path: Torus26_copy39_default/transform12
+        weight: 1
+      - path: Torus26_copy40_default
+        weight: 1
+      - path: Torus26_copy40_default/transform13
+        weight: 1
+      - path: Torus26_default
+        weight: 1
+      - path: Torus26_default/transform8
+        weight: 1
+      - path: Torus26_sep33_default
+        weight: 1
+      - path: Torus26_sep33_default/transform9
+        weight: 1
+      - path: Torus26_sep34_default
+        weight: 1
+      - path: Torus26_sep34_default/transform10
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
