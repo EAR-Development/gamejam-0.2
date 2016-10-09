@@ -80,6 +80,9 @@ public class Player : LivingEntity {
 
 				gunController.EquipGun (gunController.euqippedGunNr,this);
 			}
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				animator.SetTrigger ("Jump");		
+			}
 		}
 	}
 
