@@ -35,7 +35,9 @@ public class gameControllerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Time.timeScale = 1.0F;
+		Time.fixedDeltaTime = 0.02F * Time.timeScale;
+
 		scoreKeeper = (ScoreKeeper)FindObjectOfType (typeof(ScoreKeeper));
 
 		if (scoreKeeper == null) {
