@@ -37,11 +37,6 @@ public class gameControllerScript : MonoBehaviour {
 
 	void Awake(){
 		setupSpawnpoints ();
-		if (GameObject.FindGameObjectWithTag ("Player") != null) {
-
-			target = GameObject.FindGameObjectWithTag ("Player").transform;
-		}
-
 	}
 
 	// Use this for initialization
@@ -57,6 +52,12 @@ public class gameControllerScript : MonoBehaviour {
 			scoreKeeper.playerTwoEnabled = false;
 			scoreKeeper.playerOneName = "Peter Lustig";
 			scoreKeeper.playerTwoName = "";
+		}
+
+		GameObject[] playerList = GameObject.FindGameObjectsWithTag ("Player");
+
+		foreach (GameObject player in playerList) {
+			Debug.Log (player);
 		}
 
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
