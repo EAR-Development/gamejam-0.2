@@ -213,6 +213,9 @@ public class Player : LivingEntity {
 		currentSpeed = moveSpeed;
 	}
 
-
+	public void PlayWalkSound(){
+		//currentSpeed = moveSpeed;
+		AudioManager.instance.PlaySound2D ("MechaWalking");
+	}
 		
 }

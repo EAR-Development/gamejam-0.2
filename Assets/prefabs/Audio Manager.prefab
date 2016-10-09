@@ -11,7 +11,7 @@ GameObject:
   - 81: {fileID: 8181370}
   m_Layer: 0
   m_Name: Audio Listener
-  m_TagString: Untagged
+  m_TagString: AudioListener
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8142a225d1a6a41108a3799f05f62ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioListener: {fileID: 437494}
 --- !u!114 &11457068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundGroups:
-  - groupID: MechWalk
+  - groupID: MechaWalking
     group:
     - {fileID: 8300000, guid: 31edfbe002fd0fe48bb21cb28e0836fc, type: 3}
     - {fileID: 8300000, guid: b4be60fb3d4140647985123dffa6f7e5, type: 3}
@@ -97,14 +98,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: cf6559c83d6107d4499fb01f4525c735, type: 3}
     - {fileID: 8300000, guid: 0c5f340767ceb0647ac02235c02f6a42, type: 3}
     - {fileID: 8300000, guid: 649afddb37101e74e9783d09fe1e219b, type: 3}
-  - groupID: 
-    group: []
-  - groupID: 
-    group: []
-  - groupID: 
-    group: []
-  - groupID: 
-    group: []
 --- !u!114 &11492390
 MonoBehaviour:
   m_ObjectHideFlags: 1

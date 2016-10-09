@@ -15,10 +15,10 @@ public class AudioManager : MonoBehaviour {
 
 	public static AudioManager instance;
 
-	Transform audioListener;
+	public Transform audioListener;
 	Transform playerT;
 
-	//SoundLibrary library;
+	SoundLibrary library;
 
 	void Awake() {
 		if (instance != null) {
@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour {
 			instance = this;
 			DontDestroyOnLoad (gameObject);
 
-			//library = GetComponent<SoundLibrary> ();
+			library = GetComponent<SoundLibrary> ();
 
 			musicSources = new AudioSource[2];
 			for (int i = 0; i < 2; i++) {
@@ -40,9 +40,9 @@ public class AudioManager : MonoBehaviour {
 			sfx2DSource = newSfx2Dsource.AddComponent<AudioSource> ();
 			newSfx2Dsource.transform.parent = transform;
 
-			audioListener = FindObjectOfType<AudioListener> ().transform;
+			//audioListener = GameObject.FindWithTag("AudioListener").transform;
 			if (FindObjectOfType<Player> () != null) {
-				playerT = FindObjectOfType<Player> ().transform;
+				playerT = GameObject.FindWithTag("Player").transform;
 			}
 
 			masterVolumePercent = PlayerPrefs.GetFloat ("master vol", 1);
@@ -50,15 +50,15 @@ public class AudioManager : MonoBehaviour {
 			musicVolumePercent = PlayerPrefs.GetFloat ("music vol", 1);
 		}
 	}
-	/*
+
 	void OnLevelWasLoaded(int index) {
 		if (playerT == null) {
-			if (FindObjectOfType<Player> () != null) {
+			if (GameObject.FindWithTag("Player").transform != null) {
 				playerT = FindObjectOfType<Player> ().transform;
 			}
 		}
 	}
-	*/
+
 
 	void Update() {
 		if (playerT != null) {
@@ -103,11 +103,11 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void PlaySound(string soundName, Vector3 pos) {
-		//PlaySound (library.GetClipFromName (soundName), pos);
+		PlaySound (library.GetClipFromName (soundName), pos);
 	}
 
 	public void PlaySound2D(string soundName) {
-		//sfx2DSource.PlayOneShot (library.GetClipFromName (soundName), sfxVolumePercent * masterVolumePercent);
+		sfx2DSource.PlayOneShot (library.GetClipFromName (soundName), sfxVolumePercent * masterVolumePercent);
 	}
 
 
