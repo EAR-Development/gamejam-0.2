@@ -98,7 +98,7 @@ public class menuScript : MonoBehaviour {
 	public void BackPress(){
 		startMenu.enabled = true;
 		playerMenu.enabled = false;
-		print ("back");
+		secondPlayerCard.enabled = false;
 	}
 
 	public void StartPress(){
