@@ -26,7 +26,9 @@ public class Player : LivingEntity {
 
 	float currentRunCooldown;
 	float currentSpeed = 5;
+	public bool usingController;
 	public float points;
+	public Transform playerLookAt;
 
 	protected override void Start () {
 		base.Start ();
@@ -42,80 +44,159 @@ public class Player : LivingEntity {
 
 	void Update () {
 		if (!pause) {
-			// Movement input
-			Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
-			Vector3 moveVelocity = moveInput.normalized * currentSpeed;
-			controller.Move (moveVelocity);
+			if(usingController){
+				Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal2"), 0, Input.GetAxisRaw ("Vertical2"));
+				Vector3 rightStickInput = new Vector3 (Input.GetAxisRaw ("RightStickX"), 0, Input.GetAxisRaw ("RightStickY"));
+				Vector3 moveVelocity = moveInput.normalized * currentSpeed;
+				controller.Move (moveVelocity);
 
-			if (!chargeJump) {
-				Vector3 legLookPos = controller.mechLegs.transform.position + moveInput;
-				controller.mechLegs.LookAt (legLookPos);
+				if (!chargeJump) {
+					Vector3 legLookPos = controller.mechLegs.transform.position + moveInput;
+					controller.mechLegs.LookAt (legLookPos);
+						
+					Vector3 point = transform.position + rightStickInput * 10;
+					//	Debug.DrawLine (ray.origin, point, Color.red);
+					controller.LookAt (transform.position + rightStickInput);
+					crosshairs.transform.position = gunController.equippedGun.projectileSpawn[0].transform.position ;
+					crosshairs.transform.position += gunController.equippedGun.projectileSpawn[0].transform.forward * 10;
+					point.y = gunController.equippedGun.transform.localPosition.y;
+					//point.z -= 25;
+					//	crosshairs.DetectTargets (ray);
+					//	if ((new Vector2 (point.x, point.z) - new Vector2 (transform.position.x, transform.position.z)).sqrMagnitude > 1) {
+							gunController.Aim (point);
+					//	}
 
 
-				// Look input
-				Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
-				Plane groundPlane = new Plane (Vector3.up, Vector3.up * gunController.GunHeight);
-				float rayDistance;
+					// Weapon input
+					if(Input.GetAxis("RightTrigger") < 0){
+						gunController.OnTriggerHold ();
+					}
+					if(Input.GetAxis("RightTrigger") > 0){
+						gunController.OnTriggerRelease ();
+						animator.SetTrigger ("ShootWeapon1");
+						if (gunController.equippedGun.weaponType == "Flamethrower") {
+							gunController.equippedGun.hitCollider.enabled = true;
+						}
+					}
+					if (Input.GetKeyDown (KeyCode.R)) {
+						gunController.Reload ();
+					}
+					if (Input.GetKeyDown (KeyCode.Q)) {
+						if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
+							gunController.euqippedGunNr++;
 
-				if (groundPlane.Raycast (ray, out rayDistance)) {
-					Vector3 point = ray.GetPoint (rayDistance);
-					Debug.DrawLine (ray.origin, point, Color.red);
-					controller.LookAt (point);
-					crosshairs.transform.position = point;
-					crosshairs.DetectTargets (ray);
-					if ((new Vector2 (point.x, point.z) - new Vector2 (transform.position.x, transform.position.z)).sqrMagnitude > 1) {
-						gunController.Aim (point);
+						} else {
+							gunController.euqippedGunNr = 0;
+						}
+
+						gunController.EquipGun (gunController.euqippedGunNr, this);
+					}
+
+					if (Input.GetKeyDown (KeyCode.Space)) {
+						animator.SetTrigger ("Jump");		
+					}
+
+					if (Input.GetKeyDown (KeyCode.LeftShift)) {
+						//animator.SetTrigger ("Jump");
+						if (!runCoolingDown) {
+							currentSpeed = runSpeed;
+							Invoke ("ResetRunSpeed", runDuration);
+							currentRunCooldown = runCooldown;
+							runCoolingDown = true;
+						}
+					}
+
+					if (runCoolingDown) {					
+						if (currentRunCooldown > 0) {
+							currentRunCooldown -= Time.deltaTime;
+
+						} else {
+							runCoolingDown = false;
+
+						}
+
 					}
 				}
 
-				// Weapon input
-				if (Input.GetMouseButton (0)) {
-					gunController.OnTriggerHold ();
-				}
-				if (Input.GetMouseButtonUp (0)) {
-					gunController.OnTriggerRelease ();
-					animator.SetTrigger ("ShootWeapon1");
-					if (gunController.equippedGun.weaponType == "Flamethrower") {
-						gunController.equippedGun.hitCollider.enabled = true;
-					}
-				}
-				if (Input.GetKeyDown (KeyCode.R)) {
-					gunController.Reload ();
-				}
-				if (Input.GetKeyDown (KeyCode.Q)) {
-					if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
-						gunController.euqippedGunNr++;
+				Debug.Log ("rightStickInput: "+rightStickInput);
+			}
+			else {
+				
+				// Movement input
+				Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+				Vector3 moveVelocity = moveInput.normalized * currentSpeed;
+				controller.Move (moveVelocity);
 
-					} else {
-						gunController.euqippedGunNr = 0;
-					}
+				if (!chargeJump) {
+					Vector3 legLookPos = controller.mechLegs.transform.position + moveInput;
+					controller.mechLegs.LookAt (legLookPos);
 
-					gunController.EquipGun (gunController.euqippedGunNr, this);
-				}
 
-				if (Input.GetKeyDown (KeyCode.Space)) {
-					animator.SetTrigger ("Jump");		
-				}
+					// Look input
+					Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
+					Plane groundPlane = new Plane (Vector3.up, Vector3.up * gunController.GunHeight);
+					float rayDistance;
 
-				if (Input.GetKeyDown (KeyCode.LeftShift)) {
-					//animator.SetTrigger ("Jump");
-					if(!runCoolingDown){
-						currentSpeed = runSpeed;
-						Invoke ("ResetRunSpeed",runDuration);
-						currentRunCooldown = runCooldown;
-						runCoolingDown = true;
-					}
-				}
-
-				if(runCoolingDown){					
-					if (currentRunCooldown > 0) {
-						currentRunCooldown -= Time.deltaTime;
-
-					} else {
-						runCoolingDown = false;
-
+					if (groundPlane.Raycast (ray, out rayDistance)) {
+						Vector3 point = ray.GetPoint (rayDistance);
+						Debug.DrawLine (ray.origin, point, Color.red);
+						controller.LookAt (point);
+						crosshairs.transform.position = point;
+						crosshairs.DetectTargets (ray);
+						if ((new Vector2 (point.x, point.z) - new Vector2 (transform.position.x, transform.position.z)).sqrMagnitude > 1) {
+							gunController.Aim (point);
+						}
 					}
 
+					// Weapon input
+					if (Input.GetMouseButton (0)) {
+						gunController.OnTriggerHold ();
+					}
+					if (Input.GetMouseButtonUp (0)) {
+						gunController.OnTriggerRelease ();
+						animator.SetTrigger ("ShootWeapon1");
+						if (gunController.equippedGun.weaponType == "Flamethrower") {
+							gunController.equippedGun.hitCollider.enabled = true;
+						}
+					}
+					if (Input.GetKeyDown (KeyCode.R)) {
+						gunController.Reload ();
+					}
+					if (Input.GetKeyDown (KeyCode.Q)) {
+						if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
+							gunController.euqippedGunNr++;
+
+						} else {
+							gunController.euqippedGunNr = 0;
+						}
+
+						gunController.EquipGun (gunController.euqippedGunNr, this);
+					}
+
+					if (Input.GetKeyDown (KeyCode.Space)) {
+						animator.SetTrigger ("Jump");		
+					}
+
+					if (Input.GetKeyDown (KeyCode.LeftShift)) {
+						//animator.SetTrigger ("Jump");
+						if (!runCoolingDown) {
+							currentSpeed = runSpeed;
+							Invoke ("ResetRunSpeed", runDuration);
+							currentRunCooldown = runCooldown;
+							runCoolingDown = true;
+						}
+					}
+
+					if (runCoolingDown) {					
+						if (currentRunCooldown > 0) {
+							currentRunCooldown -= Time.deltaTime;
+
+						} else {
+							runCoolingDown = false;
+
+						}
+
+					}
 				}
 			}
 		}
