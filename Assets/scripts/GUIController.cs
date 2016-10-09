@@ -13,6 +13,8 @@ public class GUIController : MonoBehaviour {
 	public GameObject playerOneName;
 	public GameObject playerOneWeapon;
 	public GameObject playerOneWeaponText;
+	public Text playerOnePointsText;
+
 
 	[Header("Spieler 2")]
 	public GameObject playerTwoStat;
@@ -21,6 +23,7 @@ public class GUIController : MonoBehaviour {
 	public GameObject playerTwoName;
 	public GameObject playerTwoWeapon;
 	public GameObject playerTwoWeaponText;
+	public Text playerTwoPointsText;
 
 	[HideInInspector]
 	public ScoreKeeper scoreKeeper;
@@ -59,6 +62,8 @@ public class GUIController : MonoBehaviour {
 
 			playerOneLives.GetComponent<Text> ().text = "" + targetEntity.health;
 			playerOneAmmo.GetComponent<Text> ().text = "" + currentAmmo + " / " + maxAmmo;
+
+			playerOnePointsText.text= "" + (gameControllerScript.playerOne.points);
 		}
 	}
 
