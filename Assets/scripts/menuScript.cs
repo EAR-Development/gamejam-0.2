@@ -27,8 +27,8 @@ public class menuScript : MonoBehaviour {
 	public InputField playerTwoNameField;
 	public bool characterFlipped;
 
+	public GameObject ScoreKeeperPrefab;
 	public ScoreKeeper scoreKeeper;
-
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +39,15 @@ public class menuScript : MonoBehaviour {
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
 
-		scoreKeeper = scoreKeeper.GetComponent<ScoreKeeper> ();
+		scoreKeeper = (ScoreKeeper)FindObjectOfType (typeof(ScoreKeeper));
+
+		if (scoreKeeper == null) {
+			scoreKeeper = Object.Instantiate (ScoreKeeperPrefab).GetComponent<ScoreKeeper> ();
+
+			scoreKeeper.playerTwoEnabled = false;
+			scoreKeeper.playerOneName = "Peter Lustig";
+			scoreKeeper.playerTwoName = "";
+		}
 
 		quitMenu.enabled = false;
 		playerMenu.enabled = false;
@@ -54,8 +62,15 @@ public class menuScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void LateUpdate () {
+		if (playerMenu.enabled) {
+			if (Input.GetButtonDown ("p2_use") && !secondPlayerCard.enabled) {
+				toggleSecondPlayerPress ();
+			}
+			if (Input.GetButtonDown ("p2_back") && secondPlayerCard.enabled) {
+				toggleSecondPlayerPress ();
+			}
+		}
 	}
 
 	public void ExitPress(){
