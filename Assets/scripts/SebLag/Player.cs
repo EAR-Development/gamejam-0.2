@@ -47,38 +47,41 @@ public class Player : LivingEntity {
 			if(usingController){
 				Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal2"), 0, Input.GetAxisRaw ("Vertical2"));
 				Vector3 rightStickInput = new Vector3 (Input.GetAxisRaw ("RightStickX"), 0, Input.GetAxisRaw ("RightStickY"));
+
 				Vector3 moveVelocity = moveInput.normalized * currentSpeed;
+
 				controller.Move (moveVelocity);
 
 				if (!chargeJump) {
+					Transform ProjectileSpawnTransform = gunController.equippedGun.projectileSpawn [0].transform;
 					Vector3 legLookPos = controller.mechLegs.transform.position + moveInput;
-					controller.mechLegs.LookAt (legLookPos);
+
+					controller.mechLegs.LookAt(legLookPos);
 						
 					Vector3 point = transform.position + rightStickInput * 10;
-					//	Debug.DrawLine (ray.origin, point, Color.red);
-					controller.LookAt (transform.position + rightStickInput);
-					crosshairs.transform.position = gunController.equippedGun.projectileSpawn[0].transform.position ;
-					crosshairs.transform.position += gunController.equippedGun.projectileSpawn[0].transform.forward * 10;
-					point.y = gunController.equippedGun.transform.localPosition.y;
-					//point.z -= 25;
-					//	crosshairs.DetectTargets (ray);
-					//	if ((new Vector2 (point.x, point.z) - new Vector2 (transform.position.x, transform.position.z)).sqrMagnitude > 1) {
-							gunController.Aim (point);
-					//	}
 
+					controller.LookAt (transform.position + rightStickInput);
+
+					crosshairs.transform.position = ProjectileSpawnTransform.position ;
+					crosshairs.transform.position += ProjectileSpawnTransform.forward * rightStickInput.magnitude * 20;
+
+					Vector3 aimPoint = crosshairs.transform.position;
+					aimPoint.y = gunController.GunHeight;
+
+					gunController.Aim (aimPoint);
 
 					// Weapon input
 					if(Input.GetAxis("RightTrigger") < 0){
 						gunController.OnTriggerHold ();
 					}
-					if(Input.GetAxis("RightTrigger") > 0){
+					if(Input.GetAxis("RightTrigger") >= 0){
 						gunController.OnTriggerRelease ();
 						animator.SetTrigger ("ShootWeapon1");
 						if (gunController.equippedGun.weaponType == "Flamethrower") {
 							gunController.equippedGun.hitCollider.enabled = true;
 						}
 					}
-					if (Input.GetKeyDown (KeyCode.R)) {
+					if (Input.GetButton ("p2_reload")) {
 						gunController.Reload ();
 					}
 					if (Input.GetKeyDown (KeyCode.Q)) {
@@ -117,8 +120,6 @@ public class Player : LivingEntity {
 
 					}
 				}
-
-				Debug.Log ("rightStickInput: "+rightStickInput);
 			}
 			else {
 				
