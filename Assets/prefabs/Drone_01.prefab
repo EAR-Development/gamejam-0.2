@@ -32,7 +32,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &112150
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -853,6 +853,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436596}
+  - {fileID: 496508}
   m_Father: {fileID: 497882}
   m_RootOrder: 0
 --- !u!4 &471114
@@ -948,12 +949,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112150}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.66, z: 0.207}
+  m_LocalRotation: {x: 0.8011545, y: 0, z: 0, w: 0.5984577}
+  m_LocalPosition: {x: 0, y: -0.844, z: 0.165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 497882}
-  m_RootOrder: 17
+  m_Father: {fileID: 470740}
+  m_RootOrder: 1
 --- !u!4 &497882
 Transform:
   m_ObjectHideFlags: 1
@@ -961,7 +962,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.88, y: 5.951, z: -38.89}
+  m_LocalPosition: {x: 7.88, y: 5.55, z: -38.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470740}
@@ -981,7 +982,6 @@ Transform:
   - {fileID: 433528}
   - {fileID: 414122}
   - {fileID: 470494}
-  - {fileID: 496508}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2379000
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  speed: 8
+  speed: 7
   ownerPos: {x: 0, y: 0, z: 0}
   rndTime: 0
   equippedGun: {fileID: 0}
@@ -1063,13 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponHold: {fileID: 496508}
   allGuns:
-  - {fileID: 11410872, guid: be40e0d31818f4592bef4bcccb0cf1ca, type: 2}
-  - {fileID: 11475382, guid: d603f2009b9424db0b921341cb3d3784, type: 2}
-  - {fileID: 11476506, guid: 488036bd9f9b04426a34fedb9079f997, type: 2}
-  - {fileID: 11476730, guid: 2e1ce6894843d42429ac1523bf278404, type: 2}
-  - {fileID: 11456016, guid: f7293d2c7785040f1934c99e7fa89fe1, type: 2}
-  - {fileID: 11456016, guid: f9b400fab9487284e858a64963534035, type: 2}
-  - {fileID: 11412100, guid: 930d87d331457c949a92eaf87f2058ec, type: 2}
+  - {fileID: 11476506, guid: a2433322f8cef4040bdf4a4cc55f3226, type: 2}
   equippedGun: {fileID: 0}
   euqippedGunNr: 0
 --- !u!1001 &100100000
