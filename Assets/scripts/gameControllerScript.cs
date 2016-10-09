@@ -144,6 +144,7 @@ public class gameControllerScript : MonoBehaviour {
 	}
 
 	public void ExitButtonPressed(){
+		scoreKeeper.afterGame = true;
 		SceneManager.LoadScene ("scenes/menu");
 	}
 
