@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &123558
 GameObject:
   m_ObjectHideFlags: 1
@@ -611,6 +611,7 @@ MonoBehaviour:
   weaponName: Burst SMG
   owner: {fileID: 0}
   fireMode: 1
+  weaponImage: {fileID: 0}
   projectileSpawn:
   - {fileID: 417700}
   projectile: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c, type: 2}
@@ -631,6 +632,7 @@ MonoBehaviour:
   projectilesRemainingInMag: 0
   weaponType: 
   hitCollider: {fileID: 0}
+  collidersHit: []
 --- !u!212 &21248412
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -742,6 +744,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: reloadTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

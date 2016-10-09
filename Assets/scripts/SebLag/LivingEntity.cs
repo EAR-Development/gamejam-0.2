@@ -19,6 +19,8 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 		// Do some stuff here with hit var
 		TakeDamage (damage , damager);
 		damager.hits++;
+//		DecalPainter.Instance.Paint (transform.position, Color.red, 1, 0.8f);
+		//DecalPainter.PaintDecal(RaycastHit hit, Color color, float scaleBonus);
 
 	}
 

@@ -364,6 +364,7 @@ GameObject:
   - 4: {fileID: 405924}
   - 114: {fileID: 11438718}
   - 114: {fileID: 11438020}
+  - 114: {fileID: 11439696}
   m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
@@ -906,6 +907,24 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11439696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e9844a502fe1942af720b1c3a2d227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PaintDecalPrefabs:
+  - {fileID: 441368, guid: efbda1fc8a949f14189c0394724f3f5b, type: 2}
+  DecalsParent: {fileID: 0}
+  MinScale: 0.75
+  MaxScale: 3
+  SplashRange: 1.5
+  PoolSize: 50
 --- !u!114 &11443592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2011,7 +2030,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 176}
+  m_AnchoredPosition: {x: -380, y: -53}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22456262

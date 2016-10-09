@@ -74,6 +74,7 @@ public class Player : LivingEntity {
 				}
 				if (Input.GetMouseButtonUp (0)) {
 					gunController.OnTriggerRelease ();
+					animator.SetTrigger ("ShootWeapon1");
 					if (gunController.equippedGun.weaponType == "Flamethrower") {
 						gunController.equippedGun.hitCollider.enabled = true;
 					}
@@ -107,7 +108,7 @@ public class Player : LivingEntity {
 				}
 
 				if(runCoolingDown){					
-					if (currentRunCooldown <= 0) {
+					if (currentRunCooldown > 0) {
 						currentRunCooldown -= Time.deltaTime;
 
 					} else {
