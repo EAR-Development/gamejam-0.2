@@ -717,15 +717,16 @@ MonoBehaviour:
   weaponName: Flamethrower
   owner: {fileID: 0}
   fireMode: 0
+  weaponImage: {fileID: 0}
   projectileSpawn:
   - {fileID: 429902}
   projectile: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c, type: 2}
-  msBetweenShots: 100
+  msBetweenShots: 10
   muzzleVelocity: 35
   burstCount: 3
-  projectilesPerMag: 18
+  projectilesPerMag: 400
   reloadTime: 0.3
-  damage: 1
+  damage: 5
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -855,6 +856,18 @@ Prefab:
       propertyPath: hitCollider
       value: 
       objectReference: {fileID: 13627528}
+    - target: {fileID: 0}
+      propertyPath: projectilesPerMag
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: msBetweenShots
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187104}

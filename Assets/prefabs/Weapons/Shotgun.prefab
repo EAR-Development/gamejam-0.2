@@ -667,6 +667,7 @@ MonoBehaviour:
   weaponName: Shotgun
   owner: {fileID: 0}
   fireMode: 2
+  weaponImage: {fileID: 0}
   projectileSpawn:
   - {fileID: 411416}
   - {fileID: 487730}
@@ -677,6 +678,7 @@ MonoBehaviour:
   burstCount: 3
   projectilesPerMag: 6
   reloadTime: 0.2
+  damage: 70
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -686,6 +688,9 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: 12e2048c8149340b78a140055523ebed, type: 3}
   reloadAudio: {fileID: 8300000, guid: f6813b79839414c8c83dd4cd03fb4b8a, type: 3}
   projectilesRemainingInMag: 0
+  weaponType: 
+  hitCollider: {fileID: 0}
+  collidersHit: []
 --- !u!212 &21234086
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -773,6 +778,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: weaponName
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

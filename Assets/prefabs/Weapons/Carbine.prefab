@@ -464,10 +464,11 @@ MonoBehaviour:
   weaponName: Carbine
   owner: {fileID: 0}
   fireMode: 2
+  weaponImage: {fileID: 0}
   projectileSpawn:
   - {fileID: 450644}
   projectile: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c, type: 2}
-  msBetweenShots: 600
+  msBetweenShots: 500
   muzzleVelocity: 20
   burstCount: 1
   projectilesPerMag: 10
@@ -484,6 +485,7 @@ MonoBehaviour:
   projectilesRemainingInMag: 0
   weaponType: 
   hitCollider: {fileID: 0}
+  collidersHit: []
 --- !u!114 &11423802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -611,7 +613,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: msBetweenShots
-      value: 600
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

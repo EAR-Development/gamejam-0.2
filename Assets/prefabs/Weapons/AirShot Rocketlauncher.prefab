@@ -793,6 +793,7 @@ MonoBehaviour:
   weaponName: AirShot Rocketlauncher
   owner: {fileID: 0}
   fireMode: 1
+  weaponImage: {fileID: 0}
   projectileSpawn:
   - {fileID: 453582}
   - {fileID: 454308}
@@ -806,7 +807,7 @@ MonoBehaviour:
   burstCount: 3
   projectilesPerMag: 12
   reloadTime: 5
-  damage: 100
+  damage: 200
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
@@ -818,6 +819,7 @@ MonoBehaviour:
   projectilesRemainingInMag: 0
   weaponType: 
   hitCollider: {fileID: 0}
+  collidersHit: []
 --- !u!114 &11499072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -933,7 +935,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: projectilesPerMag
