@@ -59,8 +59,6 @@ public class gameControllerScript : MonoBehaviour {
 			scoreKeeper.playerTwoName = "";
 		}
 
-		Debug.Log ("Start");
-
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
 
 			target = GameObject.FindGameObjectWithTag ("Player").transform;

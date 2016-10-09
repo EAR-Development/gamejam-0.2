@@ -16,7 +16,7 @@ public class DoorButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(playerEntered){
-			if (Input.GetKeyDown (KeyCode.E)) {
+			if (Input.GetKeyDown (KeyCode.E) || Input.GetButtonDown ("p2_use")) {
 				if (gameControllerScript.playerOne.points >= cost) {
 					animController.SetBool ("open", !animController.GetBool ("open"));
 					gameControllerScript.playerOne.points -= cost;

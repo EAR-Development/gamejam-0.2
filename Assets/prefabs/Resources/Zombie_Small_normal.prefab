@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &153170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  animator: {fileID: 0}
   deathEffect: {fileID: 19878482, guid: 9ede256124f5842f1afbff9d9af29df7, type: 2}
   damage: 10
   spawner: {fileID: 0}

@@ -14,15 +14,21 @@ public class menuScript : MonoBehaviour {
 	public Sprite plusSprite;
 	public Sprite minusSprite;
 
+	public Sprite Mech01;
+	public Sprite Mech02;
+
+	public GameObject playerOnePortrait;
+	public GameObject playerTwoPortrait;
 
 	public Button startText;
 	public Button exitText;
 
 	public InputField playerOneNameField;
 	public InputField playerTwoNameField;
+	public bool characterFlipped;
 
+	public GameObject ScoreKeeperPrefab;
 	public ScoreKeeper scoreKeeper;
-
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +39,15 @@ public class menuScript : MonoBehaviour {
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
 
-		scoreKeeper = scoreKeeper.GetComponent<ScoreKeeper> ();
+		scoreKeeper = (ScoreKeeper)FindObjectOfType (typeof(ScoreKeeper));
+
+		if (scoreKeeper == null) {
+			scoreKeeper = Object.Instantiate (ScoreKeeperPrefab).GetComponent<ScoreKeeper> ();
+
+			scoreKeeper.playerTwoEnabled = false;
+			scoreKeeper.playerOneName = "Peter Lustig";
+			scoreKeeper.playerTwoName = "";
+		}
 
 		quitMenu.enabled = false;
 		playerMenu.enabled = false;
@@ -42,11 +56,21 @@ public class menuScript : MonoBehaviour {
 
 		Time.timeScale = 1.0F;
 		Time.fixedDeltaTime = 0.02F * Time.timeScale;
+
+		playerOnePortrait.GetComponent<Image> ().overrideSprite = Mech01;
+		playerTwoPortrait.GetComponent<Image> ().overrideSprite = Mech02;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void LateUpdate () {
+		if (playerMenu.enabled) {
+			if (Input.GetButtonDown ("p2_use") && !secondPlayerCard.enabled) {
+				toggleSecondPlayerPress ();
+			}
+			if (Input.GetButtonDown ("p2_back") && secondPlayerCard.enabled) {
+				toggleSecondPlayerPress ();
+			}
+		}
 	}
 
 	public void ExitPress(){
@@ -74,9 +98,22 @@ public class menuScript : MonoBehaviour {
 		secondPlayerCard.enabled = !secondPlayerCard.enabled;
 	}
 
+	public void FlipPress(){
+		characterFlipped = !characterFlipped;
+
+		if (!characterFlipped) {
+			playerOnePortrait.GetComponent<Image> ().overrideSprite = Mech01;
+			playerTwoPortrait.GetComponent<Image> ().overrideSprite = Mech02;
+		} else {
+			playerOnePortrait.GetComponent<Image> ().overrideSprite = Mech02;
+			playerTwoPortrait.GetComponent<Image> ().overrideSprite = Mech01;
+		}
+	}
+
 	public void BackPress(){
 		startMenu.enabled = true;
 		playerMenu.enabled = false;
+		secondPlayerCard.enabled = false;
 	}
 
 	public void StartPress(){
