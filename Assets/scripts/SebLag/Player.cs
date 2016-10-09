@@ -40,7 +40,6 @@ public class Player : LivingEntity {
 	void Awake() {
 		controller = GetComponent<PlayerController> ();
 		gunController = GetComponent<GunController> ();
-		gunController.EquipGun (0,this);
 		viewCamera = Camera.main;
 		//FindObjectOfType<Spawner> ().OnNewWave += OnNewWave;
 	}

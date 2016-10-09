@@ -195,7 +195,7 @@ public class gameControllerScript : MonoBehaviour {
 
 		for(int i=0;i<spawnpoints.Count;i++){
 
-			for(int j=0;j<points.Length;i++){
+			for(int j=0;j<points.Length;j++){
 
 				if(points[j]==spawnpoints[i]){
 					spawnpoints [i].gameObject.SetActive (true);

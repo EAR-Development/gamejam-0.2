@@ -9,6 +9,7 @@ public class WeaponShop: MonoBehaviour {
 	public string ShopTitle;
 	public int armWepItem;
 	public int backWepItem;
+	public Gun gun;
 	public Material m;
 	public Transform wobblePlate;
 	public Color wobbleColor;
@@ -30,7 +31,7 @@ public class WeaponShop: MonoBehaviour {
 			m = renderer.material;
 
 			float emission = Mathf.PingPong (Time.time, 1.0f);
-			 //Replace this with whatever you want for your base color at emission level '1'
+
 
 		Color finalColor = wobbleColor * Mathf.LinearToGammaSpace (emission);
 
@@ -45,7 +46,7 @@ public class WeaponShop: MonoBehaviour {
 					p.points -= cost;
 
 
-					//p.GetComponent<GunController> ().pickUpNewWeapon (armWepItem);
+					p.GetComponent<GunController> ().pickUpNewWeapon (gun);
 
 				
 					//Update GUI!!
