@@ -151,6 +151,8 @@ public class Enemy : LivingEntity {
 		pathfinder.enabled = true;
 	}
 
+
+
 	IEnumerator UpdatePath() {
 		float refreshRate = 0.1f;
 
@@ -174,5 +176,9 @@ public class Enemy : LivingEntity {
 	void OnDestroy(){
 //		print (spawner.spawnedUnits.Count);
 		spawner.spawnedUnits.Remove (this);
+	}
+
+	void Die(){
+		
 	}
 }

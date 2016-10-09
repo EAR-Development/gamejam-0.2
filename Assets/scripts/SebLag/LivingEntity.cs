@@ -8,9 +8,11 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 	protected bool dead;
 
 	public event System.Action OnDeath;
+	public Animator animator;
 
 	protected virtual void Start() {
 		health = startingHealth;
+		animator = GetComponent<Animator> ();
 	}
 
 	public virtual void TakeHit(float damage, Vector3 hitPoint, Vector3 hitDirection, Player damager) {
@@ -27,6 +29,7 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 			Die();
 			damager.kills++;
 			damager.points += 10;
+			animator.SetTrigger("Die");
 
 		}
 	}
@@ -37,6 +40,14 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 		if (OnDeath != null) {
 			OnDeath();
 		}
+		Destroy( GetComponent<Enemy> ());
+		Destroy( GetComponent<CapsuleCollider> ());
+		Destroy( GetComponent<NavMeshAgent> ());
+		Invoke ("delayedDestroy",8);
+
+	}
+
+	public void delayedDestroy(){
 		GameObject.Destroy (gameObject);
 	}
 }
