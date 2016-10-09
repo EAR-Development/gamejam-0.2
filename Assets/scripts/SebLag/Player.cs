@@ -6,7 +6,7 @@ using System.Collections;
 public class Player : LivingEntity {
 
 	public float moveSpeed = 5;
-	public float runSpeed = 7;
+	public float runSpeed = 20;
 	public float runCooldown = 10;
 	public float runDuration = 2;
 	public bool runCoolingDown = false;
@@ -86,10 +86,10 @@ public class Player : LivingEntity {
 							gunController.equippedGun.hitCollider.enabled = true;
 						}
 					}
-					if (Input.GetButton ("p2_reload")) {
+					if (Input.GetButtonDown ("p2_reload")) {
 						gunController.Reload ();
 					}
-					if (Input.GetKeyDown (KeyCode.Q)) {
+					if (Input.GetButtonDown ("p2_change")) {
 						if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
 							gunController.euqippedGunNr++;
 
@@ -193,12 +193,11 @@ public class Player : LivingEntity {
 						gunController.EquipGun (gunController.euqippedGunNr, this);
 					}
 
-					if (Input.GetKeyDown (KeyCode.Space)) {
+					if (Input.GetButtonDown ("p2_special")) {
 						animator.SetTrigger ("Jump");		
 					}
 
-					if (Input.GetKeyDown (KeyCode.LeftShift)) {
-						//animator.SetTrigger ("Jump");
+					if (Input.GetButtonDown ("p2_sprint")) {
 						if (!runCoolingDown) {
 							currentSpeed = runSpeed;
 							Invoke ("ResetRunSpeed", runDuration);
@@ -230,7 +229,4 @@ public class Player : LivingEntity {
 	public void ResetRunSpeed(){
 		currentSpeed = moveSpeed;
 	}
-
-
-		
 }
