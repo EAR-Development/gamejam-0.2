@@ -736,6 +736,8 @@ MonoBehaviour:
   shootAudio: {fileID: 8300000, guid: 90bb8f60485d141089a4870536866a85, type: 3}
   reloadAudio: {fileID: 8300000, guid: d617432175d1a42b9adc26881cd90b15, type: 3}
   projectilesRemainingInMag: 0
+  preFireDuration: 0
+  preFireDurationMax: 0
   weaponType: Auto
   hitCollider: {fileID: 0}
   collidersHit: []
@@ -855,6 +857,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: weaponType
       value: Auto
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: preFireDurationMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: preFireDuration
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

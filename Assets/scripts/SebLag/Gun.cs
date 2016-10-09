@@ -41,6 +41,10 @@ public class Gun : MonoBehaviour {
 	int shotsRemainingInBurst;
 	public int projectilesRemainingInMag;
 	bool isReloading;
+	public bool spinUp = true;
+	//public bool preFire = false;
+	public float preFireDuration;
+	public float preFireDurationMax;
 
 	Vector3 recoilSmoothDampVelocity;
 	float recoilRotSmoothDampVelocity;
@@ -69,61 +73,73 @@ public class Gun : MonoBehaviour {
 
 	void Shoot() {
 		if (!isReloading && Time.time > nextShotTime && projectilesRemainingInMag > 0) {
-			if (fireMode == FireMode.Burst) {
-				if (shotsRemainingInBurst == 0) {
-					return;
+			if (preFireDuration > 0) {				
+				preFireDuration -= Time.deltaTime;
+			} else {				
+
+				if (fireMode == FireMode.Burst) {
+					if (shotsRemainingInBurst == 0) {
+						return;
+					}
+					shotsRemainingInBurst--;
+				} else if (fireMode == FireMode.Single) {
+					if (!triggerReleasedSinceLastShot) {
+						return;
+					}
 				}
-				shotsRemainingInBurst --;
+
+				for (int i = 0; i < projectileSpawn.Length; i++) {
+
+					//play shot sound
+					if (weaponType == "Carbine") {
+						//AudioManager.instance.PlaySound2D ("MechaWalking");
+					} else if (weaponType == "Rocket") {
+						AudioManager.instance.PlaySound2D ("Rocketlauncher_Shot");
+					} else if (weaponType == "Minigun") {
+						AudioManager.instance.PlaySound2D ("Minigun_Shot");
+					}
+
+
+					if (projectilesRemainingInMag == 0) {
+						break;
+					}
+					projectilesRemainingInMag--;
+
+					if (projectilesRemainingInMag == 0) {
+						Reload ();
+					}
+
+					nextShotTime = Time.time + msBetweenShots / 1000;
+					if (weaponType == "Flamethrower") {
+						hitCollider.enabled = true;
+					} else {
+						Projectile newProjectile = Instantiate (projectile, projectileSpawn [i].position, projectileSpawn [i].rotation) as Projectile;
+						newProjectile.SetSpeed (muzzleVelocity);
+						newProjectile.owner = owner;
+						newProjectile.damage = damage;
+					}
+				}
+
+				Instantiate (shell, shellEjection.position, shellEjection.rotation);
+				muzzleflash.Activate ();
+				transform.localPosition -= Vector3.forward * Random.Range (kickMinMax.x, kickMinMax.y);
+				recoilAngle += Random.Range (recoilAngleMinMax.x, recoilAngleMinMax.y);
+				recoilAngle = Mathf.Clamp (recoilAngle, 0, 30);
+
 			}
-			else if (fireMode == FireMode.Single) {
-				if (!triggerReleasedSinceLastShot) {
-					return;
-				}
-			}
-
-			for (int i =0; i < projectileSpawn.Length; i ++) {
-				if (projectilesRemainingInMag == 0) {
-					break;
-				}
-				projectilesRemainingInMag --;
-
-				if (projectilesRemainingInMag == 0) {
-					Reload ();
-				}
-
-				nextShotTime = Time.time + msBetweenShots / 1000;
-				if (weaponType == "Flamethrower") {
-					hitCollider.enabled = true;
-				}
-				else {
-					Projectile newProjectile = Instantiate (projectile, projectileSpawn [i].position, projectileSpawn [i].rotation) as Projectile;
-					newProjectile.SetSpeed (muzzleVelocity);
-					newProjectile.owner = owner;
-					newProjectile.damage = damage;
-				}
-			}
-
-			Instantiate(shell,shellEjection.position, shellEjection.rotation);
-			muzzleflash.Activate();
-			transform.localPosition -= Vector3.forward * Random.Range(kickMinMax.x, kickMinMax.y);
-			recoilAngle += Random.Range(recoilAngleMinMax.x, recoilAngleMinMax.y);
-			recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
-
-
 		}
 	}
 
 	public void Reload() {
 		if (!isReloading && projectilesRemainingInMag != projectilesPerMag) {
 			StartCoroutine (AnimateReload ());
-
 		}
 	}
 
 	IEnumerator AnimateReload() {
 		isReloading = true;
 		yield return new WaitForSeconds (.2f);
-		//AudioManager.instance.PlaySound (reloadAudio, transform.position);
+		AudioManager.instance.PlaySound2D ("Mecha_Reload");
 
 		float reloadSpeed = 1f / reloadTime;
 		float percent = 0;
@@ -153,11 +169,17 @@ public class Gun : MonoBehaviour {
 	public void OnTriggerHold() {
 		Shoot ();
 		triggerReleasedSinceLastShot = false;
+		if (spinUp && preFireDuration > 0) {
+			AudioManager.instance.PlaySound2D ("Minigun_SpinUp");
+			spinUp = false;
+		}
 	}
 
 	public void OnTriggerRelease() {
 		triggerReleasedSinceLastShot = true;
+		spinUp = true;
 		shotsRemainingInBurst = burstCount;
+		preFireDuration = preFireDurationMax;
 		if (hitCollider) {
 			hitCollider.enabled = false;
 		}

@@ -114,6 +114,7 @@ public class gameControllerScript : MonoBehaviour {
 
 
 		Destroy (currentSpawner.gameObject);
+		AudioManager.instance.PlaySound2D ("NextWave");
 		currentSpawner = (Instantiate (allSpawner [nextWave]) as GameObject).GetComponent<enemySpawner> ();
 		currentSpawner.gcs = this;
 		nextWave++;
