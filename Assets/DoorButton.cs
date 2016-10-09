@@ -8,9 +8,12 @@ public class DoorButton : MonoBehaviour {
 	public float cost;
 	public bool OneWayUse;
 	public Transform[] spawnpoints;
+	public bool closed;
 	// Use this for initialization
 	void Start () {
-			
+		if(closed){
+			animController.SetBool ("open",false);
+		}
 	}
 	
 	// Update is called once per frame
