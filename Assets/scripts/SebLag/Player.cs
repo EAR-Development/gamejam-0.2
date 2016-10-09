@@ -6,6 +6,10 @@ using System.Collections;
 public class Player : LivingEntity {
 
 	public float moveSpeed = 5;
+	public float runSpeed = 7;
+	public float runCooldown = 10;
+	public float runDuration = 2;
+	public bool runCoolingDown = false;
 
 	public Crosshairs crosshairs;
 
@@ -20,6 +24,8 @@ public class Player : LivingEntity {
 	public float hits=1;
 	public float misses=0;
 
+	float currentRunCooldown;
+	float currentSpeed = 5;
 	public float points;
 
 	protected override void Start () {
@@ -38,7 +44,7 @@ public class Player : LivingEntity {
 		if (!pause) {
 			// Movement input
 			Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
-			Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+			Vector3 moveVelocity = moveInput.normalized * currentSpeed;
 			controller.Move (moveVelocity);
 
 			if (!chargeJump) {
@@ -85,8 +91,30 @@ public class Player : LivingEntity {
 
 					gunController.EquipGun (gunController.euqippedGunNr, this);
 				}
+
 				if (Input.GetKeyDown (KeyCode.Space)) {
 					animator.SetTrigger ("Jump");		
+				}
+
+				if (Input.GetKeyDown (KeyCode.LeftShift)) {
+					//animator.SetTrigger ("Jump");
+					if(!runCoolingDown){
+						currentSpeed = runSpeed;
+						Invoke ("ResetRunSpeed",runDuration);
+						currentRunCooldown = runCooldown;
+						runCoolingDown = true;
+					}
+				}
+
+				if(runCoolingDown){					
+					if (currentRunCooldown <= 0) {
+						currentRunCooldown -= Time.deltaTime;
+
+					} else {
+						runCoolingDown = false;
+
+					}
+
 				}
 			}
 		}
@@ -95,6 +123,10 @@ public class Player : LivingEntity {
 	public override void Die ()
 	{
 		base.Die ();
+	}
+
+	public void ResetRunSpeed(){
+		currentSpeed = moveSpeed;
 	}
 
 

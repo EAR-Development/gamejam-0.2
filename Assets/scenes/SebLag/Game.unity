@@ -46963,6 +46963,14 @@ Prefab:
       propertyPath: m_Name
       value: Mech
       objectReference: {fileID: 0}
+    - target: {fileID: 11402322, guid: e0e976770f68d69439f9edf5d9b70793, type: 2}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402322, guid: e0e976770f68d69439f9edf5d9b70793, type: 2}
+      propertyPath: runDuration
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0e976770f68d69439f9edf5d9b70793, type: 2}
   m_IsPrefabParent: 0
