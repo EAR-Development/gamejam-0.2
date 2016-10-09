@@ -367,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 412604}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &409184
 Transform:
   m_ObjectHideFlags: 1
@@ -390,6 +390,7 @@ Transform:
   m_LocalPosition: {x: 2.1257439e-10, y: 0.013103795, z: 6.2328764e-10}
   m_LocalScale: {x: 0.9999998, y: 0.9999996, z: 1}
   m_Children:
+  - {fileID: 495364}
   - {fileID: 403038}
   m_Father: {fileID: 427104}
   m_RootOrder: 0
@@ -455,7 +456,7 @@ Transform:
   m_Children:
   - {fileID: 445452}
   m_Father: {fileID: 496198}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &443106
 Transform:
   m_ObjectHideFlags: 1
@@ -519,7 +520,7 @@ Transform:
   m_Children:
   - {fileID: 464442}
   m_Father: {fileID: 496198}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &474178
 Transform:
   m_ObjectHideFlags: 1
@@ -594,7 +595,7 @@ Transform:
   - {fileID: 427104}
   - {fileID: 437354}
   m_Father: {fileID: 496198}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &492452
 Transform:
   m_ObjectHideFlags: 1
@@ -602,7 +603,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.41, y: -0.5, z: -37.69}
+  m_LocalPosition: {x: 15, y: -0.5, z: -73.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468816}
@@ -618,12 +619,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177092}
-  m_LocalRotation: {x: 0.000000184086, y: 0.70665586, z: 0.70755744, w: 0.0000000043425494}
-  m_LocalPosition: {x: -0.015003866, y: 0.018205589, z: 0.0062322747}
-  m_LocalScale: {x: 1, y: 0.9999998, z: 0.9999999}
+  m_LocalRotation: {x: -0.34455296, y: -0.00021719965, z: -0.0001657314, w: 0.93876684}
+  m_LocalPosition: {x: 0, y: 0.0075023435, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 496198}
-  m_RootOrder: 2
+  m_Father: {fileID: 412604}
+  m_RootOrder: 0
 --- !u!4 &496198
 Transform:
   m_ObjectHideFlags: 1
@@ -636,7 +637,6 @@ Transform:
   m_Children:
   - {fileID: 434208}
   - {fileID: 474178}
-  - {fileID: 495364}
   - {fileID: 469782}
   - {fileID: 440936}
   - {fileID: 490012}
@@ -700,13 +700,21 @@ MonoBehaviour:
   startingHealth: 300
   animator: {fileID: 0}
   moveSpeed: 5
+  runSpeed: 7
+  runCooldown: 10
+  runDuration: 2.5
+  runCoolingDown: 0
   crosshairs: {fileID: 0}
   pause: 0
   chargeJump: 0
+  gunController: {fileID: 0}
+  backGunController: {fileID: 0}
   kills: 0
   hits: 0
   misses: 0
+  usingController: 1
   points: 0
+  playerLookAt: {fileID: 0}
 --- !u!114 &11462472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -729,6 +737,10 @@ MonoBehaviour:
   - {fileID: 11412100, guid: 930d87d331457c949a92eaf87f2058ec, type: 2}
   equippedGun: {fileID: 0}
   euqippedGunNr: 0
+  maxWeaponslots: 0
+  weaponSlot1: 0
+  weaponSlot2: 0
+  weaponSlot3: 0
 --- !u!114 &11474910
 MonoBehaviour:
   m_ObjectHideFlags: 1

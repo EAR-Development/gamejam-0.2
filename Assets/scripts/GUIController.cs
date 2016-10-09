@@ -4,17 +4,25 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GUIController : MonoBehaviour {
-
-	public GameObject lives;
-	public GameObject ammo;
 	public GameObject waveAnnouncer;
 
+	[Header("Spieler 1")]
+	public GameObject playerOneStat;
+	public GameObject playerOneLives;
+	public GameObject playerOneAmmo;
 	public GameObject playerOneName;
 	public GameObject playerOneWeapon;
 	public GameObject playerOneWeaponText;
 
+	[Header("Spieler 2")]
+	public GameObject playerTwoStat;
+	public GameObject playerTwoLives;
+	public GameObject playerTwoAmmo;
 	public GameObject playerTwoName;
+	public GameObject playerTwoWeapon;
+	public GameObject playerTwoWeaponText;
 
+	[HideInInspector]
 	public ScoreKeeper scoreKeeper;
 
 	Transform target;
@@ -27,6 +35,7 @@ public class GUIController : MonoBehaviour {
 			target = GameObject.FindGameObjectWithTag ("Player").transform;
 			targetEntity = target.GetComponent<LivingEntity> ();
 		}	
+
 		waveAnnouncer.GetComponent<Text> ().text = "";
 	}
 
@@ -48,8 +57,8 @@ public class GUIController : MonoBehaviour {
 				playerOneWeapon.GetComponent<Image> ().enabled = false;
 			}
 
-			lives.GetComponent<Text> ().text = "" + targetEntity.health;
-			ammo.GetComponent<Text> ().text = "" + currentAmmo + " / " + maxAmmo;
+			playerOneLives.GetComponent<Text> ().text = "" + targetEntity.health;
+			playerOneAmmo.GetComponent<Text> ().text = "" + currentAmmo + " / " + maxAmmo;
 		}
 	}
 
@@ -61,6 +70,13 @@ public class GUIController : MonoBehaviour {
 	public void setScoreKeeper(ScoreKeeper sk){
 		scoreKeeper = sk;
 		playerOneName.GetComponent<Text> ().text = scoreKeeper.playerOneName;
+
+		if (!scoreKeeper.playerTwoEnabled) {
+			playerTwoStat.SetActive (false);
+		} else {
+			playerTwoStat.SetActive (true);
+			playerTwoName.GetComponent<Text> ().text = scoreKeeper.playerTwoName;
+		}
 	}
 
 	IEnumerator ShowWaveAnnouncer(int waveNumber){

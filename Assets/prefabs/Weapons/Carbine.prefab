@@ -30,7 +30,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &116126
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   weaponName: Carbine
   owner: {fileID: 0}
   fireMode: 2
-  weaponImage: {fileID: 0}
+  weaponImage: {fileID: 21300000, guid: 88e7a2bce4dcde641b8d2d98949bcbb2, type: 3}
   projectileSpawn:
   - {fileID: 450644}
   projectile: {fileID: 11465928, guid: a883f094d9687486eaef1f0ea8e4a96c, type: 2}
@@ -615,6 +615,15 @@ Prefab:
       propertyPath: msBetweenShots
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 88e7a2bce4dcde641b8d2d98949bcbb2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145152}
