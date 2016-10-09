@@ -38,7 +38,8 @@ public class GUIController : MonoBehaviour {
 			target = GameObject.FindGameObjectWithTag ("Player").transform;
 			targetEntity = target.GetComponent<LivingEntity> ();
 		}	
-
+		playerOnePointsText.text = "0";
+		playerTwoPointsText.text = "0";
 		waveAnnouncer.GetComponent<Text> ().text = "";
 	}
 
