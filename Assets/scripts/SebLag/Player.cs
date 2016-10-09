@@ -49,7 +49,7 @@ public class Player : LivingEntity {
 
 	void Update () {
 		if (!pause) {
-			if(usingController){
+			if (usingController) {
 				Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal2"), 0, Input.GetAxisRaw ("Vertical2"));
 				Vector3 rightStickInput = new Vector3 (Input.GetAxisRaw ("RightStickX"), 0, Input.GetAxisRaw ("RightStickY"));
 
@@ -61,13 +61,13 @@ public class Player : LivingEntity {
 					Transform ProjectileSpawnTransform = gunController.equippedGun.projectileSpawn [0].transform;
 					Vector3 legLookPos = controller.mechLegs.transform.position + moveInput;
 
-					controller.mechLegs.LookAt(legLookPos);
+					controller.mechLegs.LookAt (legLookPos);
 						
 					Vector3 point = transform.position + rightStickInput * 10;
 
 					controller.LookAt (transform.position + rightStickInput);
 
-					crosshairs.transform.position = ProjectileSpawnTransform.position ;
+					crosshairs.transform.position = ProjectileSpawnTransform.position;
 					crosshairs.transform.position += ProjectileSpawnTransform.forward * rightStickInput.magnitude * 20;
 
 					Vector3 aimPoint = crosshairs.transform.position;
@@ -76,10 +76,10 @@ public class Player : LivingEntity {
 					gunController.Aim (aimPoint);
 
 					// Weapon input
-					if(Input.GetAxis("RightTrigger") < 0){
+					if (Input.GetAxis ("RightTrigger") < 0) {
 						gunController.OnTriggerHold ();
 					}
-					if(Input.GetAxis("RightTrigger") >= 0){
+					if (Input.GetAxis ("RightTrigger") >= 0) {
 						gunController.OnTriggerRelease ();
 						animator.SetTrigger ("ShootWeapon1");
 						if (gunController.equippedGun.weaponType == "Flamethrower") {
@@ -117,30 +117,28 @@ public class Player : LivingEntity {
 					gunController.switchWeapon ();
 				}
 
-					if (Input.GetKeyDown (KeyCode.LeftShift)) {
-						//animator.SetTrigger ("Jump");
-						if (!runCoolingDown) {
-							currentSpeed = runSpeed;
-							Invoke ("ResetRunSpeed", runDuration);
-							currentRunCooldown = runCooldown;
-							runCoolingDown = true;
-						}
-					}
-
-
-					if (runCoolingDown) {					
-						if (currentRunCooldown > 0) {
-							currentRunCooldown -= Time.deltaTime;
-
-						} else {
-							runCoolingDown = false;
-
-						}
-
+				if (Input.GetKeyDown (KeyCode.LeftShift)) {
+					//animator.SetTrigger ("Jump");
+					if (!runCoolingDown) {
+						currentSpeed = runSpeed;
+						Invoke ("ResetRunSpeed", runDuration);
+						currentRunCooldown = runCooldown;
+						runCoolingDown = true;
 					}
 				}
-			}
-			else {
+
+
+				if (runCoolingDown) {					
+					if (currentRunCooldown > 0) {
+						currentRunCooldown -= Time.deltaTime;
+
+					} else {
+						runCoolingDown = false;
+
+					}
+
+				}
+			} else {
 				
 				// Movement input
 				Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
@@ -218,6 +216,7 @@ public class Player : LivingEntity {
 					}
 				}
 			}
+		}
 
 	}
 
