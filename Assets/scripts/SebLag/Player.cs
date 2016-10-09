@@ -13,7 +13,8 @@ public class Player : LivingEntity {
 	public bool chargeJump = false;
 	Camera viewCamera;
 	PlayerController controller;
-	GunController gunController;
+	public GunController gunController;
+	public GunController backGunController;
 
 	public float kills=0;
 	public float hits=1;

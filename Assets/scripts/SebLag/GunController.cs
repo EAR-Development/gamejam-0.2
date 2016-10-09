@@ -7,6 +7,10 @@ public class GunController : MonoBehaviour {
 	public Gun[] allGuns;
 	public Gun equippedGun;
 	public int euqippedGunNr =-1;
+	public int maxWeaponslots;
+	public int weaponSlot1;
+	public int weaponSlot2;
+	public int weaponSlot3;
 
 	void Start() {
 	}

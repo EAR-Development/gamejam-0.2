@@ -43,11 +43,10 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 		Destroy( GetComponent<Enemy> ());
 		Destroy( GetComponent<CapsuleCollider> ());
 		Destroy( GetComponent<NavMeshAgent> ());
-		Invoke ("delayedDestroy",8);
+		gameObject.AddComponent<AutoDestroyer> ();
+
 
 	}
 
-	public void delayedDestroy(){
-		GameObject.Destroy (gameObject);
-	}
+
 }

@@ -31,6 +31,9 @@ public class gameControllerScript : MonoBehaviour {
 	public List<Transform> spawnpoints;
 	public Transform spawnPointsParent;
 
+	public static Player playerOne{ get; set;}
+	public static Player playerTwo{ get; set;}
+	public static gameControllerScript controller{ get; set;}
 
 
 	// Use this for initialization
@@ -54,7 +57,8 @@ public class gameControllerScript : MonoBehaviour {
 
 			target = GameObject.FindGameObjectWithTag ("Player").transform;
 			targetEntity = target.GetComponent<LivingEntity> ();
-
+			gameControllerScript.playerOne = target.GetComponent<Player> ();
+			//player 2 TODO
 			targetEntity.OnDeath += OnPlayerDeath;
 		}
 
@@ -69,6 +73,7 @@ public class gameControllerScript : MonoBehaviour {
 		endMenu.enabled = false;
 
 		setupSpawnpoints ();
+		gameControllerScript.controller = this;
 
 	}
 
