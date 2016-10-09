@@ -712,9 +712,10 @@ MonoBehaviour:
   kills: 0
   hits: 0
   misses: 0
-  usingController: 1
+  usingController: 0
   points: 0
   playerLookAt: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &11462472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -737,10 +738,14 @@ MonoBehaviour:
   - {fileID: 11412100, guid: 930d87d331457c949a92eaf87f2058ec, type: 2}
   equippedGun: {fileID: 0}
   euqippedGunNr: 0
+  currentSlotNumber: 0
+  currentWeaponSlots: 2
   maxWeaponslots: 0
-  weaponSlot1: 0
-  weaponSlot2: 0
-  weaponSlot3: 0
+  WeaponSlots: 
+  ammo: 
+  ammoInMagazine: 
+  maxAmmoInStache: 
+  owner: {fileID: 0}
 --- !u!114 &11474910
 MonoBehaviour:
   m_ObjectHideFlags: 1
