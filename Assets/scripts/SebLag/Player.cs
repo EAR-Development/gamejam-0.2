@@ -6,7 +6,7 @@ using System.Collections;
 public class Player : LivingEntity {
 
 	public float moveSpeed = 5;
-	public float runSpeed = 20;
+	public float runSpeed = 7;
 	public float runCooldown = 10;
 	public float runDuration = 2;
 	public bool runCoolingDown = false;
@@ -38,12 +38,8 @@ public class Player : LivingEntity {
 	void Awake() {
 		controller = GetComponent<PlayerController> ();
 		gunController = GetComponent<GunController> ();
-		gunController.setup ();
-		gunController.owner = this;
-		gunController.pickUpNewWeapon(0);
-	
+		gunController.EquipGun (0,this);
 		viewCamera = Camera.main;
-		//gunController.RefillStacheAmmo (1,singleWeapon: false);
 		//FindObjectOfType<Spawner> ().OnNewWave += OnNewWave;
 	}
 
@@ -191,4 +187,10 @@ public class Player : LivingEntity {
 	public void ResetRunSpeed(){
 		currentSpeed = moveSpeed;
 	}
+
+	public void PlayWalkSound(){
+		//currentSpeed = moveSpeed;
+		AudioManager.instance.PlaySound2D ("MechaWalking");
+	}
+		
 }
