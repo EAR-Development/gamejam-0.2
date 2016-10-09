@@ -312,6 +312,8 @@ ModelImporter:
         weight: 1
       - path: Armature/lowerTorso/footCONTROL.r
         weight: 1
+      - path: Armature/lowerTorso/meleeCONTROL
+        weight: 1
       - path: Armature/lowerTorso/upperLeg.l
         weight: 1
       - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
@@ -330,11 +332,17 @@ ModelImporter:
         weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
         weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l/hammerHead
+        weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.r
         weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
         weight: 1
       - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
         weight: 1
       - path: Cube.057
         weight: 1
@@ -376,6 +384,8 @@ ModelImporter:
         weight: 1
       - path: Armature/lowerTorso/footCONTROL.r
         weight: 1
+      - path: Armature/lowerTorso/meleeCONTROL
+        weight: 1
       - path: Armature/lowerTorso/upperLeg.l
         weight: 1
       - path: Armature/lowerTorso/upperLeg.l/lowerLeg.l
@@ -394,11 +404,17 @@ ModelImporter:
         weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l
         weight: 1
+      - path: Armature/lowerTorso/upperTorso/upperArm.l/lowerArm.l/hammerHead
+        weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.r
         weight: 1
       - path: Armature/lowerTorso/upperTorso/upperArm.r/lowerArm.r
         weight: 1
       - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
         weight: 1
       - path: Cube.057
         weight: 1
