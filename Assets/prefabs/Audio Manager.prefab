@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &145662
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143420}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &11423506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,6 +98,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: cf6559c83d6107d4499fb01f4525c735, type: 3}
     - {fileID: 8300000, guid: 0c5f340767ceb0647ac02235c02f6a42, type: 3}
     - {fileID: 8300000, guid: 649afddb37101e74e9783d09fe1e219b, type: 3}
+  - groupID: 
+    group: []
 --- !u!114 &11492390
 MonoBehaviour:
   m_ObjectHideFlags: 1
