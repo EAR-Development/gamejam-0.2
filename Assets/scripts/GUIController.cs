@@ -60,7 +60,6 @@ public class GUIController : MonoBehaviour {
 
 	public void setScoreKeeper(ScoreKeeper sk){
 		scoreKeeper = sk;
-		Debug.Log(scoreKeeper.playerOneName);
 		playerOneName.GetComponent<Text> ().text = scoreKeeper.playerOneName;
 	}
 

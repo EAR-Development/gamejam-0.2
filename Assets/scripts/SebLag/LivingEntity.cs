@@ -26,6 +26,7 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 		if (health <= 0 && !dead) {
 			Die();
 			damager.kills++;
+			damager.points += 10;
 
 		}
 	}

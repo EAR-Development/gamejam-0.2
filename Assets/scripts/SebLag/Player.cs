@@ -18,6 +18,8 @@ public class Player : LivingEntity {
 	public float hits=1;
 	public float misses=0;
 
+	public float points;
+
 	protected override void Start () {
 		base.Start ();
 	}
@@ -85,5 +87,7 @@ public class Player : LivingEntity {
 	{
 		base.Die ();
 	}
+
+
 		
 }

@@ -30,12 +30,12 @@ public class CameraController : MonoBehaviour {
 
 		float angle = transform.eulerAngles.x * Mathf.Deg2Rad;
 
-		Debug.Log (angle);
+
 
 		angleFactor = Mathf.Tan(angle);
 
 
-		Debug.Log (angleFactor);
+
 		zOffset = HEIGHT / angleFactor;
 
 		fovXFactor = 1 / (2 * Mathf.Tan (fov / 2));

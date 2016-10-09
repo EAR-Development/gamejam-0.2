@@ -21,6 +21,7 @@ public class Enemy : LivingEntity {
 	float timeBetweenAttacks = 1;
 	public float damage = 1;
 
+
 	float nextAttackTime;
 	float myCollisionRadius;
 	float targetCollisionRadius;
