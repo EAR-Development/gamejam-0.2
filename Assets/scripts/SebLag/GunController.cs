@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GunController : MonoBehaviour {
 
@@ -7,31 +8,20 @@ public class GunController : MonoBehaviour {
 	public Gun[] allGuns;
 	public Gun equippedGun;
 	public int euqippedGunNr =0;
-	public int currentSlotNumber=0;
 	public int currentWeaponSlots=2;
 	public int maxWeaponslots=3;
-	public int[] WeaponSlots;
-	public int[] ammo;
-	public int[] ammoInMagazine;
-	public int[] maxAmmoInStache;
+	public List<Gun> carriedGuns;
 	public Player owner;
 
 	void Start() {
 		owner = GetComponent<Player> ();
 
+
 	}
 
 	public void setup(){
-		WeaponSlots=new int[maxWeaponslots];
-		ammo =new int[maxWeaponslots];
-		ammoInMagazine =new int[maxWeaponslots];
-		maxAmmoInStache = new int[maxWeaponslots];
-		for(int i=0;i<WeaponSlots.Length;i++){
-			WeaponSlots[i]=-1;
-			ammo [i] = 0;
-			ammoInMagazine [i] = 0;
-		}
-		WeaponSlots [0] = 0;
+		carriedGuns = new List<Gun> ();
+
 
 	}
 
@@ -75,16 +65,13 @@ public class GunController : MonoBehaviour {
 
 	public void Reload() {
 		
-		if (equippedGun != null && ammo [currentSlotNumber]>=equippedGun.projectilesPerMag) {
+		if (equippedGun != null && carriedGuns[euqippedGunNr] ) {
 			equippedGun.Reload ();
-			ammo [currentSlotNumber] -= equippedGun.projectilesPerMag;
-		} else {
-			equippedGun.projectilesPerMag=ammo[currentSlotNumber];
-			ammo [currentSlotNumber] = 0;
-		}
+
+		} 
 	}
 
-	public void switchWeapon(){
+	/*public void switchWeapon(){
 		ammoInMagazine[currentSlotNumber] = equippedGun.projectilesRemainingInMag;
 	//	ammo [currentSlotNumber] = maxAmmoInStache [currentSlotNumber];
 		currentSlotNumber++;
@@ -117,9 +104,9 @@ public class GunController : MonoBehaviour {
 			}
 		}
 
-	}
+	}*/
 
-	public void RefillStacheAmmo(int slot, bool singleWeapon=true){
+	/*public void RefillStacheAmmo(int slot, bool singleWeapon=true){
 	
 		if (singleWeapon) {
 			
@@ -164,7 +151,7 @@ public class GunController : MonoBehaviour {
 		/*EquipGun (WeaponSlots [slot], owner);
 		equippedGun.projectilesRemainingInMag = ammoInMagazine [slot];
 		ammo [slot] = maxAmmoInStache [slot];
-		print (equippedGun.projectilesRemainingInMag + "    " + ammo[currentSlotNumber]);*/
+		print (equippedGun.projectilesRemainingInMag + "    " + ammo[currentSlotNumber]);
 
 
 	
@@ -199,7 +186,7 @@ public class GunController : MonoBehaviour {
 
 		}
 
-	}
+	}*/
 
 
 

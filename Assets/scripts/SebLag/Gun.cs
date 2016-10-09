@@ -157,7 +157,7 @@ public class Gun : MonoBehaviour {
 
 
 		isReloading = false;
-	//	projectilesRemainingInMag = projectilesPerMag;
+		projectilesRemainingInMag = projectilesPerMag;
 	}
 
 	public void Aim(Vector3 aimPoint) {

@@ -45,7 +45,7 @@ public class WeaponShop: MonoBehaviour {
 					p.points -= cost;
 
 
-					p.GetComponent<GunController> ().pickUpNewWeapon (armWepItem);
+					//p.GetComponent<GunController> ().pickUpNewWeapon (armWepItem);
 
 				
 					//Update GUI!!
