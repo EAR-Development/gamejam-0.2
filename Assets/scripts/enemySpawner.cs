@@ -26,6 +26,7 @@ public class enemySpawner : MonoBehaviour {
 	public float maxIntevallUntis = 3;
 	public float minIntervallUnits = 2;
 
+	public float maxUnitsAlive;
 	public gameControllerScript gcs;
 
 
@@ -45,7 +46,10 @@ public class enemySpawner : MonoBehaviour {
 		intervallTimer += Time.deltaTime;
 
 		if(intervallTimer>=intervallPause){
-
+			intervallTimer = 0;
+			if(spawnedUnits.Count<maxUnitsAlive){
+				
+		
 			float intervallUnits = 0;
 
 
@@ -88,12 +92,12 @@ public class enemySpawner : MonoBehaviour {
 			}
 
 			spawnCount += spawnedCounter;
-			intervallTimer = 0;
+			
 			intervallPause = Random.Range (minIntervalPause, maxIntervallPause);
 
 
 		}
-
+		}
 		if(spawnCount>=totalEnemys&&spawnedUnits.Count==0){
 			print ("nextWave");
 			gcs.spawnNextWave ();

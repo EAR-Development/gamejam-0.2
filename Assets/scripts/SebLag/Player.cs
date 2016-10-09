@@ -35,8 +35,12 @@ public class Player : LivingEntity {
 	void Awake() {
 		controller = GetComponent<PlayerController> ();
 		gunController = GetComponent<GunController> ();
-		gunController.EquipGun (0,this);
+		gunController.setup ();
+		gunController.owner = this;
+		gunController.pickUpNewWeapon(0);
+	
 		viewCamera = Camera.main;
+		//gunController.RefillStacheAmmo (1,singleWeapon: false);
 		//FindObjectOfType<Spawner> ().OnNewWave += OnNewWave;
 	}
 
@@ -82,14 +86,15 @@ public class Player : LivingEntity {
 					gunController.Reload ();
 				}
 				if (Input.GetKeyDown (KeyCode.Q)) {
-					if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
+					/*if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
 						gunController.euqippedGunNr++;
 
 					} else {
 						gunController.euqippedGunNr = 0;
 					}
 
-					gunController.EquipGun (gunController.euqippedGunNr, this);
+					gunController.EquipGun (gunController.euqippedGunNr, this);*/
+					gunController.switchWeapon ();
 				}
 
 				if (Input.GetKeyDown (KeyCode.Space)) {
