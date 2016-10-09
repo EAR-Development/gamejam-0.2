@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour {
 			musicVolumePercent = PlayerPrefs.GetFloat ("music vol", 1);
 		}
 	}
-
+	/*
 	void OnLevelWasLoaded(int index) {
 		if (playerT == null) {
 			if (FindObjectOfType<Player> () != null) {
@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour {
 			}
 		}
 	}
+	*/
 
 	void Update() {
 		if (playerT != null) {

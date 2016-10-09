@@ -29,6 +29,7 @@ public class Player : LivingEntity {
 	public bool usingController;
 	public float points;
 	public Transform playerLookAt;
+	public AudioManager audioManager;
 
 	protected override void Start () {
 		base.Start ();
