@@ -34,7 +34,7 @@ public class Player : LivingEntity {
 	protected override void Start () {
 		base.Start ();
 
-		AudioManager.instance.PlaySound2D ("Mecha_Reload");
+		//AudioManager.instance.PlaySound2D ("Mecha_Reload");
 	}
 
 	void Awake() {
@@ -149,7 +149,7 @@ public class Player : LivingEntity {
 	}
 
 	public void OnWeaponChangePressed(){
-			if (gunController.euqippedGunNr < gunController.allGuns.Length - 1) {
+		if (gunController.euqippedGunNr < gunController.carriedGuns.Count - 1) {
 				gunController.euqippedGunNr++;
 
 			} else {

@@ -36,7 +36,7 @@ public class GunController : MonoBehaviour {
 	}
 
 	public void EquipGun(int weaponIndex, Player owner) {
-		EquipGun (allGuns [weaponIndex],owner);
+		EquipGun (carriedGuns [weaponIndex],owner);
 		euqippedGunNr = weaponIndex;
 	}
 

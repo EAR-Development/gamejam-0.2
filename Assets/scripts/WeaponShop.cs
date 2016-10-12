@@ -7,8 +7,7 @@ public class WeaponShop: MonoBehaviour {
 
 	public float cost;
 	public string ShopTitle;
-	public int armWepItem;
-	public int backWepItem;
+
 	public Gun gun;
 	public Material m;
 	public Transform wobblePlate;
@@ -18,7 +17,7 @@ public class WeaponShop: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m = new Material ((GetComponent<Material> () as Material));
+		m = new Material ((wobblePlate.GetComponent<Material> () as Material));
 		m.SetColor ("emission",Color.blue);
 	}
 
@@ -40,9 +39,10 @@ public class WeaponShop: MonoBehaviour {
 
 		if(playerEntered){
 			if (Input.GetKeyDown (KeyCode.E)) {
+				print ("ttest");
 				if (gameControllerScript.playerOne.points >= cost) {
+					
 					Player p = gameControllerScript.playerOne;
-					//animController.SetBool ("open", !animController.GetBool ("open"));
 					p.points -= cost;
 
 
@@ -52,6 +52,7 @@ public class WeaponShop: MonoBehaviour {
 					//Update GUI!!
 				} else {
 					//UPDATE GUI
+					print("'NOT ENOUGH ROBOCACHE!");
 				}
 
 

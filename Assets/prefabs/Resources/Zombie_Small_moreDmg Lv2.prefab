@@ -1297,6 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 200
+  animator: {fileID: 0}
   deathEffect: {fileID: 19878482, guid: 9ede256124f5842f1afbff9d9af29df7, type: 2}
   damage: 25
   spawner: {fileID: 0}
