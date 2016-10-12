@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour {
 	float recoilAngle;
 	public string weaponType;
 	public CapsuleCollider hitCollider; 
-	public List<Collider> collidersHit;
+	public List<Enemy> EnemysHit;
 
 	void Start() {
 		muzzleflash = GetComponent<MuzzleFlash> ();
@@ -68,6 +68,10 @@ public class Gun : MonoBehaviour {
 		//if (!isReloading && projectilesRemainingInMag == 0) {
 		if(Input.GetButtonDown("Reload")){
 			Reload();
+		}
+
+		foreach(Enemy e in EnemysHit){
+			e.TakeDamage (damage,owner);
 		}
 	}
 
@@ -94,9 +98,9 @@ public class Gun : MonoBehaviour {
 					if (weaponType == "Carbine") {
 						//AudioManager.instance.PlaySound2D ("MechaWalking");
 					} else if (weaponType == "Rocket") {
-						AudioManager.instance.PlaySound2D ("Rocketlauncher_Shot");
+						//AudioManager.instance.PlaySound2D ("Rocketlauncher_Shot");
 					} else if (weaponType == "Minigun") {
-						AudioManager.instance.PlaySound2D ("Minigun_Shot");
+						//AudioManager.instance.PlaySound2D ("Minigun_Shot");
 					}
 
 
@@ -127,25 +131,28 @@ public class Gun : MonoBehaviour {
 				recoilAngle = Mathf.Clamp (recoilAngle, 0, 30);
 
 			}
+
+
 		}
+
 	}
 
 	public void Reload() {
 		if (!isReloading && projectilesRemainingInMag != projectilesPerMag) {
 			StartCoroutine (AnimateReload ());
+
 		}
 	}
 
 	IEnumerator AnimateReload() {
 		isReloading = true;
 		yield return new WaitForSeconds (.2f);
-		AudioManager.instance.PlaySound2D ("Mecha_Reload");
+		//AudioManager.instance.PlaySound2D ("Mecha_Reload");
 
 		float reloadSpeed = 1f / reloadTime;
 		float percent = 0;
 		Vector3 initialRot = transform.localEulerAngles;
 		float maxReloadAngle = 30;
-
 		while (percent < 1) {
 			percent += Time.deltaTime * reloadSpeed;
 			float interpolation = (-Mathf.Pow(percent,2) + percent) * 4;
@@ -155,7 +162,7 @@ public class Gun : MonoBehaviour {
 			yield return null;
 		}
 
-
+	
 		isReloading = false;
 		projectilesRemainingInMag = projectilesPerMag;
 	}
@@ -170,7 +177,7 @@ public class Gun : MonoBehaviour {
 		Shoot ();
 		triggerReleasedSinceLastShot = false;
 		if (spinUp && preFireDuration > 0) {
-			AudioManager.instance.PlaySound2D ("Minigun_SpinUp");
+			//AudioManager.instance.PlaySound2D ("Minigun_SpinUp");
 			spinUp = false;
 		}
 	}
@@ -181,19 +188,21 @@ public class Gun : MonoBehaviour {
 		shotsRemainingInBurst = burstCount;
 		preFireDuration = preFireDurationMax;
 		if (hitCollider) {
+			
 			hitCollider.enabled = false;
+		
 		}
 	}
 
 	public void OnTriggerEnter(Collider col){
 		if(weaponType == "Flamethrower" && col.gameObject.tag == "Enemy"){
-			collidersHit.Add(col);
+			EnemysHit.Add(col.GetComponent<Enemy>());
 		}
 	}
 
 	public void OnTriggerExit(Collider col){
 		if(weaponType == "Flamethrower" && col.gameObject.tag == "Enemy"){
-			collidersHit.Remove(col);
+			EnemysHit.Remove(col.GetComponent<Enemy>());
 		}
 	}
 }

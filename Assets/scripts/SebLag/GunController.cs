@@ -66,7 +66,7 @@ public class GunController : MonoBehaviour {
 
 	public void Reload() {
 		
-		if (equippedGun != null && carriedGuns[euqippedGunNr] ) {
+		if (equippedGun != null /*&& carriedGuns[euqippedGunNr]*/ ) {
 			equippedGun.Reload ();
 
 		} 

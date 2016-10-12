@@ -143,9 +143,9 @@ public class Player : LivingEntity {
 	public void OnShootUp(){
 		gunController.OnTriggerRelease ();
 		animator.SetTrigger ("ShootWeapon1");
-		if (gunController.equippedGun.weaponType == "Flamethrower") {
+		/*if (gunController.equippedGun.weaponType == "Flamethrower") {
 			gunController.equippedGun.hitCollider.enabled = true;
-		}
+		}*/
 	}
 
 	public void OnWeaponChangePressed(){
