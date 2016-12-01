@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		calculateContainingRectangle ();
 
-		float speedFactor = 1.8f;
+		float speedFactor = 5f;
 
 		Vector3 distance = transform.position - new Vector3 ((xMin + xMax) / 2, HEIGHT, (zMin + zMax) / 2);
 		if (distance.magnitude > 9) {

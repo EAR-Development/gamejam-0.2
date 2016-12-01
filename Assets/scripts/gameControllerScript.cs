@@ -110,7 +110,7 @@ public class gameControllerScript : MonoBehaviour {
 		currentSpawner = (Instantiate (allSpawner [nextWave]) as GameObject).GetComponent<enemySpawner> ();
 		currentSpawner.gcs = this;
 		nextWave++;
-		AudioManager.instance.PlaySound2D ("NextWave");
+		//AudioManager.instance.PlaySound2D ("NextWave");
 
 	}
 

@@ -19,8 +19,8 @@ TagManager:
   - ZombieBody
   - PlayerBullet
   - Wall
-  - 
-  - 
+  - ignoreMe
+  - VisionBlock
   - 
   - 
   - 
